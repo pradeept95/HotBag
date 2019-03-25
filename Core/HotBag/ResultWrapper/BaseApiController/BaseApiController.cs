@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace HotBag.BaseApiController
+namespace HotBag.BaseController
 {
     [Route("api/[controller]")]
     [ApiController]
