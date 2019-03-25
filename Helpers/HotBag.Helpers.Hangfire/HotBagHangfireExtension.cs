@@ -9,8 +9,7 @@ namespace HotBag.Plugins.Hangfire
         public static IApplicationBuilder UseHotBagHangfire(this IApplicationBuilder applicationBuilder, IHostingEnvironment env)
         {
             applicationBuilder.UseHangfireDashboard("/hangfire");
-            applicationBuilder.UseHangfireServer(); 
-
+            applicationBuilder.UseHangfireServer();  
             return applicationBuilder;
         }
     }
