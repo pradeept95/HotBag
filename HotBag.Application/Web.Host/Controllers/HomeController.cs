@@ -12,8 +12,8 @@ namespace Web.Host.Controllers
     {
         public IActionResult Index()
         {
-            //return Redirect("/swagger");
-            return View();
+            return Redirect("/swagger");
+            //return View();
         } 
     }
 }
