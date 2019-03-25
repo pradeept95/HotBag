@@ -21,14 +21,14 @@ namespace Core
 
             //register module
             new ModuleBootstrapper(services, serviceProvider); 
-            var policy = new Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicy();
 
-            policy.Headers.Add("*");
-            policy.Methods.Add("*");
-            policy.Origins.Add("*");
-            policy.SupportsCredentials = true;
+            //var policy = new Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicy(); 
+            //policy.Headers.Add("*");
+            //policy.Methods.Add("*");
+            //policy.Origins.Add("*");
+            //policy.SupportsCredentials = true;
 
-            services.AddCors(x => x.AddPolicy("corsGlobalPolicy", policy));
+            //services.AddCors(x => x.AddPolicy("corsGlobalPolicy", policy));
             
             return services; 
         }
