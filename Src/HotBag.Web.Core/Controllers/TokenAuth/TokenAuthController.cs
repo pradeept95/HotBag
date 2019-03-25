@@ -28,7 +28,9 @@ namespace HotBag.Web.Core.Controllers.TokenAuth
         [AllowAnonymous]
         [HttpPost("authenticate")]
         public async Task<ResultDto<LoginResponseDto>> Authenticate([FromBody]LoginRequestDto input)
-        { 
+        {
+            //var userId = AppSession.UserId; 
+
             var result = new LoginResponseDto
             {
                 IsLoginSuccess = false,

@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="AutoMaper\" />
     <Folder Include="OptionConfigurer\" />
   </ItemGroup>
 

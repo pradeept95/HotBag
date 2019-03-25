@@ -136,6 +136,8 @@ namespace Web.Host
 
             app.UseCors(_defaultCorsPolicyName);
 
+            app.UseAuthentication();
+
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
