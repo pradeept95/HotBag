@@ -13,7 +13,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\HotBag\HotBag.csproj" />
+    <ProjectReference Include="..\..\Src\HotBag.Web.Core\HotBag.Web.Core.csproj" />
   </ItemGroup>
 
 </Project>
