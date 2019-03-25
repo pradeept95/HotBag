@@ -17,11 +17,11 @@ namespace HotBag.ResultWrapper.Extensions
                     var obj = JToken.Parse(text);
                     return true;
                 }
-                catch (JsonReaderException jex)
+                catch (JsonReaderException)
                 {
                     return false;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     return false;
                 }
