@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Application.Helpers.Extensions
+namespace HotBag.Extensions
 {
     /// <summary>
     /// Extension methods for Collections.
