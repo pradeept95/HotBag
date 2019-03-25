@@ -74,8 +74,8 @@ namespace Web.Host
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "HotBag Api",
-                    Description = "Asp.Net Core Startup Boilerplate Framework For Enterprise Application",
+                    Title = $"{Configuration.GetSection("App:Name").Value} Api",
+                    Description = $"{Configuration.GetSection("App:Description").Value}",
                     TermsOfService = "None",
                     Contact = new Contact
                     {
@@ -103,15 +103,7 @@ namespace Web.Host
                     In = "header",
                     Type = "apiKey"
                 });
-                c.AddSecurityRequirement(security);
-
-                //c.AddSecurityDefinition("jwt", new ApiKeyScheme
-                //{
-                //    Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
-                //    In = "header",
-                //    Name = "Authorization",
-                //    Type = "apiKey"
-                //}); 
+                c.AddSecurityRequirement(security); 
             });
 
             services.AddMvc(
@@ -151,7 +143,7 @@ namespace Web.Host
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "HotBag Enterprise Application Framework");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{Configuration.GetSection("App: Name").Value} Enterprise Application Framework");
             });
 
             app.UseHttpsRedirection();
