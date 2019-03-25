@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\HotBag\HotBag.csproj" />
+    <ProjectReference Include="..\..\Src\HotBag.Services\HotBag.Services.csproj" />
   </ItemGroup>
 
 </Project>

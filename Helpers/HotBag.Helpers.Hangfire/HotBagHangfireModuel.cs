@@ -10,8 +10,9 @@ namespace HotBag.Plugins.Hangfire
     public class HotBagHangfireModuel : ApplicationModule
     {
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        {  
-            JobStorage.Current = new MemoryStorage();
+        {   
+            JobStorage.Current = new MemoryStorage(); 
+            GlobalConfiguration.Configuration.UseMemoryStorage();
         }
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
