@@ -1,4 +1,5 @@
-﻿using HotBag.Modules;
+﻿using HotBag.AuthConfiguration;
+using HotBag.Modules;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -21,7 +22,7 @@ namespace HotBag
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-           
+            AuthConfigurer.Configure(serviceCollection, configuration);
         }
     }
 }

@@ -76,10 +76,12 @@ namespace HotBag.ResultWrapper
             if (exception is ApiException)
             {
                 var ex = exception as ApiException;
-                apiError = new ApiError(ex.Message);
-                apiError.ValidationErrors = ex.Errors;
-                apiError.ReferenceErrorCode = ex.ReferenceErrorCode;
-                apiError.ReferenceDocumentLink = ex.ReferenceDocumentLink;
+                apiError = new ApiError(ex.Message)
+                {
+                    ValidationErrors = ex.Errors,
+                    ReferenceErrorCode = ex.ReferenceErrorCode,
+                    ReferenceDocumentLink = ex.ReferenceDocumentLink
+                };
                 code = ex.StatusCode;
                 context.Response.StatusCode = code;
 
@@ -106,8 +108,10 @@ namespace HotBag.ResultWrapper
                 string stack = exception.StackTrace;
 #endif
 
-                apiError = new ApiError(msg);
-                apiError.Details = stack;
+                apiError = new ApiError(msg)
+                {
+                    Details = stack
+                };
                 code = (int)HttpStatusCode.InternalServerError;
                 context.Response.StatusCode = code;
             }
