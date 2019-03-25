@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HotBag.Identity.AppSession;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HotBag.BaseController
 {
@@ -7,6 +8,10 @@ namespace HotBag.BaseController
     // [Authorize]
     public class BaseApiController : ControllerBase
     {
-
+        protected readonly IAppSession AppSession;
+        public BaseApiController()
+        {
+            AppSession = NullAppSession.Instance;
+        }
     }
 }
