@@ -13,21 +13,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B8E5D48E-1AE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotBag", "..\Core\HotBag\HotBag.csproj", "{EDD024DF-8520-46BF-A11B-023CF217AF21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotBag.Web.Core", "..\Src\HotBag.Web.Core\HotBag.Web.Core.csproj", "{B8D8429B-1BA2-47B0-85E3-E0A613FD9DE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotBag.Web.Core", "..\Src\HotBag.Web.Core\HotBag.Web.Core.csproj", "{B8D8429B-1BA2-47B0-85E3-E0A613FD9DE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotBag.Core", "..\Src\HotBag.Core\HotBag.Core.csproj", "{177AC98F-6BE8-4422-A8DB-775856664A24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotBag.Core", "..\Src\HotBag.Core\HotBag.Core.csproj", "{177AC98F-6BE8-4422-A8DB-775856664A24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotBag.EntityFrameworkCore", "..\Src\HotBag.EntityFrameworkCore\HotBag.EntityFrameworkCore.csproj", "{3B2C7DC9-583E-44B2-9904-DCB6CC5F42D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotBag.EntityFrameworkCore", "..\Src\HotBag.EntityFrameworkCore\HotBag.EntityFrameworkCore.csproj", "{3B2C7DC9-583E-44B2-9904-DCB6CC5F42D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotBag.MongoDb", "..\Src\HotBag.MongoDb\HotBag.MongoDb.csproj", "{BA7D289D-0C53-42F9-A37D-8161F7C1BDCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotBag.MongoDb", "..\Src\HotBag.MongoDb\HotBag.MongoDb.csproj", "{BA7D289D-0C53-42F9-A37D-8161F7C1BDCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotBag.Services", "..\Src\HotBag.Services\HotBag.Services.csproj", "{812A4E69-DA97-4988-823A-B0DA3C614446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotBag.Services", "..\Src\HotBag.Services\HotBag.Services.csproj", "{812A4E69-DA97-4988-823A-B0DA3C614446}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotBag.Helpers.SignalR", "..\Helpers\HotBag.Helpers.SignalR\HotBag.Helpers.SignalR.csproj", "{61374FEC-4BFC-45DB-9DD8-6CCA307B2DF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotBag.Helpers.SignalR", "..\Helpers\HotBag.Helpers.SignalR\HotBag.Helpers.SignalR.csproj", "{61374FEC-4BFC-45DB-9DD8-6CCA307B2DF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Helpers.OData", "Application.Helpers.OData\Application.Helpers.OData.csproj", "{784BB367-00A8-48FD-96FA-6B1CE67514FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Helpers.OData", "Application.Helpers.OData\Application.Helpers.OData.csproj", "{784BB367-00A8-48FD-96FA-6B1CE67514FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotBag.Helpers.Hangfire", "..\Helpers\HotBag.Helpers.Hangfire\HotBag.Helpers.Hangfire.csproj", "{B073F7C4-2152-4F06-B668-081CDD4C3A8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotBag.Helpers.Hangfire", "..\Helpers\HotBag.Helpers.Hangfire\HotBag.Helpers.Hangfire.csproj", "{B073F7C4-2152-4F06-B668-081CDD4C3A8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{29329DEC-4374-4A59-9175-953DD7F4D629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotBag.Test", "..\Test\HotBag.Test\HotBag.Test.csproj", "{C8ADE41F-58BD-4A2D-8E68-F497E138EEBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,10 @@ Global
 		{B073F7C4-2152-4F06-B668-081CDD4C3A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B073F7C4-2152-4F06-B668-081CDD4C3A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B073F7C4-2152-4F06-B668-081CDD4C3A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8ADE41F-58BD-4A2D-8E68-F497E138EEBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8ADE41F-58BD-4A2D-8E68-F497E138EEBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8ADE41F-58BD-4A2D-8E68-F497E138EEBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8ADE41F-58BD-4A2D-8E68-F497E138EEBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,6 +97,7 @@ Global
 		{61374FEC-4BFC-45DB-9DD8-6CCA307B2DF0} = {613F1550-089B-46F1-9864-604F9516C6F0}
 		{784BB367-00A8-48FD-96FA-6B1CE67514FB} = {613F1550-089B-46F1-9864-604F9516C6F0}
 		{B073F7C4-2152-4F06-B668-081CDD4C3A8A} = {613F1550-089B-46F1-9864-604F9516C6F0}
+		{C8ADE41F-58BD-4A2D-8E68-F497E138EEBE} = {29329DEC-4374-4A59-9175-953DD7F4D629}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {94CD4262-A4CF-4818-B18B-3F5DC651DEFA}

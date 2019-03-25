@@ -1,8 +1,10 @@
 ﻿using HotBag.BaseController;
+using HotBag.ResultWrapper.ResponseModel;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace HotBag.Web.Core.Controllers.TokenAuth
 {
@@ -10,11 +12,13 @@ namespace HotBag.Web.Core.Controllers.TokenAuth
     {
         [HttpGet]
         [Route("Get")] 
-        public List<string> GetString()
+        public async Task<ListResultDto<string>> GetString()
         {
-            return new List<string> {
+            var result = new List<string> {
                 "Asdf", "Pqrs"
             };
+
+            return new ListResultDto<string>(result, "this is summary");
         }
     }
 }

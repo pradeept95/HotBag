@@ -8,4 +8,9 @@
     <ProjectReference Include="..\..\Core\HotBag\HotBag.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Entity\" />
+    <Folder Include="EntityDto\" />
+  </ItemGroup>
+
 </Project>

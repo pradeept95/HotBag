@@ -74,8 +74,8 @@ namespace Web.Host
                 c.SwaggerDoc("v1", new Info
                 {
                     Version = "v1",
-                    Title = "Web Api",
-                    Description = "All Apis Docs",
+                    Title = "HotBag Api",
+                    Description = "Asp.Net Core Startup Boilerplate Framework For Enterprise Application",
                     TermsOfService = "None",
                     Contact = new Contact
                     {
@@ -85,8 +85,8 @@ namespace Web.Host
                     },
                     License = new License
                     {
-                        Name = "Use under MIT License",
-                        Url = "#"
+                        Name = "Git Source Url",
+                        Url = "https://github.com/pradeep9860/HotBag"
                     }
                 });
 
@@ -151,7 +151,7 @@ namespace Web.Host
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "KNN Null Printer APIs");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "HotBag Enterprise Application Framework");
             });
 
             app.UseHttpsRedirection();

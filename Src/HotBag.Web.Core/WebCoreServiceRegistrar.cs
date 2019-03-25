@@ -7,7 +7,7 @@ using System.Text;
 
 namespace HotBag.Web.Core
 {
-    public class CoreServiceRegistrar : IServiceRegistrar
+    public class WebCoreServiceRegistrar : IServiceRegistrar
     {
         public void Register(IServiceCollection serviceCollection, IConfiguration configuration)
         { 

@@ -5,23 +5,23 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HotBag
+namespace HotBag.Web.Core
 {
-    public class CoreModule : ApplicationModule
+    public class WebCoreModule : ApplicationModule
     {
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            
+            //throw new NotImplementedException();
         }
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        { 
-
+        {
+            //throw new NotImplementedException();
         }
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-           
+            //throw new NotImplementedException();
         }
     }
 }

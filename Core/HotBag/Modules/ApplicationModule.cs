@@ -6,11 +6,11 @@ namespace HotBag.Modules
 {
     public abstract class ApplicationModule : IApplicationModule
     {
+        public abstract void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration);
+
         public abstract void Initialize(IServiceCollection serviceCollection, IConfiguration configuration); 
 
-        public abstract void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration);
-
-        public abstract void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration);
+        public abstract void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration); 
     }
 
 }
