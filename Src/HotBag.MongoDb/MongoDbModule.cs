@@ -1,4 +1,5 @@
 ﻿using HotBag.Modules;
+using HotBag.MongoDb.Seed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -16,7 +17,7 @@ namespace HotBag.MongoDb
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-           
+            SeedHelpers.SeedMongoData(serviceCollection).Wait();
         }
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)

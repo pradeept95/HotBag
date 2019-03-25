@@ -1,7 +1,7 @@
-﻿using HotBag.AuthConfiguration;
-using HotBag.BaseController;
+﻿using HotBag.BaseController;
 using HotBag.Constants;
 using HotBag.Core.EntityDto.Authenticate;
+using HotBag.OptionConfigurer.Settings;
 using HotBag.ResultWrapper.ResponseModel;
 using HotBag.Security.StringCipher;
 using Microsoft.AspNetCore.Authorization;
@@ -12,7 +12,6 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace HotBag.Web.Core.Controllers.TokenAuth

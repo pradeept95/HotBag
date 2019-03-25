@@ -1,7 +1,7 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using System;
 
-namespace HotBag.AuthConfiguration
+namespace HotBag.OptionConfigurer.Settings
 {
     public class TokenAuthConfiguration
     {

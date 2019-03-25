@@ -1,10 +1,8 @@
 ﻿using HotBag.AuthConfiguration;
 using HotBag.Modules;
+using HotBag.OptionConfigurer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace HotBag
 {
@@ -22,7 +20,8 @@ namespace HotBag
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            AuthConfigurer.Configure(serviceCollection, configuration);
+            serviceCollection.ConfigureApplicationSettings(configuration);
+            AuthConfigurer.Configure(serviceCollection, configuration); 
         }
     }
 }
