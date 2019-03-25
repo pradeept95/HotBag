@@ -11,74 +11,16 @@ namespace Core
         public static IServiceCollection RegisterHotBagCore(this IServiceCollection services,
             IServiceProvider serviceProvider)
         {
-            var configuration = serviceProvider.GetService<IConfiguration>();
-            // var changeEvent = serviceProvider.GetService<ConfigChangeEvent>();
-            // var autoReset = new AutoResetEvent(false);
-            //  changeEvent.Attach(new KachuwaConfigChangeListner());
-            //ChangeToken.OnChange(() =>
-            //        configuration.GetReloadToken(),
-            //    () =>
-            //    {
-            //        autoReset.Set();
-            //        changeEvent.Notify();
-            //    }
-            //);
-
-            //config to json service
-            //services.TryAddSingleton<IConfigToJson, ConfigToJson>();
-            //-- Add functionality to inject IOptions<T>
-            //services.AddOptions();// Add our Config object so it can be injected
-            //services.Configure<KachuwaAppConfig>(configuration.GetSection("KachuwaAppConfig"));
-            //services.AddScoped(cfg => cfg.GetService<IOptionsSnapshot<KachuwaAppConfig>>().Value);
-            //services.AddScoped(cfg => cfg.GetService<IOptionsSnapshot<KachuwaConnectionStrings>>().Value);
-            //to access kachuwa app config
-            //IOptions<KachuwaAppConfig> settings or Configuration.GetValue<string>("KachuwaAppConfig:AppName");  
-
+            var configuration = serviceProvider.GetService<IConfiguration>(); 
             services.AddHttpContextAccessor();
             //registering service for later use
             services.AddSingleton(services);
-            //services.TryAddSingleton<ILoggerSetting, DefaultLoggerSetting>();
-            //services.TryAddSingleton<ILogProvider, DefaultLogProvider>();
-            //services.TryAddSingleton<ILogger, FileBaseLogger>();
-
-            //removed 
-            //services.TryAddSingleton<ILoggerService, FileBaseLogger>();
-            //services.AddTransient<LogErrorAttribute>();
-            //var logger = serviceProvider.GetService<ILogger>();
-            //IHostingEnvironment hostingEnvironment = serviceProvider.GetService<IHostingEnvironment>();
-            //var plugs = new PluginBootStrapper(hostingEnvironment, logger, services);
-
-            //services.AddScoped<IViewRenderService, ViewRenderService>();
-            //services.TryAddSingleton<IViewComponentSelector, Default2ViewComponentSelector>();
-            // services.TryAddTransient<IViewComponentHelper, Default2ViewComponentHelper>();
-
-
-            //services.TryAddSingleton<ICacheService, DefaultCacheService>();
-            //services.AddTransient<KachuwaCacheAttribute>();
-            //services.TryAddSingleton<IStorageProvider, LocalStorageProvider>();
-            //services.RegisterKachuwaStorageService(new DefaultFileOptions()
-            //{
-
-            //});
+              
             //TODO:: register all dependencies
             new Bootstrapper(services, serviceProvider);
 
             //register module
-            new ModuleBootstrapper(services, serviceProvider);
-
-            // services.AddSingleton(configuration);
-
-            // services.TryAddSingleton<ICache, DefaultCache>();
-
-            //services.EnableKachuwaLocalization(config =>
-            //{
-            //    config.UseDbResources = true;
-            //    config.UseJsonResources = true;
-            //});
-            //services.RegisterKachuwaWeb();
-
-            //Add Cors support to the service
-            //services.AddCors();
+            new ModuleBootstrapper(services, serviceProvider); 
             var policy = new Microsoft.AspNetCore.Cors.Infrastructure.CorsPolicy();
 
             policy.Headers.Add("*");
@@ -87,22 +29,8 @@ namespace Core
             policy.SupportsCredentials = true;
 
             services.AddCors(x => x.AddPolicy("corsGlobalPolicy", policy));
-            //services.TryAddSingleton<ICspNonceService, CspNonceService>();
-
-            //services.Configure<ApplicationInsightsSettings>(options => configuration.GetSection("ApplicationInsights").Bind(options));
-
-            //enable socket
-            //services.AddWebSocketManager();
-            //services.Configure<RazorViewEngineOptions>(options =>
-            //{
-            //    options.ViewLocationExpanders.Insert(0, new ViewOverrideLocationExpander());
-
-            //});
-            return services;
-            // Add application services.
-            //services.AddTransient<IEmailSender, EmailSender>();
-            //services.AddTransient<ISmsSender, SmsSender>();
-
+            
+            return services; 
         }
 
 

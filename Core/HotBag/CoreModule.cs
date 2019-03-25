@@ -11,17 +11,18 @@ namespace HotBag
     {
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
         }
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+             
         }
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
         }
     }
 }

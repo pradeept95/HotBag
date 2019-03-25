@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HotBag.EntityFrameworkCore\HotBag.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\HotBag.MongoDb\HotBag.MongoDb.csproj" />
+  </ItemGroup>
+
 </Project>
