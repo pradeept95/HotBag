@@ -27,11 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotBag.Plugins.SignalR", ".
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotBag.Plugins.OData", "Application.Helpers.OData\HotBag.Plugins.OData.csproj", "{784BB367-00A8-48FD-96FA-6B1CE67514FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotBag.Plugins.angfire", "..\Helpers\HotBag.Helpers.Hangfire\HotBag.Plugins.angfire.csproj", "{B073F7C4-2152-4F06-B668-081CDD4C3A8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotBag.Plugins.Hangfire", "..\Helpers\HotBag.Helpers.Hangfire\HotBag.Plugins.Hangfire.csproj", "{B073F7C4-2152-4F06-B668-081CDD4C3A8A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{29329DEC-4374-4A59-9175-953DD7F4D629}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotBag.Test", "..\Test\HotBag.Test\HotBag.Test.csproj", "{C8ADE41F-58BD-4A2D-8E68-F497E138EEBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotBag.Test", "..\Test\HotBag.Test\HotBag.Test.csproj", "{C8ADE41F-58BD-4A2D-8E68-F497E138EEBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

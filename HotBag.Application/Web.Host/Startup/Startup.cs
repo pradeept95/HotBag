@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Core;
+using HotBag.Plugins.Hangfire;
 using HotBag.ResultWrapper.Extensions;
 using HotBag.ResultWrapper.Filters;
 using Microsoft.AspNetCore.Builder;
@@ -20,7 +21,7 @@ namespace Web.Host
 {
     public class Startup
     {
-        private string _defaultCorsPolicyName = "DefaultPolicy";
+        private readonly string _defaultCorsPolicyName = "DefaultPolicy";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -151,6 +152,9 @@ namespace Web.Host
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            //Use HotBag Hangfire
+            app.UseHotBagHangfire(env);
 
             app.UseWhen(context => context.Request.Path.StartsWithSegments("/api"), appBuilder =>
             {
