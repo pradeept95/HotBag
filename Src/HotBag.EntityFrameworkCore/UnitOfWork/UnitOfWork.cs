@@ -24,7 +24,16 @@ namespace HotBag.EntityFrameworkCore.UnitOfWork
 
         public async Task CommitAsync()
         {
-            await Context.SaveChangesAsync();
+            try
+            {
+                await Context.SaveChangesAsync();
+            }
+            catch (System.Exception ex)
+            {
+
+                throw;
+            }
+           
         }
 
         public void Dispose()

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace HotBag.EntityFrameworkCore.Repository
 {
-    public class EFRepository<TEntity, TPrimaryKey> : IEFRepository<TEntity, TPrimaryKey> where TEntity : class, IEFEntityBase<TPrimaryKey>, IScopedDependencies
+    public class EFRepository<TEntity, TPrimaryKey> : IEFRepository<TEntity, TPrimaryKey>, IScopedDependencies where TEntity : class, IEFEntityBase<TPrimaryKey>
     {
         private readonly IUnitOfWork _unitOfWork;
         public EFRepository(IUnitOfWork unitOfWork)
@@ -297,7 +297,7 @@ namespace HotBag.EntityFrameworkCore.Repository
 
         public async Task<TEntity> UpdateAsync(TEntity entity)
         {
-            AttachIfNot(entity);
+            //AttachIfNot(entity);
             Context.Entry(entity).State = EntityState.Modified;
             return await Task.FromResult(entity);
         }

@@ -16,12 +16,14 @@ namespace HotBag.EntityFrameworkCore
                      .WithTransientLifetime()
 
                  .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
-                     .As<IScopedDependencies>()
+                     .AsImplementedInterfaces()
                      .WithScopedLifetime()
 
                   .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
                              .AsImplementedInterfaces()
                              .WithSingletonLifetime());
+
+
         }
 
         public void Update(IServiceCollection serviceCollection)

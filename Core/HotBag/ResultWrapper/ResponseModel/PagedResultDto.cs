@@ -7,12 +7,15 @@ namespace HotBag.ResultWrapper.ResponseModel
         public int TotalCount { get; set; }
         public List<T> Data { get; set; } = new List<T>();
         public string Summary { get; set; }
+        public bool HasMore { get; set; }
 
-        public PagedResultDto(int totalCount, List<T> data, string summary = "")
+        public PagedResultDto(int totalCount, List<T> data, bool HasMore = true, string summary = "")
         {
             this.TotalCount = totalCount;
             this.Data = data;
-            this.Summary = summary;
+            this.HasMore = HasMore;
+            this.Summary = !string.IsNullOrEmpty(summary)? summary
+                         : $"Showing {data.Count} of {totalCount}";
         }
     }
 }
