@@ -8,4 +8,8 @@
     <ProjectReference Include="..\HotBag.Core\HotBag.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Seed\" />
+  </ItemGroup>
+
 </Project>

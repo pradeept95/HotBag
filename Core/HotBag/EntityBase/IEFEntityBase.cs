@@ -1,11 +1,14 @@
-﻿namespace HotBag.EntityBase
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace HotBag.EntityBase
 {
     public interface IEFEntityBase<TPrimaryKey>
     {
         //
         // Summary:
         //     Unique identifier for this entity. 
-        TPrimaryKey Id { get; set; }
+        [Key]
+        TPrimaryKey Id { get; set; } 
     }
       
 }
