@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using HotBag.Autofill;
 using HotBag.DI.Base;
 using System;
 using System.Collections.Generic;
@@ -17,12 +18,14 @@ namespace HotBag.AutoMaper
         public TDestination Map<TDestination>(object source)
         {
             TDestination destinationObj = _mapper.Map<TDestination>(source);
+            destinationObj.AutoFill();
             return destinationObj;
         }
 
         public TDestination Map<TSource, TDestination>(TSource source, TDestination destination)
         {
             TDestination destinationObj = _mapper.Map(source, destination);
+            destinationObj.AutoFill();
             return destinationObj;
         }
     }

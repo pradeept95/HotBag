@@ -1,4 +1,5 @@
 ﻿using HotBag.Core.Entity;
+using HotBag.EntityBase;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotBag.EntityFrameworkCore.Context
@@ -14,6 +15,11 @@ namespace HotBag.EntityFrameworkCore.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         { 
+            
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
             
         }
     }

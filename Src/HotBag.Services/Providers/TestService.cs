@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using HotBag.Autofill;
 using HotBag.AutoMaper;
 using HotBag.Core.Entity;
 using HotBag.Core.EntityDto;
@@ -23,6 +24,7 @@ namespace HotBag.Services.Providers
             _unitOfWork = unitOfWork;
             _objectMapper = objectMapper;
         }
+
         public async Task Delete(Guid id)
         {
             await _repository.DeleteAsync(id);
@@ -109,7 +111,7 @@ namespace HotBag.Services.Providers
             //    TestProp3 = entity.TestProp3
             //};
 
-            var saveModel = _objectMapper.Map<TestEntity>(entity);
+            var saveModel = _objectMapper.Map<TestEntity>(entity); 
             var result = await _repository.InsertAsync(saveModel);
             await _unitOfWork.CommitAsync();
             var res = _objectMapper.Map<TestEntityDto>(result);
@@ -128,6 +130,7 @@ namespace HotBag.Services.Providers
             //    };
 
             var updateModel = _objectMapper.Map<TestEntity>(entity);
+ 
             var result = await _repository.UpdateAsync(updateModel);
             await _unitOfWork.CommitAsync();
             var res = _objectMapper.Map<TestEntityDto>(result);
