@@ -28,6 +28,7 @@ namespace HotBag.Services.Providers
         public async Task Delete(Guid id)
         {
             await _repository.DeleteAsync(id);
+            await _unitOfWork.CommitAsync();
         }
 
         public async Task<ResultDto<TestEntityDto>> Get(Guid id)

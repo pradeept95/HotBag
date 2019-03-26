@@ -60,5 +60,14 @@ namespace Web.Host.Controllers
         {
             return await _testService.Update(entity);
         }
+
+
+        [HttpDelete]
+        [Route("Delete")]
+
+        public async Task Delete(Guid id)
+        {
+            await _testService.Delete(id);
+        }
     }
 }
