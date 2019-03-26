@@ -17,7 +17,7 @@ namespace HotBag.MongoDb.Repository
     /// </summary>
     /// <typeparam name="TEntity">Type of the Entity for this repository</typeparam>
     /// <typeparam name="TPrimaryKey">Primary key of the entity</typeparam>
-    public class MongoRepository<TEntity, TPrimaryKey> : IMongoRepository<TEntity, TPrimaryKey>, ISingletonService
+    public class MongoRepository<TEntity, TPrimaryKey> : IMongoRepository<TEntity, TPrimaryKey>, ISingletonDependencies
         where TEntity : class, IMongoEntityBase<TPrimaryKey>
     {
         private readonly IMongoDatabase _database = null;

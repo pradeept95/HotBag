@@ -1,6 +1,6 @@
 ﻿namespace HotBag.DI.Base
 {
-    public interface ITransientService
+    public interface ITransientDependencies
     { 
     }
 }

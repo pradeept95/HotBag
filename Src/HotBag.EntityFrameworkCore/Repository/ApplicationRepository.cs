@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace HotBag.EntityFrameworkCore.Repository
 {
-    public class EFRepository<TEntity, TPrimaryKey> : IEFRepository<TEntity, TPrimaryKey> where TEntity : class, IEFEntityBase<TPrimaryKey>, IScopedService
+    public class EFRepository<TEntity, TPrimaryKey> : IEFRepository<TEntity, TPrimaryKey> where TEntity : class, IEFEntityBase<TPrimaryKey>, IScopedDependencies
     {
         private readonly IUnitOfWork _unitOfWork;
         public EFRepository(IUnitOfWork unitOfWork)

@@ -11,15 +11,15 @@ namespace HotBag.MongoDb
         {
             serviceCollection.Scan(scan => scan
              .FromAssemblyOf<MongoDbModule>()
-                 .AddClasses(classes => classes.AssignableTo<ITransientService>())
+                 .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
                      .AsImplementedInterfaces()
                      .WithTransientLifetime()
 
-                 .AddClasses(classes => classes.AssignableTo<IScopedService>())
-                     .As<IScopedService>()
+                 .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
+                     .As<IScopedDependencies>()
                      .WithScopedLifetime()
 
-                  .AddClasses(classes => classes.AssignableTo<ISingletonService>())
+                  .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
                              .AsImplementedInterfaces()
                              .WithSingletonLifetime());
         }

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace HotBag.EntityFrameworkCore.UnitOfWork
 {
-    public class UnitOfWork : IUnitOfWork, IScopedService
+    public class UnitOfWork : IUnitOfWork, IScopedDependencies
     {
         public ApplicationDbContext Context { get; }
 

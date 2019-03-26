@@ -5,7 +5,7 @@ using MongoDB.Driver;
 
 namespace HotBag.MongoDb.Context
 {
-    public class MongoDbContext : ISingletonService, IMongoDbContext
+    public class MongoDbContext :  IMongoDbContext, ISingletonDependencies
     {
         private readonly IMongoDatabase _database = null;
 
