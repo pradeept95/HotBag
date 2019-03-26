@@ -9,7 +9,7 @@ namespace HotBag.BaseController
     [Authorize]
     public class BaseApiController : ControllerBase
     {
-        protected readonly IAppSession AppSession;
+        protected readonly IAppSession AppSession; 
         public BaseApiController()
         {
             AppSession = NullAppSession.Instance;

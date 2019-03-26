@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using HotBag.AutoMaper;
 using HotBag.Core.Entity;
 using HotBag.Core.EntityDto;
 using HotBag.DI.Base;
@@ -15,10 +16,12 @@ namespace HotBag.Services.Providers
     {
         private readonly IEFRepository<TestEntity, Guid> _repository;
         private readonly IUnitOfWork _unitOfWork;
-        public TestService(IEFRepository<TestEntity, Guid> repository, IUnitOfWork unitOfWork)
+        private readonly IObjectMapper _objectMapper;
+        public TestService(IEFRepository<TestEntity, Guid> repository, IUnitOfWork unitOfWork, IObjectMapper objectMapper)
         {
             _repository = repository;
             _unitOfWork = unitOfWork;
+            _objectMapper = objectMapper;
         }
         public async Task Delete(Guid id)
         {
@@ -28,14 +31,15 @@ namespace HotBag.Services.Providers
         public async Task<ResultDto<TestEntityDto>> Get(Guid id)
         {
             var result = await _repository.GetAsync(id);
-            var res = new TestEntityDto
-            {
-                Id = result.Id,
-                TestName = result.TestName,
-                TestProp1 = result.TestProp1,
-                TestProp2 = result.TestProp2,
-                TestProp3 = result.TestProp3
-            };
+            //var res = new TestEntityDto
+            //{
+            //    Id = result.Id,
+            //    TestName = result.TestName,
+            //    TestProp1 = result.TestProp1,
+            //    TestProp2 = result.TestProp2,
+            //    TestProp3 = result.TestProp3
+            //};
+            var res = _objectMapper.Map<TestEntityDto>(result);
             return new ResultDto<TestEntityDto>(res);
         }
 
@@ -96,34 +100,38 @@ namespace HotBag.Services.Providers
 
         public async Task<ResultDto<TestEntityDto>> Save(TestEntityDto entity)
         {
-            var saveModel = new TestEntity 
-            { 
-                Id = Guid.NewGuid(),
-                TestName = entity.TestName,
-                TestProp1 = entity.TestProp1,
-                TestProp2 = entity.TestProp2,
-                TestProp3 = entity.TestProp3
-            };
+            //var saveModel = new TestEntity 
+            //{ 
+            //    Id = Guid.NewGuid(),
+            //    TestName = entity.TestName,
+            //    TestProp1 = entity.TestProp1,
+            //    TestProp2 = entity.TestProp2,
+            //    TestProp3 = entity.TestProp3
+            //};
 
+            var saveModel = _objectMapper.Map<TestEntity>(entity);
             var result = await _repository.InsertAsync(saveModel);
             await _unitOfWork.CommitAsync();
-            return new ResultDto<TestEntityDto>(entity);
+            var res = _objectMapper.Map<TestEntityDto>(result);
+            return new ResultDto<TestEntityDto>(res);
         }
 
         public async Task<ResultDto<TestEntityDto>> Update(TestEntityDto entity)
         {
-            var updateModel = new TestEntity
-            {
-                Id = entity.Id,
-                TestName = entity.TestName,
-                TestProp1 = entity.TestProp1,
-                TestProp2 = entity.TestProp2,
-                TestProp3 = entity.TestProp3
-            };
+            //    var updateModel = new TestEntity
+            //    {
+            //        Id = entity.Id,
+            //        TestName = entity.TestName,
+            //        TestProp1 = entity.TestProp1,
+            //        TestProp2 = entity.TestProp2,
+            //        TestProp3 = entity.TestProp3
+            //    };
 
+            var updateModel = _objectMapper.Map<TestEntity>(entity);
             var result = await _repository.UpdateAsync(updateModel);
             await _unitOfWork.CommitAsync();
-            return new ResultDto<TestEntityDto>(entity);
+            var res = _objectMapper.Map<TestEntityDto>(result);
+            return new ResultDto<TestEntityDto>(res);
         }
     }
 }

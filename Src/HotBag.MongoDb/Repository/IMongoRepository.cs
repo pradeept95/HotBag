@@ -356,8 +356,8 @@ namespace HotBag.MongoDb.Repository
         Task<long> LongCountAsync(Expression<Func<TEntity, bool>> predicate);
         //
         // Summary:
-        //     Used to run a query over entire entities. Abp.Domain.Uow.UnitOfWorkAttribute
-        //     attribute is not always necessary (as opposite to Abp.Domain.Repositories.IRepository`2.GetAll)
+        //     Used to run a query over entire entities. HotBag.Domain.Uow.UnitOfWorkAttribute
+        //     attribute is not always necessary (as opposite to HotBag.Domain.Repositories.IRepository`2.GetAll)
         //     if queryMethod finishes IQueryable with ToList, FirstOrDefault etc..
         //
         // Parameters:

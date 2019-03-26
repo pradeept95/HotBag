@@ -1,10 +1,13 @@
-﻿using HotBag.EntityBase;
+﻿using HotBag.AutoMaper.Attributes;
+using HotBag.Core.EntityDto;
+using HotBag.EntityBase;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace HotBag.Core.Entity
 {
+    [AutoMap(typeof(TestEntityDto))]
     public class TestEntity : IEFEntityBase<Guid>
     {
         public Guid Id { get; set; }

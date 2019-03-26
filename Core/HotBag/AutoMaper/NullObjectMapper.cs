@@ -3,7 +3,7 @@ using HotBag.ResultWrapper.WrapperModel;
 
 namespace HotBag.AutoMaper
 {
-    public sealed class NullObjectMapper : IObjectMapper, ISingletonDependencies
+    public sealed class NullObjectMapper// : IObjectMapper 
     {
         /// <summary>
         /// Singleton instance.
@@ -12,12 +12,12 @@ namespace HotBag.AutoMaper
 
         public TDestination Map<TDestination>(object source)
         {
-            throw new ApiException("Abp.ObjectMapping.IObjectMapper should be implemented in order to map objects.");
+            throw new ApiException("HotBag.ObjectMapping.IObjectMapper should be implemented in order to map objects.");
         }
 
         public TDestination Map<TSource, TDestination>(TSource source, TDestination destination)
         {
-            throw new ApiException("Abp.ObjectMapping.IObjectMapper should be implemented in order to map objects.");
+            throw new ApiException("HotBag.ObjectMapping.IObjectMapper should be implemented in order to map objects.");
 
         }
     }
