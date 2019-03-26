@@ -9,8 +9,4 @@
     <ProjectReference Include="..\HotBag.MongoDb\HotBag.MongoDb.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Providers\" />
-  </ItemGroup>
-
 </Project>

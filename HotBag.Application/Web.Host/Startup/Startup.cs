@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Core;
+using HotBag.EntityFrameworkCore;
 using HotBag.Plugins.Hangfire;
 using HotBag.ResultWrapper.Extensions;
 using HotBag.ResultWrapper.Filters;
@@ -153,8 +154,11 @@ namespace Web.Host
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            //Use HotBag EfCore 
+            app.UseHotBagEfCore(env);
+
             //Use HotBag Hangfire
-            app.UseHotBagHangfire(env);
+            app.UseHotBagHangfire(env); 
 
             app.UseWhen(context => context.Request.Path.StartsWithSegments("/api"), appBuilder =>
             {
