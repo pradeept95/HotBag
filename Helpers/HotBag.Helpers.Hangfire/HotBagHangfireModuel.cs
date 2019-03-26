@@ -4,15 +4,18 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Hangfire.MemoryStorage;
 using HotBag.Scheuler;
+using Hangfire.SqlServer;
 
 namespace HotBag.Plugins.Hangfire
 {
     public class HotBagHangfireModuel : ApplicationModule
     {
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        {   
-            JobStorage.Current = new MemoryStorage(); 
-            GlobalConfiguration.Configuration.UseMemoryStorage();
+        {
+            string connectionString = configuration["Configuration:EntityFramework:ConnectionString:Default"];
+            //set current job storage 
+            JobStorage.Current = new SqlServerStorage(connectionString);
+            GlobalConfiguration.Configuration.UseSqlServerStorage(connectionString);
         }
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
@@ -25,10 +28,11 @@ namespace HotBag.Plugins.Hangfire
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
+            string connectionString = configuration["Configuration:EntityFramework:ConnectionString:Default"];  // read connection string form appsetting.json
             serviceCollection.AddTransient<IJob, Job>();
             serviceCollection.AddHangfire(config =>
             {
-                config.UseMemoryStorage();
+                config.UseSqlServerStorage(connectionString);
             });
 
         }

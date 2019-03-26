@@ -1,4 +1,6 @@
-﻿using HotBag.Modules;
+﻿using HotBag.EntityFrameworkCore.Context;
+using HotBag.Modules;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -21,7 +23,9 @@ namespace HotBag.EntityFrameworkCore
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            
+            string connectionString = configuration["Configuration:EntityFramework:ConnectionString:Default"];
+            serviceCollection.AddDbContext<ApplicationDbContext>
+                        (options => options.UseSqlServer(connectionString));
         }
     }
 }

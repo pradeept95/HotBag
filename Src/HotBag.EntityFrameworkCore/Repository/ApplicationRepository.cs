@@ -98,9 +98,17 @@ namespace HotBag.EntityFrameworkCore.Repository
             await DeleteAsync(entity);
         }
 
-        public Task DeleteAsync(Expression<Func<TEntity, bool>> predicate)
+        public async Task DeleteAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            var entites = Table.Where(predicate);
+            if(!entites.Any())
+            {
+                throw new EntityNotFoundException($"No Entity found to Delete in : {typeof(TEntity).Name}");
+            }
+            foreach (var item in entites)
+            {
+                await DeleteAsync(item);
+            } 
         }
 
         public TEntity FirstOrDefault(TPrimaryKey id)
