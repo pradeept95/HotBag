@@ -177,6 +177,22 @@ namespace HotBag.Extensions
         }
 
         /// <summary>
+        ///     Remove Characters from string
+        /// </summary>
+        /// <param name="s">string to remove characters</param>
+        /// <param name="chars">array of chars</param>
+        /// <returns>System.string</returns>
+        public static string RemoveChars(this string input, params char[] chars)
+        {
+            var sb = new StringBuilder(input.Length);
+            foreach (char c in input.Where(c => !chars.Contains(c)))
+            {
+                sb.Append(c);
+            }
+            return sb.ToString();
+        }
+
+        /// <summary>
         /// Removes first occurrence of the given postfixes from end of the given string.
         /// Ordering is important. If one of the postFixes is matched, others will not be tested.
         /// </summary>
