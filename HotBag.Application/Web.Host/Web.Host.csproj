@@ -17,4 +17,11 @@
     <ProjectReference Include="..\..\Src\HotBag.Web.Core\HotBag.Web.Core.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Content Update="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

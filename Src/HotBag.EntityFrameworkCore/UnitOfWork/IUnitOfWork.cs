@@ -7,7 +7,7 @@ namespace HotBag.EntityFrameworkCore.UnitOfWork
     public interface IUnitOfWork : IDisposable
     {
         ApplicationDbContext Context { get; }
-        void Commit();
-        Task CommitAsync();
+        void SaveChanges();
+        Task SaveChangesAsync();
     } 
 }

@@ -12,9 +12,14 @@ namespace Web.Host
 {
     public class Program
     {
+        private static readonly log4net.ILog log =
+        log4net.LogManager.GetLogger(typeof(Program));
+
         public static void Main(string[] args)
         {
+            log.Info("Application configuration completed");
             CreateWebHostBuilder(args).Build().Run();
+           
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

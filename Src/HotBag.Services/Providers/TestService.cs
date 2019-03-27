@@ -28,7 +28,7 @@ namespace HotBag.Services.Providers
         public async Task Delete(Guid id)
         {
             await _repository.DeleteAsync(id);
-            await _unitOfWork.CommitAsync();
+            await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task<ResultDto<TestEntityDto>> Get(Guid id)
@@ -114,7 +114,7 @@ namespace HotBag.Services.Providers
 
             var saveModel = _objectMapper.Map<TestEntity>(entity); 
             var result = await _repository.InsertAsync(saveModel);
-            await _unitOfWork.CommitAsync();
+            await _unitOfWork.SaveChangesAsync();
             var res = _objectMapper.Map<TestEntityDto>(result);
             return new ResultDto<TestEntityDto>(res);
         }
@@ -133,7 +133,7 @@ namespace HotBag.Services.Providers
             var updateModel = _objectMapper.Map<TestEntity>(entity);
  
             var result = await _repository.UpdateAsync(updateModel);
-            await _unitOfWork.CommitAsync();
+            await _unitOfWork.SaveChangesAsync();
             var res = _objectMapper.Map<TestEntityDto>(result);
             return new ResultDto<TestEntityDto>(res);
         }

@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Web.Host
@@ -123,7 +124,7 @@ namespace Web.Host
         }
 
         // Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -158,7 +159,12 @@ namespace Web.Host
             app.UseHotBagEfCore(env);
 
             //Use HotBag Hangfire
-            app.UseHotBagHangfire(env); 
+            app.UseHotBagHangfire(env);
+
+            // Add Log4Net
+            var loggingOptions = this.Configuration.GetSection("Log4NetCore")
+                                                   .Get<Log4NetProviderOptions>();
+            loggerFactory.AddLog4Net(loggingOptions);
 
             app.UseWhen(context => context.Request.Path.StartsWithSegments("/api"), appBuilder =>
             {

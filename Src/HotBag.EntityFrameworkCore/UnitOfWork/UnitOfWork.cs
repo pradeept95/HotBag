@@ -12,7 +12,7 @@ namespace HotBag.EntityFrameworkCore.UnitOfWork
         {
             Context = context;
         }
-        public void Commit()
+        public void SaveChanges()
         {
             Context.SaveChanges();
         }
@@ -22,18 +22,10 @@ namespace HotBag.EntityFrameworkCore.UnitOfWork
             
         }
 
-        public async Task CommitAsync()
+        public async Task SaveChangesAsync()
         {
-            try
-            {
-                await Context.SaveChangesAsync();
-            }
-            catch (System.Exception ex)
-            {
+            await Context.SaveChangesAsync();
 
-                throw;
-            }
-           
         }
 
         public void Dispose()

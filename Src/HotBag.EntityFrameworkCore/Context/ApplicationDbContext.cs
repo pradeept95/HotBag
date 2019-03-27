@@ -1,12 +1,13 @@
 ﻿using HotBag.Core.Entity;
 using HotBag.EntityBase;
+using HotBag.EntityFramework.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotBag.EntityFrameworkCore.Context
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : HotBagDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public ApplicationDbContext(DbContextOptions<HotBagDbContext> options)
           : base(options)
         {
         }
