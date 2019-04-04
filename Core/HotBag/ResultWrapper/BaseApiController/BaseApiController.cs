@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace HotBag.BaseController
 {
+ 
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]

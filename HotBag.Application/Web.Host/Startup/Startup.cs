@@ -19,6 +19,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 
+[assembly: ApiConventionType(typeof(DefaultApiConventions))]
 namespace Web.Host
 {
     public class Startup
