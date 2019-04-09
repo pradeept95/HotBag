@@ -17,7 +17,7 @@ namespace HotBag.MongoDb
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            SeedHelpers.SeedMongoData(serviceCollection).Wait();
+            //SeedHelpers.SeedMongoData(serviceCollection).Wait();
         }
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
