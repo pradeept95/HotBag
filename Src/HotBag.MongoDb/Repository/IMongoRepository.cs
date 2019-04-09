@@ -167,6 +167,15 @@ namespace HotBag.MongoDb.Repository
         //
         // Summary:
         //     Used to get a IQueryable that is used to retrieve entities from entire table.
+        //
+        // Returns:
+        //     IQueryable to be used to select entities from database with async
+        Task<IQueryable<TEntity>> GetAllAsync();
+
+
+        //
+        // Summary:
+        //     Used to get a IQueryable that is used to retrieve entities from entire table.
         //     One or more
         //
         // Parameters:

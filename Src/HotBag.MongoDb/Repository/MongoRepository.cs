@@ -43,6 +43,11 @@ namespace HotBag.MongoDb.Repository
             return Collection.Find(_ => true).ToList().AsQueryable();
         }
 
+        public async Task<IQueryable<TEntity>> GetAllAsync()
+        {
+            return await Task.FromResult(Collection.AsQueryable());
+        }
+
         public async Task<List<TEntity>> GetAllListAsync()
         {
             return await Collection.Find(_ => true).ToListAsync();
@@ -123,6 +128,12 @@ namespace HotBag.MongoDb.Repository
 
         public void Delete(TEntity entity)
         {
+            //FindOptions<BsonDocument> options = new FindOptions<BsonDocument>
+            //{
+            //    BatchSize = 2,
+            //    NoCursorTimeout = false
+            //};
+
             Delete(entity.Id);
         }
 
@@ -133,7 +144,7 @@ namespace HotBag.MongoDb.Repository
 
         public void Delete(TPrimaryKey id)
         {
-            FilterDefinition<TEntity> filter = Builders<TEntity>.Filter.Eq(m => m.Id, id);
+            FilterDefinition<TEntity> filter = Builders<TEntity>.Filter.Eq(m => m.Id, id); 
             Collection.DeleteOne(filter);
         }
 

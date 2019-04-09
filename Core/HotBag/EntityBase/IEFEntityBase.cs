@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace HotBag.EntityBase
 {
@@ -9,6 +10,5 @@ namespace HotBag.EntityBase
         //     Unique identifier for this entity. 
         [Key]
         TPrimaryKey Id { get; set; } 
-    }
-      
+    }  
 }
