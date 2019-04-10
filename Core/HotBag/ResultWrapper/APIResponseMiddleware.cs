@@ -137,7 +137,7 @@ namespace HotBag.ResultWrapper
             else if (code == (int)HttpStatusCode.NoContent)
                 apiError = new ApiError("The specified URI does not contain any content.");
             else if(code == (int)HttpStatusCode.Unauthorized)
-                apiError = new ApiError("User not loged in.");
+                apiError = new ApiError("Current user did not login to the application.");
             else if(code == (int)HttpStatusCode.BadRequest)
             {
                 var ModelState = context.Features.Get<ModelStateFeature>()?.ModelState;

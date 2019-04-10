@@ -1,4 +1,4 @@
-﻿using HotBag.AppUserDto;
+﻿using HotBag.AppUser;
 using HotBag.AutoMaper.Attributes;
 using HotBag.EntityBase;
 using HotBag.Tanents;
@@ -6,12 +6,11 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HotBag.AppUser
+namespace HotBag.AppUserDto
 {
-    [AutoMap(typeof(HotBagUserDto))]
-    public class HotBagUser  : IEFEntityBase<Guid>
-    {
-        [Key]
+    [AutoMapTo(typeof(HotBagUser))]
+    public class HotBagUserDto  
+    { 
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "First name is Required")]
@@ -28,10 +27,7 @@ namespace HotBag.AppUser
         [Required(ErrorMessage ="Password is Required")]
         public string HashedPassword { get; set; }
         public string Phone { get; set; }
-        public UserStatus Status { get; set; }
-
-        [ForeignKey("Tanents")]
-        public int? TanentIdId { get; set; }
-        public virtual Tenant Tanents { get; set; }
+        public UserStatus Status { get; set; } 
+        public int? TanentIdId { get; set; } 
     }
 }
