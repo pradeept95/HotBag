@@ -2,6 +2,7 @@
 using AutoMapper;
 using HotBag.AuthConfiguration;
 using HotBag.AutoMaper;
+using HotBag.EntityFramework.Context;
 using HotBag.Modules;
 using HotBag.OptionConfigurer;
 using Microsoft.Extensions.Configuration;
@@ -22,6 +23,7 @@ namespace HotBag
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
+            serviceCollection.AddScoped<HotBagDbContext>();
             serviceCollection.AddAutoMapper();
             serviceCollection.AddTransient(typeof(HotBag.AutoMaper.IObjectMapper), typeof(HotBagAutoMapper));
             serviceCollection.ConfigureApplicationSettings(configuration);

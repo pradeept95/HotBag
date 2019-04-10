@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Core;
 using HotBag.EntityFrameworkCore;
+using HotBag.EntityFrameworkCore.Context;
 using HotBag.Plugins.Hangfire;
 using HotBag.ResultWrapper.Extensions;
 using HotBag.ResultWrapper.Filters;
@@ -14,6 +15,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -45,6 +47,10 @@ namespace Web.Host
             //You can remove the APIController attribute to disable the automatic model 
             //validation. But, then you will lose the other benefits of this attribute like disabling 
             //conventional routing and allowing model binding without adding[FromBody] parameter attributes.
+
+            string connectionString = Configuration["Configuration:EntityFramework:ConnectionString:Default"];
+            services.AddDbContext<ApplicationDbContext>
+                        (options => options.UseSqlServer(connectionString));
 
             //The better approach to disable the default behavior by setting 
             //SuppressModelStateInvalidFilter option to true.You can set this option to 

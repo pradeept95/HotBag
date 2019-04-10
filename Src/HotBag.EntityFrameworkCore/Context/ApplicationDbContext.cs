@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HotBag.EntityFrameworkCore.Context
 {
-    public class ApplicationDbContext : HotBagDbContext
+    public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<HotBagDbContext> options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
           : base(options)
         {
         }

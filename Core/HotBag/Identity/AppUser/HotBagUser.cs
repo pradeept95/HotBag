@@ -95,7 +95,7 @@ namespace HotBag.AppUser
         public long Id { get; set; }
 
         [ForeignKey("HotBagApplicationModule")]
-        public Guid HotBagApplicationModuleId { get; set; }
+        public long HotBagApplicationModuleId { get; set; }
         public virtual HotBagApplicationModule HotBagApplicationModule { get; set; }
 
         public ApplicationModulePermissionLevel PermissionLevel { get; set; }

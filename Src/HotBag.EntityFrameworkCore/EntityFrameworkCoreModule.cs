@@ -23,9 +23,7 @@ namespace HotBag.EntityFrameworkCore
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            string connectionString = configuration["Configuration:EntityFramework:ConnectionString:Default"];
-            serviceCollection.AddDbContext<ApplicationDbContext>
-                        (options => options.UseSqlServer(connectionString));
+           
         }
     }
 }
