@@ -1,4 +1,5 @@
-﻿using HotBag.EntityFrameworkCore.Context;
+﻿using HotBag.DI.Base;
+using HotBag.EntityFrameworkCore.Context;
 using HotBag.Modules;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -35,7 +36,20 @@ namespace HotBag.EntityFrameworkCore
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-           
+            serviceCollection.Scan(scan => scan
+             .FromAssemblyOf<EntityFrameworkCoreModule>()
+                 .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
+                     .AsImplementedInterfaces()
+                     .WithTransientLifetime()
+
+                 .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
+                     .AsImplementedInterfaces()
+                     .WithScopedLifetime()
+
+                  .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
+                             .AsImplementedInterfaces()
+                             .WithSingletonLifetime());
+
         }
     }
 }
