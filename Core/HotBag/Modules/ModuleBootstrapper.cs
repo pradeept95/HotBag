@@ -47,17 +47,18 @@ namespace HotBag.Modules
             
             foreach (var instance in moduleInstances)
             {   //TODO::check module is installed or not
-                instance.PreInitialize(_serviceCollection, _configuration);
+                if (instance.IsInstalled) instance.PreInitialize(_serviceCollection, _configuration);
+
             } 
 
             foreach (var instance in moduleInstances)
             {
-                instance.Initialize(_serviceCollection, _configuration);
+                if (instance.IsInstalled) instance.Initialize(_serviceCollection, _configuration);
             }
 
             foreach (var instance in moduleInstances)
             {
-                instance.PostInitialize(_serviceCollection, _configuration);
+                if (instance.IsInstalled) instance.PostInitialize(_serviceCollection, _configuration);
             } 
         }
 

@@ -12,6 +12,18 @@ namespace HotBag
 {
     public class CoreModule : ApplicationModule
     {
+        public override string ModuleName
+        {
+            get {  return "CoreModule"; }
+
+        }
+
+        public override bool IsInstalled  
+        {
+            get { return true; }
+
+        } 
+
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         { 
         }

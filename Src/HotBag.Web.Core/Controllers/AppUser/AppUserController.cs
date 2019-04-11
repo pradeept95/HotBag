@@ -1,9 +1,7 @@
 ﻿using HotBag.AppUserDto;
 using HotBag.BaseController;
-using HotBag.Core.EntityDto;
 using HotBag.EntityFrameworkCore.Services.Identity;
 using HotBag.ResultWrapper.ResponseModel;
-using HotBag.Services.Providers;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;

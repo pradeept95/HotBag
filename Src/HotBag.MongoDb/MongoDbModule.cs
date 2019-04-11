@@ -10,6 +10,18 @@ namespace HotBag.MongoDb
 {
     public class MongoDbModule : ApplicationModule
     {
+        public override string ModuleName
+        {
+            get { return "EntityFrameworkCoreModule"; }
+
+        }
+
+        public override bool IsInstalled
+        {
+            get { return false; }
+
+        }
+
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
           
@@ -17,7 +29,7 @@ namespace HotBag.MongoDb
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            //SeedHelpers.SeedMongoData(serviceCollection).Wait();
+            SeedHelpers.SeedMongoData(serviceCollection).Wait();
         }
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)

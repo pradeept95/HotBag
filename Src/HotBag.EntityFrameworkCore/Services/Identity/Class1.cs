@@ -1,6 +1,4 @@
-﻿
-using HotBag.AppUser;
-using HotBag.Core.EntityDto;
+﻿using HotBag.Core.EntityDto;
 
 namespace HotBag.EntityFrameworkCore.Services.Identity
 {

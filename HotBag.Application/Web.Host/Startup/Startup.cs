@@ -166,7 +166,7 @@ namespace Web.Host
             app.UseHotBagEfCore(env);
 
             //Use HotBag Hangfire
-            app.UseHotBagHangfire(env);
+            //app.UseHotBagHangfire(env);
 
             // Add Log4Net
             var loggingOptions = this.Configuration.GetSection("Log4NetCore")

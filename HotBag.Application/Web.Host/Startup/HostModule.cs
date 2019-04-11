@@ -9,6 +9,17 @@ namespace Web.Host
 {
     public class HostModule : ApplicationModule
     {
+        public override string ModuleName
+        {
+            get { return "HostModule"; }
+
+        }
+
+        public override bool IsInstalled
+        {
+            get { return true; }
+
+        }
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {

@@ -10,6 +10,17 @@ namespace HotBag.Plugins.Hangfire
 {
     public class HotBagHangfireModuel : ApplicationModule
     {
+        public override string ModuleName
+        {
+            get { return "HotBagHangfireModuel"; }
+
+        }
+
+        public override bool IsInstalled
+        {
+            get { return false; }
+
+        }
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
             string connectionString = configuration["Configuration:EntityFramework:ConnectionString:Default"];

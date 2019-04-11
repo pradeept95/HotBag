@@ -8,6 +8,8 @@ namespace HotBag.Modules
 {
     public abstract class ApplicationModule : IApplicationModule
     { 
+        public abstract string ModuleName { get; }
+        public abstract bool  IsInstalled { get; }
         public abstract void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration);
 
         public abstract void Initialize(IServiceCollection serviceCollection, IConfiguration configuration); 

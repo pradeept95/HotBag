@@ -105,7 +105,7 @@ namespace HotBag.EntityFrameworkCore.Services.Identity
             var saveModel = _objectMapper.Map<HotBagUser>(entity);
             var result = await _repository.InsertAsync(saveModel);
             await _unitOfWork.SaveChangesAsync();
-            var res = _objectMapper.Map<HotBagUserDto>(result);
+            var res = _objectMapper.Map<HotBagUserDto>(result); 
             return new ResultDto<HotBagUserDto>(res);
         }
 

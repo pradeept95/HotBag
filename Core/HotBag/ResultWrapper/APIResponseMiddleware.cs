@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -79,6 +80,7 @@ namespace HotBag.ResultWrapper
                 apiError = new ApiError(ex.Message)
                 {
                     ValidationErrors = ex.Errors,
+                    IsValidationError = ex.Errors.Any(),
                     ReferenceErrorCode = ex.ReferenceErrorCode,
                     ReferenceDocumentLink = ex.ReferenceDocumentLink
                 };

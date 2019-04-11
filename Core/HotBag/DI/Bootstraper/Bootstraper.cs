@@ -58,24 +58,8 @@ namespace HotBag.DI
                 .SelectMany(a => a.ExportedTypes)
                 .Where(t => TypeExtensions.GetInterfaces(t).Contains(typeof(IServiceRegistrar)) && t.GetConstructor(Type.EmptyTypes) != null)
                 .Select(y => (IServiceRegistrar)Activator.CreateInstance(y));
-            serviceInstances.AddRange(instances);
-             
-            //will return assembly start with kachuwa
-            //var assesmblies = AppDomain.CurrentDomain.GetAssemblies();
+                 serviceInstances.AddRange(instances);  
 
-            //foreach (var assembly in assesmblies)
-            //{
-            //   var zz= assembly.GetTypes().Where(e => TypeExtensions.GetInterfaces(e).Contains(typeof(IServiceRegistrar)));
-            //    var xxx = from t in assembly.GetTypes()
-            //        where TypeExtensions.GetInterfaces(t).Contains(typeof(IServiceRegistrar))
-            //        select t;
-            //    var instances = from t in assembly.GetTypes()
-            //                    where TypeExtensions.GetInterfaces(t).Contains(typeof(IServiceRegistrar))
-            //                          && t.GetConstructor(Type.EmptyTypes) != null
-            //                    select Activator.CreateInstance(t) as IServiceRegistrar;
-
-            //    serviceInstances.AddRange(instances);
-            //}
             foreach (var instance in serviceInstances)
             {   //TODO::check module is installed or not
                 instance.Register(_serviceCollection, _configuration);
