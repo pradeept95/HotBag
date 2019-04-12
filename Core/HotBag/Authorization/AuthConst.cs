@@ -8,4 +8,6 @@ namespace HotBag.Authorization
     {
         public const string Permission = "UserPolicies";
     }
+
+    
 }
