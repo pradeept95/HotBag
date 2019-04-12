@@ -74,7 +74,7 @@ namespace HotBag.EntityFrameworkCore.Services.Identity
             return new ListResultDto<HotBagUserDto>(finalResult, "Users");
         }
 
-        public async Task<PagedResultDto<HotBagUserDto>> GetAllPaged(int skip, int maxResultCount, string searchText)
+        public async Task<PagedResultDto<HotBagUserDto>> GetAllPaged(int skip = 0, int maxResultCount = 10, string searchText = "")
         {
             var result = _repository.GetAll();
 

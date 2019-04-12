@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Web.Host.Controllers
 {
+    [AllowAnonymous]
     public class AppUserController : BaseApiController
     {
         private readonly IAppUserService _appUserService;

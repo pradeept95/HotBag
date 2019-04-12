@@ -1,5 +1,6 @@
 ﻿using HotBag.ResultWrapper.WrapperModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Linq;
 using System.Security.Claims;
@@ -30,6 +31,12 @@ namespace HotBag.Authorization.Attribute
 
         public void OnAuthorization(AuthorizationFilterContext context)
         {
+            // Allow Anonymous skips all authorization
+            if (context.Filters.Any(item => item is IAllowAnonymousFilter))
+            {
+                return;
+            }
+
             var modulePermissions = _claim.Value.Split(",").Select(x => x.Trim()).ToList();
             var hasClaim = false;
              
