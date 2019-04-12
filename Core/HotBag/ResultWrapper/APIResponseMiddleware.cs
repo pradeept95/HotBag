@@ -90,7 +90,7 @@ namespace HotBag.ResultWrapper
             }
             else if (exception is UnauthorizedAccessException)
             {
-                apiError = new ApiError("Unauthorized Access");
+                apiError = new ApiError($"Unauthorized Access : {exception.Message}");
                 code = (int)HttpStatusCode.Unauthorized;
                 context.Response.StatusCode = code;
             }

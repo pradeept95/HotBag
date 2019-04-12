@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotBag.AppUser
 {
-    [AutoMap(typeof(HotBagUserDto))]
+    //[AutoMap(typeof(HotBagUserDto))]
     public class HotBagUser  : IEFEntityBase<Guid>
     {
         [Key]
@@ -31,7 +31,7 @@ namespace HotBag.AppUser
         public UserStatus Status { get; set; }
 
         [ForeignKey("Tanents")]
-        public int? TanentIdId { get; set; }
+        public int? TanentIdId { get; set; }  
         public virtual Tenant Tanents { get; set; }
     }
 }

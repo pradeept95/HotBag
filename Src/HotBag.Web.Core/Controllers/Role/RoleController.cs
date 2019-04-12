@@ -1,6 +1,4 @@
 ﻿using HotBag.AppUserDto;
-using HotBag.Authorization;
-using HotBag.Authorization.Attribute;
 using HotBag.BaseController;
 using HotBag.EntityFrameworkCore.Services.Identity;
 using HotBag.ResultWrapper.ResponseModel;
@@ -11,24 +9,24 @@ using System.Threading.Tasks;
 
 namespace Web.Host.Controllers
 {
-    public class AppUserController : BaseApiController
+    public class RoleController : BaseApiController
     {
-        private readonly IAppUserService _appUserService;
-        public AppUserController(IAppUserService appUserService)
+        private readonly IRoleService _appUserService;
+        public RoleController(IRoleService appUserService)
         {
             _appUserService = appUserService;
         }
 
         [HttpGet]
         [Route("Get")]
-        public async Task<ResultDto<HotBagUserDto>> Get(Guid id)
+        public async Task<ResultDto<HotBagRoleDto>> Get(long id)
         {
             return await _appUserService.Get(id);
         }
 
         [HttpGet]
         [Route("GetAll")]
-        public async Task<ListResultDto<HotBagUserDto>> GetAll(string searchText)
+        public async Task<ListResultDto<HotBagRoleDto>> GetAll(string searchText)
         {
             return await _appUserService.GetAll(searchText); 
         }
@@ -36,7 +34,7 @@ namespace Web.Host.Controllers
         [HttpGet]
         [Route("GetAllPaged")]
 
-        public async Task<PagedResultDto<HotBagUserDto>> GetAllPaged(int skip, int maxResultCount, string searchText)
+        public async Task<PagedResultDto<HotBagRoleDto>> GetAllPaged(int skip, int maxResultCount, string searchText)
         {
             return await _appUserService.GetAllPaged(skip, maxResultCount, searchText);
         }
@@ -49,27 +47,24 @@ namespace Web.Host.Controllers
         }
 
         [HttpPost]
-        [Route("Save")]
-        [HotBagAuthorize(HotBagClaimTypes.Permission, "AppUser.Create, AppUser.Read", RequiredAllPermission : false)]
-        public async Task<ResultDto<HotBagUserDto>> Save(HotBagUserDto entity)
+        [Route("Save")] 
+        public async Task<ResultDto<HotBagRoleDto>> Save(HotBagRoleDto entity)
         {
             return await _appUserService.Save(entity);
         }
 
 
         [HttpPut]
-        [Route("Update")]
-
-        public async Task<ResultDto<HotBagUserDto>> Update(HotBagUserDto entity)
+        [Route("Update")] 
+        public async Task<ResultDto<HotBagRoleDto>> Update(HotBagRoleDto entity)
         {
             return await _appUserService.Update(entity);
         }
 
 
         [HttpDelete]
-        [Route("Delete")]
-
-        public async Task Delete(Guid id)
+        [Route("Delete")] 
+        public async Task Delete(long id)
         {
             await _appUserService.Delete(id);
         }

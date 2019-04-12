@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HotBag.AutoMaper
 {
-    public class ProfilerBase : Profile
+    public class ProfilerBase : Profile, IProfile
     {
     }
 }

@@ -1,8 +1,11 @@
-﻿using HotBag.BaseController;
+﻿using HotBag.Authorization;
+using HotBag.BaseController;
 using HotBag.Constants;
 using HotBag.Core.EntityDto.Authenticate;
+using HotBag.EntityFrameworkCore.Services.Identity;
 using HotBag.OptionConfigurer.Settings;
 using HotBag.ResultWrapper.ResponseModel;
+using HotBag.ResultWrapper.WrapperModel;
 using HotBag.Security.StringCipher;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,16 +22,24 @@ namespace HotBag.Web.Core.Controllers.TokenAuth
     public class TokenAuthController : BaseApiController
     {
         private readonly IOptions<TokenAuthConfiguration> _configuration;
-        public TokenAuthController(IOptions<TokenAuthConfiguration> configuration)
+        private readonly IUserManager _userManager;
+
+        public TokenAuthController(IOptions<TokenAuthConfiguration> configuration, IUserManager userManager)
         {
-            _configuration = configuration;
+            this._configuration = configuration;
+            this._userManager = userManager;
         }
          
         [AllowAnonymous]
         [HttpPost("authenticate")]
         public async Task<ResultDto<LoginResponseDto>> Authenticate([FromBody]LoginRequestDto input)
         {
-            //var userId = AppSession.UserId; 
+            var loginResutl = await _userManager.GetLoginAsync(input.UsernameOrEmail, input.Password);
+
+            if (!loginResutl.IsLoginSuccess)
+            {
+                throw new Exception(loginResutl.LoginErrorMessage); 
+            }
 
             var result = new LoginResponseDto
             {
@@ -38,11 +49,7 @@ namespace HotBag.Web.Core.Controllers.TokenAuth
                 UserId = string.Empty
             };
 
-            var user = new {
-                Id = "123",
-                UserName = "pradeep",
-                Email = "thapaliyapradeep@gmail.com"
-            };
+            var user = loginResutl.User;
 
             if (user == null)
                 return new ResultDto<LoginResponseDto>(result);
@@ -53,8 +60,9 @@ namespace HotBag.Web.Core.Controllers.TokenAuth
             var Identity = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                     new Claim(ClaimTypes.Name, user.UserName.ToString()),
-                      new Claim(ClaimTypes.Email, user.Email.ToString())
+                     new Claim(ClaimTypes.Name, user.Username.ToString()),
+                      new Claim(ClaimTypes.Email, user.Email.ToString()),
+                      new Claim(HotBagClaimTypes.Permission, "AppUser.Create")
                 });
 
             var accessToken = CreateAccessToken(CreateJwtClaims(Identity), TimeSpan.FromDays(userTokenExpiryDays));
@@ -71,7 +79,7 @@ namespace HotBag.Web.Core.Controllers.TokenAuth
             };
 
             return new ResultDto<LoginResponseDto>(loginResult);
-        }
+        } 
    
         private string CreateAccessToken(IEnumerable<Claim> claims, TimeSpan? expiration = null)
         {

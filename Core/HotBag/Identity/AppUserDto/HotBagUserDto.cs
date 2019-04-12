@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotBag.AppUserDto
 {
-    [AutoMapTo(typeof(HotBagUser))]
+    //[AutoMapTo(typeof(HotBagUser))]
     public class HotBagUserDto  
     { 
         public Guid Id { get; set; }
@@ -25,7 +25,7 @@ namespace HotBag.AppUserDto
         public string Email { get; set; }
 
         [Required(ErrorMessage ="Password is Required")]
-        public string HashedPassword { get; set; }
+        public string Password { get; set; }
         public string Phone { get; set; }
         public UserStatus Status { get; set; } 
         public int? TanentIdId { get; set; } 

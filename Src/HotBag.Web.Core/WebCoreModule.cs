@@ -30,6 +30,8 @@ namespace HotBag.Web.Core
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
             //throw new NotImplementedException();
+
+
         }
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)

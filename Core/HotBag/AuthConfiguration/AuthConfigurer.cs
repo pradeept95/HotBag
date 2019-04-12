@@ -1,11 +1,16 @@
 ﻿using HotBag.Constants;
 using HotBag.Security.StringCipher;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +24,7 @@ namespace HotBag.AuthConfiguration
             {
                 services.AddAuthentication(options => {
                     options.DefaultAuthenticateScheme = "JwtBearer";
-                    options.DefaultChallengeScheme = "JwtBearer";
+                    options.DefaultChallengeScheme = "JwtBearer"; 
                 }).AddJwtBearer("JwtBearer", options =>
                 {
                     options.Audience = configuration["Authentication:JwtBearer:Audience"];
@@ -75,5 +80,6 @@ namespace HotBag.AuthConfiguration
             context.Token = SimpleStringCipher.Instance.Decrypt(qsAuthToken, AppConsts.DefaultPassPhrase);
             return Task.CompletedTask;
         }
-    }
+    } 
+
 }

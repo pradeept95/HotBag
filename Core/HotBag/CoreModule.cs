@@ -3,6 +3,7 @@ using AutoMapper;
 using HotBag.AuthConfiguration;
 using HotBag.AutoMaper;
 using HotBag.EntityFramework.Context;
+using HotBag.Identity.Profiller;
 using HotBag.Modules;
 using HotBag.OptionConfigurer;
 using Microsoft.Extensions.Configuration;
@@ -25,7 +26,18 @@ namespace HotBag
         } 
 
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        { 
+        {
+            // Auto Mapper Configurations
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            serviceCollection.AddSingleton(mapper);
+
+
+
         }
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)

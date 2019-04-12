@@ -6,6 +6,7 @@ using HotBag.DI.Base;
 using HotBag.EntityFrameworkCore.Repository;
 using HotBag.EntityFrameworkCore.UnitOfWork;
 using HotBag.ResultWrapper.ResponseModel;
+using HotBag.Security.PasswordHasher;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -16,11 +17,19 @@ namespace HotBag.EntityFrameworkCore.Services.Identity
     public class AppUserService : IAppUserService, ITransientDependencies
     {
         private readonly IEFRepository<HotBagUser, Guid> _repository;
+        private readonly IEFRepository<HotBagPasswordHistoryLog, long> _passwordHistoryLogRepository;
+        private readonly IEFRepository<HotBagUserStatusLog, long> _userStatusLogRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IObjectMapper _objectMapper;
-        public AppUserService(IEFRepository<HotBagUser, Guid> repository, IUnitOfWork unitOfWork, IObjectMapper objectMapper)
+        public AppUserService(
+            IEFRepository<HotBagUser, Guid> repository,
+            IEFRepository<HotBagPasswordHistoryLog, long> passwordHistoryLogRepository,
+            IEFRepository<HotBagUserStatusLog, long> userStatusLogRepository,
+            IUnitOfWork unitOfWork, IObjectMapper objectMapper)
         {
             _repository = repository;
+            this._passwordHistoryLogRepository = passwordHistoryLogRepository;
+            this._userStatusLogRepository = userStatusLogRepository;
             _unitOfWork = unitOfWork;
             _objectMapper = objectMapper;
         }
@@ -32,7 +41,7 @@ namespace HotBag.EntityFrameworkCore.Services.Identity
 
         public async Task<ResultDto<HotBagUserDto>> Get(Guid id)
         {
-            var result = await _repository.GetAsync(id); 
+            var result = await _repository.GetAsync(id);
             var res = _objectMapper.Map<HotBagUserDto>(result);
             return new ResultDto<HotBagUserDto>(res);
         }
@@ -58,7 +67,7 @@ namespace HotBag.EntityFrameworkCore.Services.Identity
                     LastName = x.LastName,
                     Phone = x.Phone,
                     Status = x.Status,
-                    TanentIdId = x.TanentIdId 
+                    TanentIdId = x.TanentIdId
                 })
                 .ToListAsync();
 
@@ -103,15 +112,41 @@ namespace HotBag.EntityFrameworkCore.Services.Identity
         public async Task<ResultDto<HotBagUserDto>> Save(HotBagUserDto entity)
         {
             var saveModel = _objectMapper.Map<HotBagUser>(entity);
+
+            saveModel.HashedPassword = PasswordHasher.HashPassword(entity.Password);
+            saveModel.Status = UserStatus.Active;
             var result = await _repository.InsertAsync(saveModel);
+
+            #region Save Password History Log
+
+            var passworHistory = new HotBagPasswordHistoryLog
+            {
+                HashedPassword = saveModel.HashedPassword,
+                UserId = result.Id,
+                Timestamp = DateTime.Now
+            };
+            await _passwordHistoryLogRepository.InsertAsync(passworHistory);
+            #endregion
+
+            #region Save User Status History Log
+
+            var userStatusHistory = new HotBagUserStatusLog
+            {
+                Status = saveModel.Status,
+                UserId = result.Id,
+                Timestamp = DateTime.Now
+            };
+            await _userStatusLogRepository.InsertAsync(userStatusHistory);
+            #endregion 
+
             await _unitOfWork.SaveChangesAsync();
-            var res = _objectMapper.Map<HotBagUserDto>(result); 
+            var res = _objectMapper.Map<HotBagUserDto>(result);
             return new ResultDto<HotBagUserDto>(res);
         }
 
         public async Task<ResultDto<HotBagUserDto>> Update(HotBagUserDto entity)
         {
-            var updateModel = _objectMapper.Map<HotBagUser>(entity); 
+            var updateModel = _objectMapper.Map<HotBagUser>(entity);
             var result = await _repository.UpdateAsync(updateModel);
             await _unitOfWork.SaveChangesAsync();
             var res = _objectMapper.Map<HotBagUserDto>(result);
