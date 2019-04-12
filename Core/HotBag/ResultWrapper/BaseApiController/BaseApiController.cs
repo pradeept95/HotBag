@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace HotBag.BaseController
 {
  
-    [Route("api/[controller]")]
+    [Route("api/app/v1/[controller]")]
     [ApiController]
     [Authorize]
     public class BaseApiController : ControllerBase
