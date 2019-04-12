@@ -40,9 +40,7 @@ namespace HotBag.Authorization.Attribute
               
             if (!hasClaim)
             {
-                //get not assigned permission\
-
-                
+                //get not assigned permission\ 
                 var assignedClaims = context.HttpContext.User.Claims.Where(c => c.Type == _claim.Type).Select(c => c.Value);
                 var unAssignedPermission = modulePermissions.FirstOrDefault(x => !assignedClaims.Contains(x));
 
