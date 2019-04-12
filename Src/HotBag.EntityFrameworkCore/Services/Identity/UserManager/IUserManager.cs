@@ -11,6 +11,8 @@ namespace HotBag.EntityFrameworkCore.Services.Identity
         Task<LoginResultDto> GetLoginAsync(string userNameOrEmail, string password);
         Task<LoginResultDto> GetLoginAsync(HotBagUser user, string password);
 
+        Task<string> GetAllPermissions(HotBagUser user);
+
         Task<bool> CreatePasswordAsync(string oldPassword, string newPassword);
         Task<bool> CreatePasswordAsync(HotBagUser user, string newPassword);
 

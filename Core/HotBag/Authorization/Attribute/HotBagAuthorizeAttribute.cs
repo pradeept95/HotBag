@@ -32,16 +32,18 @@ namespace HotBag.Authorization.Attribute
         {
             var modulePermissions = _claim.Value.Split(",").Select(x => x.Trim()).ToList();
             var hasClaim = false;
-                
-            if(_requiredAllPermission)
-                hasClaim = context.HttpContext.User.Claims.All(c => c.Type == _claim.Type && modulePermissions.Contains(c.Value.Trim()));
+             
+            var assignedClaims = context.HttpContext.User.Claims.Where(c => c.Type == _claim.Type).Select(c => c.Value).FirstOrDefault()?.Split(",");
+
+            if (_requiredAllPermission)
+                hasClaim = modulePermissions.All(x => assignedClaims.Contains(x));
             else
-                hasClaim = context.HttpContext.User.Claims.Any(c => c.Type == _claim.Type && modulePermissions.Contains(c.Value));
-              
+                hasClaim = modulePermissions.Any(x => assignedClaims.Contains(x));
+
+
             if (!hasClaim)
             {
-                //get not assigned permission\ 
-                var assignedClaims = context.HttpContext.User.Claims.Where(c => c.Type == _claim.Type).Select(c => c.Value);
+                //get not assigned permission\  
                 var unAssignedPermission = modulePermissions.FirstOrDefault(x => !assignedClaims.Contains(x));
 
                 var arr = unAssignedPermission.Split(".").ToList(); 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using HotBag.AppUser;
 using HotBag.DI.Base;
@@ -12,9 +13,27 @@ namespace HotBag.EntityFrameworkCore.Services.Identity
     public class UserManager : IUserManager, ITransientDependencies
     {
         private readonly IEFRepository<HotBagUser, Guid> _userRepository;
-        public UserManager(IEFRepository<HotBagUser, Guid> userRepository)
+        private readonly IEFRepository<HotBagApplicationModule, long> _applicationModuleRepository;
+        private readonly IEFRepository<HotBagApplicationModulePermissionLevel, long> _roleApplicationModulePermissionLevelRepository;
+        private readonly IEFRepository<HotBagRoleApplicationModule, long> _roleApplicationModuleRepository;
+        private readonly IEFRepository<HotBagRole, long> _roleRepository;
+        private readonly IEFRepository<HotBagUserRoles, long> _userRoleRepository;
+
+        public UserManager(
+            IEFRepository<HotBagUser, Guid> userRepository,
+            IEFRepository<HotBagUserRoles, long> userRoleRepository,
+            IEFRepository<HotBagRole, long> roleRepository,
+            IEFRepository<HotBagRoleApplicationModule, long> roleApplicationModuleRepository,
+            IEFRepository<HotBagApplicationModulePermissionLevel, long> roleApplicationModulePermissionLevelRepository,
+            IEFRepository<HotBagApplicationModule, long> ApplicationModuleRepository 
+            )
         {
             _userRepository = userRepository;
+            _applicationModuleRepository = ApplicationModuleRepository;
+            this._roleApplicationModulePermissionLevelRepository = roleApplicationModulePermissionLevelRepository;
+            this._roleApplicationModuleRepository = roleApplicationModuleRepository;
+            this._roleRepository = roleRepository;
+            this._userRoleRepository = userRoleRepository;
         } 
 
         public Task<bool> AddUserPermissions()
@@ -166,6 +185,23 @@ namespace HotBag.EntityFrameworkCore.Services.Identity
         public Task<bool> CreatePasswordAsync(HotBagUser user, string newPassword)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<string> GetAllPermissions(HotBagUser user)
+        {
+            var permissions = await (from userRole in _userRoleRepository.GetAll().Where(x => x.UserId == user.Id)
+                                     join role in _roleRepository.GetAll() on userRole.RoleIdId equals role.Id
+                                     join roleApplicationModule in _roleApplicationModuleRepository.GetAll() on role.Id equals roleApplicationModule.RoleId
+                                     join applicatonModule in _applicationModuleRepository.GetAll() on roleApplicationModule.ApplicationModuleId equals applicatonModule.Id
+                                     join applicationModulePermissionLevel in _roleApplicationModulePermissionLevelRepository.GetAll()
+                                     on roleApplicationModule.ApplicationModulePermissionLevelId equals applicationModulePermissionLevel.Id
+                                     select new
+                                     { 
+                                         PermissionName = $"{applicatonModule.ModuleName}.{applicationModulePermissionLevel.PermissionLevel.ToString()}", 
+                                     }).Distinct().ToListAsync();
+
+            var per = string.Join(",", permissions.Select(x => x.PermissionName));
+            return per;
         }
     }
 }

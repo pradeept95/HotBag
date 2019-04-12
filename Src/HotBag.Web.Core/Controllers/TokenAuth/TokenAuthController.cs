@@ -1,4 +1,5 @@
-﻿using HotBag.Authorization;
+﻿using HotBag.AppUser;
+using HotBag.Authorization;
 using HotBag.BaseController;
 using HotBag.Constants;
 using HotBag.Core.EntityDto.Authenticate;
@@ -59,10 +60,11 @@ namespace HotBag.Web.Core.Controllers.TokenAuth
 
             var Identity = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                     new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                      new Claim(ClaimTypes.Name, user.Username.ToString()),
                       new Claim(ClaimTypes.Email, user.Email.ToString()),
-                      new Claim(HotBagClaimTypes.Permission, "AppUser.Create")
+                      //new Claim(HotBagClaimTypes.Permission, "AppUser.Create")
+                      await getAllApplicationModulePermission(user)
                 });
 
             var accessToken = CreateAccessToken(CreateJwtClaims(Identity), TimeSpan.FromDays(userTokenExpiryDays));
@@ -80,7 +82,19 @@ namespace HotBag.Web.Core.Controllers.TokenAuth
 
             return new ResultDto<LoginResponseDto>(loginResult);
         } 
-   
+
+        private async Task<Claim>  getAllApplicationModulePermission(HotBagUser user)
+        {
+            var allpermissions = await _userManager.GetAllPermissions(user);
+            var result = new Claim
+            (
+                HotBagClaimTypes.Permission,
+                allpermissions
+            );
+
+            return result;
+        }
+
         private string CreateAccessToken(IEnumerable<Claim> claims, TimeSpan? expiration = null)
         {
             var now = DateTime.UtcNow;
