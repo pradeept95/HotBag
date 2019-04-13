@@ -9,15 +9,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="emailsettings.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
+    <Content Include="emailsettings.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\HotBag\HotBag.csproj" />
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties emailsettings_1json__JSONSchema="http://json.schemastore.org/appsettings" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>
