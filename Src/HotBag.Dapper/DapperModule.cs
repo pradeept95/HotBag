@@ -1,4 +1,5 @@
-﻿using HotBag.DI.Base;
+﻿using HotBag.Dapper.DbFactory;
+using HotBag.DI.Base;
 using HotBag.Modules;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,6 +32,11 @@ namespace HotBag.Dapper
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
+            //registering default database factory service
+            var serviceProvider = serviceCollection.BuildServiceProvider();
+            IDatabaseFactory dbFactory = DatabaseFactories.SetFactory(Dialect.SQLServer, serviceProvider);
+            serviceCollection.AddSingleton(dbFactory);
+
             serviceCollection.Scan(scan => scan
              .FromAssemblyOf<DapperModule>()
                  .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())

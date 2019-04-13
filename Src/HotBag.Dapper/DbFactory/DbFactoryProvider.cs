@@ -17,6 +17,5 @@ namespace HotBag.Dapper.DbFactory
                 throw new Exception("Please set first default db factory!");
             return _currentDatabaseFactory;
         } 
-    }
-
+    } 
 }
