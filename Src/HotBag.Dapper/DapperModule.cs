@@ -34,7 +34,7 @@ namespace HotBag.Dapper
         {
             //registering default database factory service
             var serviceProvider = serviceCollection.BuildServiceProvider();
-            IDatabaseFactory dbFactory = DatabaseFactories.SetFactory(Dialect.SQLServer, serviceProvider);
+            IDatabaseFactory dbFactory = DatabaseFactories.SetFactory(Dialect.SQLServer, serviceProvider, configuration);
             serviceCollection.AddSingleton(dbFactory);
 
             serviceCollection.Scan(scan => scan

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Helpers\HotBag.Plugins.Email\HotBag.Plugins.Email.csproj" />
+    <ProjectReference Include="..\HotBag.Dapper\HotBag.Dapper.csproj" />
     <ProjectReference Include="..\HotBag.EntityFrameworkCore\HotBag.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\HotBag.MongoDb\HotBag.MongoDb.csproj" />
   </ItemGroup>

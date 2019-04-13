@@ -25,10 +25,10 @@ namespace HotBag.Dapper.DbFactory
             return DbFactoryProvider.GetFactory();
         } 
 
-        public static IDatabaseFactory SetFactory(Dialect dialect, IServiceProvider serviceProvider)
+        public static IDatabaseFactory SetFactory(Dialect dialect, IServiceProvider serviceProvider, IConfiguration configuration)
         {
             // return the requested DaoFactory
-            IConfiguration configuration = serviceProvider.GetService<IConfiguration>();
+            //IConfiguration configuration = serviceProvider.GetService<IConfiguration>();
             IDatabaseFactory myFactory;
             switch (dialect)
             {

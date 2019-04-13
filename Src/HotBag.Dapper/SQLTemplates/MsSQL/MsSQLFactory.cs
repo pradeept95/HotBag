@@ -37,7 +37,7 @@ namespace HotBag.SqlTemplate.MsSQL
         {
             //IConfiguration configuration
             // connectionString = configuration.GetValue<string>("DBInfo:ConnectionString");
-            _connectionString = configuration.GetConnectionString("DefaultConnection");// ConfigurationManager.ConnectionStrings[connectionStringName].ToString();
+            _connectionString = configuration["Configuration:EntityFramework:ConnectionString:Default"];// ConfigurationManager.ConnectionStrings[connectionStringName].ToString();
             Db = new SqlConnection(_connectionString);
             QueryBuilder = new MsSqlQueryBuilder(new MsSQLTemplate());
             var hostingenv = serviceProvider.GetService<IHostingEnvironment>();
