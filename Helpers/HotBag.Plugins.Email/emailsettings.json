@@ -4,7 +4,7 @@
     "EncryptedPassword": "E+DQh1/1vmGsPVDjpRA0+jo8OuJIVZkmqBnv+lndv4Y=",
     "Host": "smtp.gmail.com",
     "Port": "587",
-    "EnableSSL": true,
+    "EnableSSL": "true",
     "DefaultCCEmails": "thapaliyapradeep@gmail.com,pradeep.thapaliya@amniltech.com",
     "DefaultEmails": "thapaliyapradeep@gmail.com",
     "DefaultSubject": "HotBag Enterprise Application Framework"
