@@ -1,12 +1,7 @@
 ﻿using HotBag.DI.Base;
-using HotBag.EntityFrameworkCore.Context;
 using HotBag.Modules;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace HotBag.EntityFrameworkCore
 {
@@ -31,7 +26,7 @@ namespace HotBag.EntityFrameworkCore
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-             
+            //SeedHelpers.SeedData(serviceCollection);
         }
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)

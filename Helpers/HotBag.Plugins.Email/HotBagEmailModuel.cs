@@ -16,7 +16,7 @@ namespace HotBag.Plugins.Email
 
         public override bool IsInstalled
         {
-            get { return true; }
+            get { return false; }
 
         }
 
