@@ -10,5 +10,5 @@ namespace HotBag.EntityBase
         //     Unique identifier for this entity. 
         [Key]
         TPrimaryKey Id { get; set; } 
-    }  
+    } 
 }
