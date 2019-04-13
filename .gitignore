@@ -56,3 +56,4 @@ packages/**
 *.resharper
 *.ncrunch*
 *.ndproj
+HotBag.Application/Web.Host/Properties/launchSettings.json
