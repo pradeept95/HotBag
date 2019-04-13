@@ -8,7 +8,7 @@ namespace HotBag.BaseController
  
     [Route("api/app/v1/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class BaseApiController : ControllerBase
     {
         protected readonly IAppSession AppSession; 
