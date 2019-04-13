@@ -5,7 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="emailsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="emailsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Core\HotBag\HotBag.csproj" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties emailsettings_1json__JSONSchema="http://json.schemastore.org/appsettings" /></VisualStudio></ProjectExtensions>
 
 </Project>

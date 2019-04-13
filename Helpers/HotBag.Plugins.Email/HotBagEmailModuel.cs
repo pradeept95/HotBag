@@ -2,6 +2,7 @@
 using HotBag.Modules;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.IO;
 
 namespace HotBag.Plugins.Email
 {
@@ -31,7 +32,14 @@ namespace HotBag.Plugins.Email
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            
+            var currentDir = Directory.GetCurrentDirectory();
+            var builder = new ConfigurationBuilder()
+                 .SetBasePath(currentDir)
+                 .AddJsonFile("emailsettings.json", optional: false, reloadOnChange: true);
+                  
+
+            IConfigurationRoot config = builder.Build();
+            serviceCollection.ConfigureEmailSettings(config);
         }
     }
 }
