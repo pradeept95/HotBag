@@ -2,11 +2,13 @@
 using HotBag.AppUser;
 using HotBag.AppUserDto;
 using HotBag.AutoMaper;
+using HotBag.Data;
 using HotBag.DI.Base;
 using HotBag.EntityFrameworkCore.Repository;
 using HotBag.EntityFrameworkCore.UnitOfWork;
 using HotBag.ResultWrapper.ResponseModel;
 using HotBag.Security.PasswordHasher;
+using HotBag.Services.RepositoryFactory;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -16,20 +18,20 @@ namespace HotBag.Services.Identity
 {
     public class RoleService : IRoleService, ITransientDependencies
     {
-        private readonly IEFRepository<HotBagRole, long> _repository;
-        private readonly IEFRepository<HotBagPasswordHistoryLog, long> _passwordHistoryLogRepository;
-        private readonly IEFRepository<HotBagUserStatusLog, long> _userStatusLogRepository;
+        private readonly IBaseRepository<HotBagRole, long> _repository;
+        private readonly IBaseRepository<HotBagPasswordHistoryLog, long> _passwordHistoryLogRepository;
+        private readonly IBaseRepository<HotBagUserStatusLog, long> _userStatusLogRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IObjectMapper _objectMapper;
         public RoleService(
-            IEFRepository<HotBagRole, long> repository,
-            IEFRepository<HotBagPasswordHistoryLog, long> passwordHistoryLogRepository,
-            IEFRepository<HotBagUserStatusLog, long> userStatusLogRepository,
+            IRepositoryFactory<HotBagRole, long> repository,
+            IRepositoryFactory<HotBagPasswordHistoryLog, long> passwordHistoryLogRepository,
+            IRepositoryFactory<HotBagUserStatusLog, long> userStatusLogRepository,
             IUnitOfWork unitOfWork, IObjectMapper objectMapper)
         {
-            _repository = repository;
-            this._passwordHistoryLogRepository = passwordHistoryLogRepository;
-            this._userStatusLogRepository = userStatusLogRepository;
+            _repository = repository.GetRepository();
+            this._passwordHistoryLogRepository = passwordHistoryLogRepository.GetRepository();
+            this._userStatusLogRepository = userStatusLogRepository.GetRepository();
             _unitOfWork = unitOfWork;
             _objectMapper = objectMapper;
         }

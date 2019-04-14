@@ -2,38 +2,40 @@
 using System.Linq;
 using System.Threading.Tasks;
 using HotBag.AppUser;
+using HotBag.Data;
 using HotBag.DI.Base;
 using HotBag.EntityFrameworkCore.Repository;
 using HotBag.Identity.UserManagerResultDto;
 using HotBag.Security.PasswordHasher;
+using HotBag.Services.RepositoryFactory;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotBag.Services.Identity
 {
     public class UserManager : IUserManager, ITransientDependencies
     {
-        private readonly IEFRepository<HotBagUser, Guid> _userRepository;
-        private readonly IEFRepository<HotBagApplicationModule, long> _applicationModuleRepository;
-        private readonly IEFRepository<HotBagApplicationModulePermissionLevel, long> _roleApplicationModulePermissionLevelRepository;
-        private readonly IEFRepository<HotBagRoleApplicationModule, long> _roleApplicationModuleRepository;
-        private readonly IEFRepository<HotBagRole, long> _roleRepository;
-        private readonly IEFRepository<HotBagUserRoles, long> _userRoleRepository;
+        private readonly IBaseRepository<HotBagUser, Guid> _userRepository;
+        private readonly IBaseRepository<HotBagApplicationModule, long> _applicationModuleRepository;
+        private readonly IBaseRepository<HotBagApplicationModulePermissionLevel, long> _roleApplicationModulePermissionLevelRepository;
+        private readonly IBaseRepository<HotBagRoleApplicationModule, long> _roleApplicationModuleRepository;
+        private readonly IBaseRepository<HotBagRole, long> _roleRepository;
+        private readonly IBaseRepository<HotBagUserRoles, long> _userRoleRepository;
 
         public UserManager(
-            IEFRepository<HotBagUser, Guid> userRepository,
-            IEFRepository<HotBagUserRoles, long> userRoleRepository,
-            IEFRepository<HotBagRole, long> roleRepository,
-            IEFRepository<HotBagRoleApplicationModule, long> roleApplicationModuleRepository,
-            IEFRepository<HotBagApplicationModulePermissionLevel, long> roleApplicationModulePermissionLevelRepository,
-            IEFRepository<HotBagApplicationModule, long> ApplicationModuleRepository 
+            IRepositoryFactory<HotBagUser, Guid> userRepository,
+            IRepositoryFactory<HotBagUserRoles, long> userRoleRepository,
+            IRepositoryFactory<HotBagRole, long> roleRepository,
+            IRepositoryFactory<HotBagRoleApplicationModule, long> roleApplicationModuleRepository,
+            IRepositoryFactory<HotBagApplicationModulePermissionLevel, long> roleApplicationModulePermissionLevelRepository,
+            IRepositoryFactory<HotBagApplicationModule, long> ApplicationModuleRepository 
             )
         {
-            _userRepository = userRepository;
-            _applicationModuleRepository = ApplicationModuleRepository;
-            this._roleApplicationModulePermissionLevelRepository = roleApplicationModulePermissionLevelRepository;
-            this._roleApplicationModuleRepository = roleApplicationModuleRepository;
-            this._roleRepository = roleRepository;
-            this._userRoleRepository = userRoleRepository;
+            _userRepository = userRepository.GetRepository();
+            _applicationModuleRepository = ApplicationModuleRepository.GetRepository();
+            this._roleApplicationModulePermissionLevelRepository = roleApplicationModulePermissionLevelRepository.GetRepository();
+            this._roleApplicationModuleRepository = roleApplicationModuleRepository.GetRepository();
+            this._roleRepository = roleRepository.GetRepository();
+            this._userRoleRepository = userRoleRepository.GetRepository();
         } 
 
         public Task<bool> AddUserPermissions()

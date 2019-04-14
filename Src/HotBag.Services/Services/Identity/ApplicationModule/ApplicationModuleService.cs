@@ -4,11 +4,13 @@ using HotBag.AppUserDto;
 using HotBag.AutoMaper;
 using HotBag.Core.EntityDto.Authenticate;
 using HotBag.Core.Permissions;
+using HotBag.Data;
 using HotBag.DI.Base;
 using HotBag.EntityFrameworkCore.Repository;
 using HotBag.EntityFrameworkCore.UnitOfWork;
 using HotBag.ResultWrapper.ResponseModel;
 using HotBag.Security.PasswordHasher;
+using HotBag.Services.RepositoryFactory;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -18,20 +20,20 @@ namespace HotBag.Services.Identity
 {
     public class ApplicationModuleService : IApplicationModuleService, ITransientDependencies
     {
-        private readonly IEFRepository<HotBagApplicationModule, long> _applicationModuleRepository;
-        private readonly IEFRepository<HotBagApplicationModulePermissionLevel, long> _roleApplicationModulePermissionLevelRepository;
+        private readonly IBaseRepository<HotBagApplicationModule, long> _applicationModuleRepository;
+        private readonly IBaseRepository<HotBagApplicationModulePermissionLevel, long> _roleApplicationModulePermissionLevelRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IObjectMapper _objectMapper;
 
         public ApplicationModuleService(
-            IEFRepository<HotBagApplicationModulePermissionLevel, long> roleApplicationModulePermissionLevelRepository,
-            IEFRepository<HotBagApplicationModule, long> ApplicationModuleRepository, 
+            IRepositoryFactory<HotBagApplicationModulePermissionLevel, long> roleApplicationModulePermissionLevelRepository,
+            IRepositoryFactory<HotBagApplicationModule, long> ApplicationModuleRepository, 
             IUnitOfWork unitOfWork, IObjectMapper objectMapper
             )
         {
 
-            _applicationModuleRepository = ApplicationModuleRepository;
-            this._roleApplicationModulePermissionLevelRepository = roleApplicationModulePermissionLevelRepository;
+            _applicationModuleRepository = ApplicationModuleRepository.GetRepository();
+            this._roleApplicationModulePermissionLevelRepository = roleApplicationModulePermissionLevelRepository.GetRepository();
             _unitOfWork = unitOfWork;
             _objectMapper = objectMapper;
         }
