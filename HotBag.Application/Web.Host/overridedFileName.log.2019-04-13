@@ -1,0 +1,295 @@
+2019-04-13 12:49:40,884  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/  
+ 2019-04-13 12:49:41,288  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-04-13 12:49:41,343  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Index", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.Index (Web.Host)
+ 2019-04-13 12:49:42,081  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.Index (Web.Host) - Validation state: Valid
+ 2019-04-13 12:49:42,109  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.Index (Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 1.2797ms.
+ 2019-04-13 12:49:42,156  INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor.? [?] - MESSAGE: Executing RedirectResult, redirecting to /swagger.
+ 2019-04-13 12:49:42,218  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.Index (Web.Host) in 814.8999ms
+ 2019-04-13 12:49:42,253  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-04-13 12:49:42,298  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1510.945ms 302 
+ 2019-04-13 12:49:42,333  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+ 2019-04-13 12:49:42,357  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 19.91ms 301 
+ 2019-04-13 12:49:42,379  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+ 2019-04-13 12:49:42,696  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 318.906ms 200 text/html
+ 2019-04-13 12:49:42,916  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css  
+ 2019-04-13 12:49:43,013  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-bundle.js  
+ 2019-04-13 12:49:43,022  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js  
+ 2019-04-13 12:49:43,221  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+ 2019-04-13 12:49:43,236  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+ 2019-04-13 12:49:43,280  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 365.1445ms 200 text/css
+ 2019-04-13 12:49:43,284  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 265.5685ms 200 application/javascript
+ 2019-04-13 12:49:43,312  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+ 2019-04-13 12:49:43,344  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 321.5443ms 200 application/javascript
+ 2019-04-13 12:49:44,133  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+ 2019-04-13 12:49:44,403  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/favicon-32x32.png  
+ 2019-04-13 12:49:44,466  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+ 2019-04-13 12:49:44,542  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 234.6074ms 200 image/png
+ 2019-04-13 12:49:44,884  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 746.46ms 200 application/json;charset=utf-8
+ 2019-04-13 12:49:59,998  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/api/app/v1/TokenAuth/authenticate application/json-patch+json 79
+ 2019-04-13 12:50:00,051  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-04-13 12:50:00,063  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-04-13 12:50:00,092  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'HotBag.Web.Core.Controllers.TokenAuth.TokenAuthController.Authenticate (HotBag.Web.Core)'
+ 2019-04-13 12:50:00,156  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Authenticate", controller = "TokenAuth"}. Executing action HotBag.Web.Core.Controllers.TokenAuth.TokenAuthController.Authenticate (HotBag.Web.Core)
+ 2019-04-13 12:50:00,659  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HotBag.Web.Core.Controllers.TokenAuth.TokenAuthController.Authenticate (HotBag.Web.Core) with arguments (HotBag.Core.EntityDto.Authenticate.LoginRequestDto) - Validation state: Valid
+ 2019-04-13 12:50:01,166  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 2.2.4-servicing-10062 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2019-04-13 12:54:25,127  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/  
+ 2019-04-13 12:54:25,491  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-04-13 12:54:25,539  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Index", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.Index (Web.Host)
+ 2019-04-13 12:54:26,101  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.Index (Web.Host) - Validation state: Valid
+ 2019-04-13 12:54:26,121  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.Index (Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.668ms.
+ 2019-04-13 12:54:26,155  INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor.? [?] - MESSAGE: Executing RedirectResult, redirecting to /swagger.
+ 2019-04-13 12:54:26,172  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.Index (Web.Host) in 614.4474ms
+ 2019-04-13 12:54:26,184  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-04-13 12:54:26,215  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1098.2166ms 302 
+ 2019-04-13 12:54:26,240  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+ 2019-04-13 12:54:26,267  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 19.2899ms 301 
+ 2019-04-13 12:54:26,303  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+ 2019-04-13 12:54:26,652  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 341.6715ms 200 text/html
+ 2019-04-13 12:54:26,947  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css  
+ 2019-04-13 12:54:26,975  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-bundle.js  
+ 2019-04-13 12:54:27,129  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+ 2019-04-13 12:54:27,152  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+ 2019-04-13 12:54:27,186  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 219.1732ms 200 application/javascript
+ 2019-04-13 12:54:27,190  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 240.153ms 200 text/css
+ 2019-04-13 12:54:27,244  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js  
+ 2019-04-13 12:54:27,275  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+ 2019-04-13 12:54:27,290  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 45.9123ms 200 application/javascript
+ 2019-04-13 12:54:28,156  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+ 2019-04-13 12:54:28,807  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 661.2166ms 200 application/json;charset=utf-8
+ 2019-04-13 12:54:42,532  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/api/app/v1/TokenAuth/authenticate application/json-patch+json 79
+ 2019-04-13 12:54:42,564  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-04-13 12:54:42,580  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-04-13 12:54:42,614  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'HotBag.Web.Core.Controllers.TokenAuth.TokenAuthController.Authenticate (HotBag.Web.Core)'
+ 2019-04-13 12:54:42,708  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Authenticate", controller = "TokenAuth"}. Executing action HotBag.Web.Core.Controllers.TokenAuth.TokenAuthController.Authenticate (HotBag.Web.Core)
+ 2019-04-13 12:54:43,074  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HotBag.Web.Core.Controllers.TokenAuth.TokenAuthController.Authenticate (HotBag.Web.Core) with arguments (HotBag.Core.EntityDto.Authenticate.LoginRequestDto) - Validation state: Valid
+ 2019-04-13 12:54:43,846  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 2.2.4-servicing-10062 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2019-04-13 12:54:44,722  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (155ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[Email], [x].[FirstName], [x].[HashedPassword], [x].[LastName], [x].[MiddleName], [x].[Phone], [x].[Status], [x].[TanentIdId], [x].[Username]
+FROM [HotBagUser] AS [x]
+WHERE (LOWER([x].[Email]) = @__ToLower_0) OR (LOWER([x].[Username]) = @__ToLower_0)
+ 2019-04-13 12:54:45,118  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HotBag.Web.Core.Controllers.TokenAuth.TokenAuthController.Authenticate (HotBag.Web.Core) in 2397.5271ms
+ 2019-04-13 12:54:45,138  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'HotBag.Web.Core.Controllers.TokenAuth.TokenAuthController.Authenticate (HotBag.Web.Core)'
+ 2019-04-13 12:54:45,696  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 3160.3436ms 500 application/json
+ 2019-04-13 15:06:39,302  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/api/app/v1/Role/Get?id=1  
+ 2019-04-13 15:06:39,320  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.RoleController.Get (HotBag.Web.Core)'
+ 2019-04-13 15:06:39,343  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Get", controller = "Role"}. Executing action Web.Host.Controllers.RoleController.Get (HotBag.Web.Core)
+ 2019-04-13 15:06:39,381  INFO Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.? [?] - MESSAGE: Authorization failed.
+ 2019-04-13 15:06:39,395  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+ 2019-04-13 15:06:39,414  INFO Microsoft.AspNetCore.Mvc.ChallengeResult.? [?] - MESSAGE: Executing ChallengeResult with authentication schemes ().
+ 2019-04-13 15:06:39,437  INFO Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.? [?] - MESSAGE: AuthenticationScheme: JwtBearer was challenged.
+ 2019-04-13 15:06:39,450  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.RoleController.Get (HotBag.Web.Core) in 93.4711ms
+ 2019-04-13 15:06:39,460  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.RoleController.Get (HotBag.Web.Core)'
+ 2019-04-13 15:06:39,481  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 172.7811ms 401 application/json
+ 2019-04-13 15:51:28,650  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/  
+ 2019-04-13 15:51:28,966  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-04-13 15:51:29,002  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Index", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.Index (Web.Host)
+ 2019-04-13 15:51:29,519  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.Index (Web.Host) - Validation state: Valid
+ 2019-04-13 15:51:29,545  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.Index (Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.9976ms.
+ 2019-04-13 15:51:29,575  INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor.? [?] - MESSAGE: Executing RedirectResult, redirecting to /swagger.
+ 2019-04-13 15:51:29,597  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.Index (Web.Host) in 573.3002ms
+ 2019-04-13 15:51:29,625  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-04-13 15:51:29,668  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1044.0792ms 302 
+ 2019-04-13 15:51:29,702  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+ 2019-04-13 15:51:29,804  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 23.5929ms 301 
+ 2019-04-13 15:51:29,831  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+ 2019-04-13 15:51:30,107  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 278.8016ms 200 text/html
+ 2019-04-13 15:51:30,496  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css  
+ 2019-04-13 15:51:30,531  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-bundle.js  
+ 2019-04-13 15:51:30,537  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js  
+ 2019-04-13 15:51:30,752  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+ 2019-04-13 15:51:30,759  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+ 2019-04-13 15:51:30,809  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 437.5122ms 200 text/css
+ 2019-04-13 15:51:30,812  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 278.4533ms 200 application/javascript
+ 2019-04-13 15:51:30,860  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+ 2019-04-13 15:51:30,946  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 394.3602ms 200 application/javascript
+ 2019-04-13 15:51:32,155  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+ 2019-04-13 15:51:32,894  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 785.9646ms 200 application/json;charset=utf-8
+ 2019-04-13 15:52:26,591  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/api/app/v1/ApplicationModule/GetAll  
+ 2019-04-13 15:52:26,639  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.ApplicationModuleController.GetAll (HotBag.Web.Core)'
+ 2019-04-13 15:52:26,846  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetAll", controller = "ApplicationModule"}. Executing action Web.Host.Controllers.ApplicationModuleController.GetAll (HotBag.Web.Core)
+ 2019-04-13 15:52:26,935  INFO Microsoft.AspNetCore.Authorization.DefaultAuthorizationService.? [?] - MESSAGE: Authorization failed.
+ 2019-04-13 15:52:26,957  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+ 2019-04-13 15:52:26,981  INFO Microsoft.AspNetCore.Mvc.ChallengeResult.? [?] - MESSAGE: Executing ChallengeResult with authentication schemes ().
+ 2019-04-13 15:52:27,014  INFO Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.? [?] - MESSAGE: AuthenticationScheme: JwtBearer was challenged.
+ 2019-04-13 15:52:27,030  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.ApplicationModuleController.GetAll (HotBag.Web.Core) in 157.9384ms
+ 2019-04-13 15:52:27,048  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.ApplicationModuleController.GetAll (HotBag.Web.Core)'
+ 2019-04-13 15:52:27,149  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 534.7456ms 401 application/json
+ 2019-04-13 16:00:48,782  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/  
+ 2019-04-13 16:00:49,171  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-04-13 16:00:49,207  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Index", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.Index (Web.Host)
+ 2019-04-13 16:00:49,814  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.Index (Web.Host) - Validation state: Valid
+ 2019-04-13 16:00:49,840  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.Index (Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 1.0433ms.
+ 2019-04-13 16:00:49,864  INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor.? [?] - MESSAGE: Executing RedirectResult, redirecting to /swagger.
+ 2019-04-13 16:00:49,881  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.Index (Web.Host) in 652.1659ms
+ 2019-04-13 16:00:49,895  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-04-13 16:00:49,935  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1169.785ms 302 
+ 2019-04-13 16:00:49,951  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+ 2019-04-13 16:00:49,986  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 23.0792ms 301 
+ 2019-04-13 16:00:49,997  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+ 2019-04-13 16:00:50,259  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 262.7865ms 200 text/html
+ 2019-04-13 16:00:50,542  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css  
+ 2019-04-13 16:00:50,573  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-bundle.js  
+ 2019-04-13 16:00:50,588  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js  
+ 2019-04-13 16:00:50,758  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+ 2019-04-13 16:00:50,813  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+ 2019-04-13 16:00:50,951  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+ 2019-04-13 16:00:50,975  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 385.0634ms 200 application/javascript
+ 2019-04-13 16:00:50,981  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 460.9696ms 200 text/css
+ 2019-04-13 16:00:50,997  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 399.3539ms 200 application/javascript
+ 2019-04-13 16:00:52,023  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+ 2019-04-13 16:00:52,713  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 706.8427ms 200 application/json;charset=utf-8
+ 2019-04-13 17:02:07,343  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/  
+ 2019-04-13 17:02:07,729  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-04-13 17:02:07,758  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Index", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.Index (Web.Host)
+ 2019-04-13 17:02:08,220  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.Index (Web.Host) - Validation state: Valid
+ 2019-04-13 17:02:08,237  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.Index (Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.9052ms.
+ 2019-04-13 17:02:08,260  INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor.? [?] - MESSAGE: Executing RedirectResult, redirecting to /swagger.
+ 2019-04-13 17:02:08,276  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.Index (Web.Host) in 502.7634ms
+ 2019-04-13 17:02:08,289  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-04-13 17:02:08,319  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 984.2094ms 302 
+ 2019-04-13 17:02:08,341  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+ 2019-04-13 17:02:08,367  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 18.2796ms 301 
+ 2019-04-13 17:02:08,381  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+ 2019-04-13 17:02:08,598  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 216.3328ms 200 text/html
+ 2019-04-13 17:02:08,977  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css  
+ 2019-04-13 17:02:09,075  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-bundle.js  
+ 2019-04-13 17:02:09,105  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js  
+ 2019-04-13 17:02:09,951  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+ 2019-04-13 17:02:09,970  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+ 2019-04-13 17:02:09,957  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+ 2019-04-13 17:02:10,008  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 968.5066ms 200 application/javascript
+ 2019-04-13 17:02:10,015  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1097.0175ms 200 text/css
+ 2019-04-13 17:02:10,034  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 934.0842ms 200 application/javascript
+ 2019-04-13 17:02:11,930  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+ 2019-04-13 17:02:12,097  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/favicon-32x32.png  
+ 2019-04-13 17:02:12,125  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+ 2019-04-13 17:02:12,153  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 57.4013ms 200 image/png
+ 2019-04-13 17:02:12,693  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 762.4325ms 200 application/json;charset=utf-8
+ 2019-04-13 17:02:15,768  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+ 2019-04-13 17:02:15,833  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 22.8955ms 200 text/html
+ 2019-04-13 17:02:15,928  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css  
+ 2019-04-13 17:02:15,984  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+ 2019-04-13 17:02:16,013  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 82.0967ms 200 text/css
+ 2019-04-13 17:02:16,940  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+ 2019-04-13 17:02:16,973  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/favicon-32x32.png  
+ 2019-04-13 17:02:17,021  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+ 2019-04-13 17:02:17,044  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 77.4247ms 200 application/json;charset=utf-8
+ 2019-04-13 17:02:17,138  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 99.482ms 200 image/png
+ 2019-04-13 17:02:49,161  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/api/app/v1/Test/Save application/json-patch+json 124
+ 2019-04-13 17:02:49,181  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-04-13 17:02:49,199  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-04-13 17:02:49,232  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.TestController.Save (Web.Host)'
+ 2019-04-13 17:02:49,305  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Save", controller = "Test"}. Executing action Web.Host.Controllers.TestController.Save (Web.Host)
+ 2019-04-13 17:02:49,652  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.TestController.Save (Web.Host) with arguments (HotBag.Core.EntityDto.TestEntityDto) - Validation state: Valid
+ 2019-04-13 17:02:50,457  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 2.2.4-servicing-10062 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2019-04-13 17:02:51,199  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (158ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Audits] ([DateTime], [KeyValues], [NewValues], [OldValues], [TableName])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Audits]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+ 2019-04-13 17:02:51,403  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (133ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TestEntity] ([Id], [TestName], [TestProp1], [TestProp2], [TestProp3])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+ 2019-04-13 17:02:51,487  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.TestController.Save (Web.Host), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1817.4089ms.
+ 2019-04-13 17:02:51,527  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HotBag.ResultWrapper.ResponseModel.ResultDto`1[[HotBag.Core.EntityDto.TestEntityDto, HotBag.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2019-04-13 17:02:51,560  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.TestController.Save (Web.Host) in 2242.3373ms
+ 2019-04-13 17:02:51,584  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.TestController.Save (Web.Host)'
+ 2019-04-13 17:02:51,870  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 2705.5568ms 200 application/json
+ 2019-04-13 17:02:53,384  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/api/app/v1/Test/Save application/json-patch+json 124
+ 2019-04-13 17:02:53,398  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-04-13 17:02:53,416  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-04-13 17:02:53,445  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.TestController.Save (Web.Host)'
+ 2019-04-13 17:02:53,468  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Save", controller = "Test"}. Executing action Web.Host.Controllers.TestController.Save (Web.Host)
+ 2019-04-13 17:02:53,590  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.TestController.Save (Web.Host) with arguments (HotBag.Core.EntityDto.TestEntityDto) - Validation state: Valid
+ 2019-04-13 17:02:53,616  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 2.2.4-servicing-10062 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2019-04-13 17:02:53,950  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (263ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Audits] ([DateTime], [KeyValues], [NewValues], [OldValues], [TableName])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Audits]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+ 2019-04-13 17:02:54,112  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (115ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TestEntity] ([Id], [TestName], [TestProp1], [TestProp2], [TestProp3])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+ 2019-04-13 17:02:54,142  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.TestController.Save (Web.Host), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 531.4609ms.
+ 2019-04-13 17:02:54,178  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HotBag.ResultWrapper.ResponseModel.ResultDto`1[[HotBag.Core.EntityDto.TestEntityDto, HotBag.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2019-04-13 17:02:54,210  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.TestController.Save (Web.Host) in 718.2935ms
+ 2019-04-13 17:02:54,232  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.TestController.Save (Web.Host)'
+ 2019-04-13 17:02:54,264  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 872.9043ms 200 application/json
+ 2019-04-13 17:05:30,233  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 PUT https://localhost:5001/api/app/v1/Test/Update application/json-patch+json 206
+ 2019-04-13 17:05:30,248  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-04-13 17:05:30,264  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-04-13 17:05:30,281  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.TestController.Update (Web.Host)'
+ 2019-04-13 17:05:30,309  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Update", controller = "Test"}. Executing action Web.Host.Controllers.TestController.Update (Web.Host)
+ 2019-04-13 17:05:30,396  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.TestController.Update (Web.Host) with arguments (HotBag.Core.EntityDto.TestEntityDto) - Validation state: Valid
+ 2019-04-13 17:05:30,424  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 2.2.4-servicing-10062 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2019-04-13 17:05:30,584  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (140ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Audits] ([DateTime], [KeyValues], [NewValues], [OldValues], [TableName])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Audits]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+ 2019-04-13 17:05:30,683  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (69ms) [Parameters=[@p4='?' (DbType = Guid), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [TestEntity] SET [TestName] = @p0, [TestProp1] = @p1, [TestProp2] = @p2, [TestProp3] = @p3
+WHERE [Id] = @p4;
+SELECT @@ROWCOUNT;
+ 2019-04-13 17:05:30,729  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.TestController.Update (Web.Host), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 316.7555ms.
+ 2019-04-13 17:05:30,748  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HotBag.ResultWrapper.ResponseModel.ResultDto`1[[HotBag.Core.EntityDto.TestEntityDto, HotBag.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2019-04-13 17:05:30,764  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.TestController.Update (Web.Host) in 444.6013ms
+ 2019-04-13 17:05:30,779  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.TestController.Update (Web.Host)'
+ 2019-04-13 17:05:30,804  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 620.449ms 200 application/json
+ 2019-04-13 17:06:20,580  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/api/app/v1/Test/Save application/json-patch+json 136
+ 2019-04-13 17:06:20,592  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-04-13 17:06:20,606  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-04-13 17:06:20,627  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.TestController.Save (Web.Host)'
+ 2019-04-13 17:06:20,638  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Save", controller = "Test"}. Executing action Web.Host.Controllers.TestController.Save (Web.Host)
+ 2019-04-13 17:06:20,740  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.TestController.Save (Web.Host) with arguments (HotBag.Core.EntityDto.TestEntityDto) - Validation state: Valid
+ 2019-04-13 17:06:20,753  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 2.2.4-servicing-10062 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ 2019-04-13 17:06:20,900  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (122ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Audits] ([DateTime], [KeyValues], [NewValues], [OldValues], [TableName])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [Audits]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+ 2019-04-13 17:06:20,972  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (58ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [TestEntity] ([Id], [TestName], [TestProp1], [TestProp2], [TestProp3])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+ 2019-04-13 17:06:20,989  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.TestController.Save (Web.Host), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 238.8445ms.
+ 2019-04-13 17:06:21,004  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HotBag.ResultWrapper.ResponseModel.ResultDto`1[[HotBag.Core.EntityDto.TestEntityDto, HotBag.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2019-04-13 17:06:21,018  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.TestController.Save (Web.Host) in 358.3ms
+ 2019-04-13 17:06:21,033  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.TestController.Save (Web.Host)'
+ 2019-04-13 17:06:21,066  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 468.8725ms 200 application/json
+ 2019-04-13 21:53:52,872  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/  
+ 2019-04-13 21:53:53,923  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-04-13 21:53:54,055  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Index", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.Index (Web.Host)
+ 2019-04-13 21:53:55,445  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.Index (Web.Host) - Validation state: Valid
+ 2019-04-13 21:53:55,897  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.Index (Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.836ms.
+ 2019-04-13 21:53:56,241  INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor.? [?] - MESSAGE: Executing RedirectResult, redirecting to /swagger.
+ 2019-04-13 21:53:56,324  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.Index (Web.Host) in 2208.0455ms
+ 2019-04-13 21:53:56,360  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-04-13 21:53:56,551  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 3561.0791ms 302 
+ 2019-04-13 21:53:56,599  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+ 2019-04-13 21:53:56,642  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 29.1523ms 301 
+ 2019-04-13 21:53:56,687  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+ 2019-04-13 21:53:57,243  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 543.8281ms 200 text/html
+ 2019-04-13 21:53:58,353  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css  
+ 2019-04-13 21:53:58,464  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-bundle.js  
+ 2019-04-13 21:53:58,524  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js  
+ 2019-04-13 21:53:58,683  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+ 2019-04-13 21:53:58,836  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+ 2019-04-13 21:53:58,886  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 629.5653ms 200 text/css
+ 2019-04-13 21:53:58,970  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 402.974ms 200 application/javascript
+ 2019-04-13 21:53:58,931  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+ 2019-04-13 21:53:59,087  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 587.2743ms 200 application/javascript
+ 2019-04-13 21:54:00,959  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+ 2019-04-13 21:54:01,927  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 937.8335ms 200 application/json;charset=utf-8
+ 

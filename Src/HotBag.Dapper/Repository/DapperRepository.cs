@@ -183,8 +183,7 @@ namespace HotBag.Dapper.Repository
                 using (var db = (DbConnection)DbFactory.GetConnection())
                 {
                     await db.OpenAsync();
-                    return await db.GetListAsync<TEntity>();
-
+                    return await db.GetListAsync<TEntity>(); 
                 }
             }
         }
@@ -225,13 +224,13 @@ namespace HotBag.Dapper.Repository
                 }
             }
         }
-        public virtual async Task<int?> InsertAsync(object entityToInsert)
+        public virtual async Task<TPrimaryKey> InsertAsync(object entityToInsert)
         {
             {
                 using (var db = (DbConnection)DbFactory.GetConnection())
                 {
                     await db.OpenAsync();
-                    return await db.InsertAsync<int?>(entityToInsert);
+                    return (TPrimaryKey)await db.InsertAsync<TPrimaryKey>(entityToInsert);
 
                 }
             }

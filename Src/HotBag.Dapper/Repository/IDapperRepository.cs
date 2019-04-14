@@ -33,7 +33,7 @@ namespace HotBag.Dapper.Repository
         Task<IEnumerable<TEntity>> GetListPagedAsync(int pageNumber, int rowsPerPage, int pageSize, string conditions, string orderby, object parameters = null);
         int? Insert(TEntity entityToInsert);
         TKey Insert<TKey>(TEntity entityToInsert);
-        Task<int?> InsertAsync(object entityToInsert);
+        Task<TPrimaryKey> InsertAsync(object entityToInsert);
         Task<TKey> InsertAsync<TKey>(IDbConnection db, object entityToInsert, IDbTransaction transaction, int? commandTimeout);
         Task<TKey> InsertAsync<TKey>(TEntity entityToInsert);
         TEntity Query(string sql, object param = null);

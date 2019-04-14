@@ -35,8 +35,10 @@ namespace HotBag.Autofill
                         switch (customAtt.fillBy)
                         {
                             case AutoFillProperty.PrimaryKey:
-                                customAtt.DefaultValue = prop.GetType() == typeof(Guid)?
+                                customAtt.DefaultValue = prop.PropertyType== typeof(Guid)?
                                     Guid.NewGuid(): Guid.Empty;
+
+                                var t = prop.PropertyType;
 
                                 break;
 
@@ -57,8 +59,7 @@ namespace HotBag.Autofill
                                 break;
                             case AutoFillProperty.CurrentDate:
                                 customAtt.DefaultValue = DateTime.Now;
-
-                                break;
+                                break; 
 
                         }
                         var typedDefValue = Convert.ChangeType(customAtt.DefaultValue, prop.PropertyType);

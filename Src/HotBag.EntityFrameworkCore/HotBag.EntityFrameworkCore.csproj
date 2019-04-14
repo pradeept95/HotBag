@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190414020349_dapper test.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\HotBag.Core\HotBag.Core.csproj" />
   </ItemGroup>
 
