@@ -44,7 +44,6 @@ namespace HotBag.EntityFrameworkCore.Context
         #endregion
 
         public DbSet<TestEntity> TestEntity { get; set; }
-        public DbSet<DapperTestEntity> DapperTestEntity { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

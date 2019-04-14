@@ -36,8 +36,7 @@ namespace HotBag.EntityFrameworkCore.Seed.Host
             {
                 var saveModel = new HotBagApplicationModule
                 {
-                    Id = id,
-                    CreatedAt = DateTime.Now,
+                    Id = id, 
                     ModuleName = item.Trim()
                 };
 
@@ -48,8 +47,7 @@ namespace HotBag.EntityFrameworkCore.Seed.Host
                 {
                     var modulePermissionSaveModel = new HotBagApplicationModulePermissionLevel
                     {
-                        Id = modulePermissionId,
-                        CreatedAt = DateTime.Now,
+                        Id = modulePermissionId, 
                         HotBagApplicationModuleId = id,
                         PermissionLevel = permission.PermissionLevelName
                     };
@@ -83,8 +81,7 @@ namespace HotBag.EntityFrameworkCore.Seed.Host
 
             var roleSaveModule = new HotBagRole
             {
-                Id = 1,
-                CreatedAt = DateTime.Now,
+                Id = 1, 
                 RoleName = "Administrator"
             };
             await dbContext.HotBagRole.AddAsync(roleSaveModule);

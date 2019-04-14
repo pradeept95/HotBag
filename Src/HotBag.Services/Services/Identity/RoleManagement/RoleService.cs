@@ -62,8 +62,7 @@ namespace HotBag.Services.Identity
                 .Select(x => new HotBagRoleDto
                 {
                     Id = x.Id,
-                    RoleName = x.RoleName,
-                    CreatedAt = x.CreatedAt
+                    RoleName = x.RoleName 
                 })
                 .ToListAsync();
 
@@ -84,8 +83,7 @@ namespace HotBag.Services.Identity
                 .Select(x => new HotBagRoleDto
                 {
                     Id = x.Id,
-                    RoleName = x.RoleName,
-                    CreatedAt = x.CreatedAt
+                    RoleName = x.RoleName 
                 })
                 .Skip(skip)
                 .Take(maxResultCount)

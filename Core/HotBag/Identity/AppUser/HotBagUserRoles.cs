@@ -7,10 +7,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace HotBag.AppUser
 {
     [AutoMap(typeof(HotBagUserRolesDto))]
-    public class HotBagUserRoles : IEFEntityBase<long>
-    {
-        public long Id { get; set; }
-
+    public class HotBagUserRoles : EntityBase<long>
+    {  
         [ForeignKey("HotBagUser")]
         public Guid UserId { get; set; }
         public virtual HotBagUser HotBagUser { get; set; }

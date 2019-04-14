@@ -9,11 +9,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace HotBag.AppUser
 {
     //[AutoMap(typeof(HotBagUserDto))]
-    public class HotBagUser  : IEFEntityBase<Guid>
-    {
-        [Key]
-        public Guid Id { get; set; }
-
+    public class HotBagUser : EntityBase<Guid>
+    {  
         [Required(ErrorMessage = "First name is Required")]
         public string FirstName { get; set; }
         public string MiddleName { get; set; }

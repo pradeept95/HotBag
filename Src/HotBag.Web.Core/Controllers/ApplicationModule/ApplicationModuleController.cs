@@ -49,7 +49,7 @@ namespace Web.Host.Controllers
 
         [HttpPost]
         [Route("SaveOrUpdate")]
-        [HotBagAuthorize(HotBagClaimTypes.Permission, "AppUser.Create, AppUser.Read", RequiredAllPermission : false)]
+        //[HotBagAuthorize(HotBagClaimTypes.Permission, "AppUser.Create, AppUser.Read", RequiredAllPermission : false)]
         public async Task<ResultDto<ApplicationModuleDto>> SaveOrUpdate(ApplicationModuleDto entity)
         {
             return await _appUserService.SaveOrUpdate(entity);

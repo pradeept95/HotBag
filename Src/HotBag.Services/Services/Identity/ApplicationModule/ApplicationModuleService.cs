@@ -57,14 +57,12 @@ namespace HotBag.Services.Identity
                                 select new
                                 {
                                     Id = applicatonModule.Id,
-                                    ModuleName = applicatonModule.ModuleName,
-                                    CreatedAt = applicatonModule.CreatedAt,
+                                    ModuleName = applicatonModule.ModuleName, 
                                     ModulePermissions = applicationModulePermission != null ? applicationModulePermission : new HotBagApplicationModulePermissionLevel()
                                 }).GroupBy(g => g.Id)
                           .Select(g => new ApplicationModuleDto
                           {
-                              Id = g.First().Id,
-                              CreatedAt = g.First().CreatedAt,
+                              Id = g.First().Id, 
                               ModuleName = g.First().ModuleName,
                               PermissionLevels = PermissionLevelFactory.GetAllPermissionLevel(g.Select(x => x.ModulePermissions).ToList())
                           }).FirstOrDefaultAsync();
@@ -90,8 +88,7 @@ namespace HotBag.Services.Identity
                 .Select(x => new HotBagApplicationModuleDto
                 {
                     Id = x.Id,
-                    ModuleName = x.ModuleName,
-                    CreatedAt = x.CreatedAt
+                    ModuleName = x.ModuleName 
                 })
                 .ToListAsync();
 
@@ -112,8 +109,7 @@ namespace HotBag.Services.Identity
                 .Select(x => new HotBagApplicationModuleDto
                 {
                     Id = x.Id,
-                    ModuleName = x.ModuleName,
-                    CreatedAt = x.CreatedAt
+                    ModuleName = x.ModuleName 
                 })
                 .Skip(skip)
                 .Take(maxResultCount)
@@ -134,8 +130,7 @@ namespace HotBag.Services.Identity
                 //create module
                 var createModel = new HotBagApplicationModule
                 {
-                    ModuleName = entity.ModuleName,
-                    CreatedAt = DateTime.Now
+                    ModuleName = entity.ModuleName 
                 };
                 var result = await _applicationModuleRepository.InsertAsync(createModel);
                 entity.Id = result.Id;
@@ -144,8 +139,7 @@ namespace HotBag.Services.Identity
                     if (!item.IsAssigned) continue;
                     var modelPermission = new HotBagApplicationModulePermissionLevel
                     {
-                        HotBagApplicationModuleId = result.Id,
-                        CreatedAt = DateTime.Now,
+                        HotBagApplicationModuleId = result.Id, 
                         PermissionLevel = item.PermissionLevelName 
                     };
                     await _roleApplicationModulePermissionLevelRepository.InsertAsync(modelPermission);
@@ -173,8 +167,7 @@ namespace HotBag.Services.Identity
                         var modelPermission = new HotBagApplicationModulePermissionLevel
                         {
                             Id = item.Id,
-                            HotBagApplicationModuleId = entity.Id,
-                            CreatedAt = DateTime.Now,
+                            HotBagApplicationModuleId = entity.Id, 
                             PermissionLevel = item.PermissionLevelName
                         };
 

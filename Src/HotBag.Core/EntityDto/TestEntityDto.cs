@@ -22,15 +22,5 @@ namespace HotBag.Core.EntityDto
         public string TestProp1 { get; set; }
         public int TestProp2 { get; set; }
         public DateTime TestProp3 { get; set; }
-    }
-
-    [AutoMapTo(typeof(DapperTestEntity))]
-    public class DappperTestEntityDto
-    {
-        public long Id { get; set; }
-        public string TestName { get; set; }
-        public string TestProp1 { get; set; }
-        public int TestProp2 { get; set; }
-        public DateTime TestProp3 { get; set; }
     } 
 }

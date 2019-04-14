@@ -8,13 +8,9 @@ namespace HotBag.AppUser
 {
 
     [AutoMap(typeof(HotBagApplicationModuleDto))]
-    public class HotBagApplicationModule : IEFEntityBase<long>
-    {
-        public long Id { get; set; }
-
+    public class HotBagApplicationModule : EntityBase<long>
+    { 
         [Required(ErrorMessage = "Application Module Name is Required")]
-        public string ModuleName { get; set; }
-        public DateTime CreatedAt { get; set; }
-
+        public string ModuleName { get; set; } 
     }
 }
