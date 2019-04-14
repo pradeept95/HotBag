@@ -62,7 +62,7 @@ namespace HotBag.Autofill
                                 break; 
 
                         }
-                        var typedDefValue = Convert.ChangeType(customAtt.DefaultValue, prop.PropertyType);
+                        var typedDefValue = Convert.ChangeType(customAtt.DefaultValue, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
                         if (null != prop && prop.CanWrite)
                         {
                             prop.SetValue(obj, typedDefValue, null);

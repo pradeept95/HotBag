@@ -9,6 +9,8 @@ namespace HotBag.Data
 {
     public interface IBaseRepository<TEntity, TPrimaryKey> where TEntity : class, IEntityBase<TPrimaryKey>
     {
+        Task SaveChangeAsync(); 
+        void SaveChange();
 
         #region Select/Get/Query
 

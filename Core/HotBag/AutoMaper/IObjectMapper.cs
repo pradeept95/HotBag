@@ -1,4 +1,6 @@
-﻿namespace HotBag.AutoMaper
+﻿using System.Linq;
+
+namespace HotBag.AutoMaper
 {
     /// <summary>
     /// Defines a simple interface to map objects.
@@ -21,5 +23,15 @@
         /// <param name="destination">Destination object</param>
         /// <returns>Returns the same <see cref="destination"/> object after mapping operation</returns>
         TDestination Map<TSource, TDestination>(TSource source, TDestination destination);
+
+
+        /// <summary>
+        /// Execute a mapping from the IQueryable source object to the existing IQueryable destination object
+        /// </summary>
+        /// <typeparam name="TSource">Source type</typeparam>
+        /// <typeparam name="TDestination">Destination type</typeparam>
+        /// <param name="source">Source object</param> 
+        /// <returns>Returns the same <see cref="IQueryable<TDestination>"/> object after mapping operation</returns>
+        IQueryable<TDestination> ProjectTo<TSource, TDestination>(IQueryable<TSource> source);
     }
 }

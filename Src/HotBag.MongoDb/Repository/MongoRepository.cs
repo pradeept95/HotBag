@@ -354,5 +354,15 @@ namespace HotBag.MongoDb.Repository
         {
             throw new NotImplementedException();
         }
+
+        public Task SaveChangeAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveChange()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

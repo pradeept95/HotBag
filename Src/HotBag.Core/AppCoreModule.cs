@@ -1,4 +1,5 @@
-﻿using HotBag.Modules;
+﻿using AutoMapper;
+using HotBag.Modules;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -23,7 +24,14 @@ namespace HotBag.Core
 
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            
+            // Auto Mapper Configurations
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new EntityMappingProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            serviceCollection.AddSingleton(mapper);
         }
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)

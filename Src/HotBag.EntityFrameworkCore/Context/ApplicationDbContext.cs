@@ -87,13 +87,13 @@ namespace HotBag.EntityFrameworkCore.Context
             return base.SaveChanges();
         }
 
-        public override async Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var auditEntries = OnBeforeSaveChanges();
-            var result = await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
-            await OnAfterSaveChanges(auditEntries);
-            return result;
-        }
+        //public override async Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default(CancellationToken))
+        //{
+        //    var auditEntries = OnBeforeSaveChanges();
+        //    var result = await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+        //    await OnAfterSaveChanges(auditEntries);
+        //    return result;
+        //}
 
         //object GetPrimaryKeyValue(DbEntityEntry entry)
         //{

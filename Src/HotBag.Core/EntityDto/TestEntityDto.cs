@@ -5,9 +5,9 @@ using System;
 
 namespace HotBag.Core.EntityDto
 {
-    [AutoMapTo(typeof(TestEntity))]
-    public class TestEntityDto {
-        public Guid Id { get; set; }
+    //[AutoMapTo(typeof(TestEntity))]
+    public class TestEntityDto  : EntityBaseDto<Guid>
+    { 
         public string TestName { get; set; }
         public string TestProp1 { get; set; }
         public int TestProp2 { get; set; }

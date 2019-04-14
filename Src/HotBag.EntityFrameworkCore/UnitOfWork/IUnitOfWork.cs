@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 
 namespace HotBag.EntityFrameworkCore.UnitOfWork
 {
-    public interface IUnitOfWork : IBaseUnitOfWork 
+    public interface IUnitOfWork  : IDisposable
     {
-        ApplicationDbContext Context { get; } 
+        ApplicationDbContext Context { get; }
+        void SaveChanges();
+        Task SaveChangesAsync();
     } 
 }

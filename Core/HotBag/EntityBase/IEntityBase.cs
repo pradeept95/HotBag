@@ -5,4 +5,8 @@
         TPrimaryKey Id { get; set; }
     }
 
+    public interface IEntityBaseDto<TPrimaryKey>
+    {
+        TPrimaryKey Id { get; set; }
+    }
 }

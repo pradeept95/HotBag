@@ -8,7 +8,7 @@ using System.Text;
 
 namespace HotBag.Core.Entity
 {
-    [AutoMap(typeof(TestEntityDto))]
+    //[AutoMap(typeof(TestEntityDto))]
     public class TestEntity : EntityBase<Guid>
     {    
         public string TestName { get; set; }
