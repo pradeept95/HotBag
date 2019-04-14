@@ -2,7 +2,7 @@
 using HotBag.Authorization;
 using HotBag.Authorization.Attribute;
 using HotBag.BaseController;
-using HotBag.EntityFrameworkCore.Services.Identity;
+using HotBag.Services.Identity;
 using HotBag.ResultWrapper.ResponseModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

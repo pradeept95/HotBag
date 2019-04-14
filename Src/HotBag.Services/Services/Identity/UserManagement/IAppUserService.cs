@@ -3,11 +3,10 @@ using HotBag.ResultWrapper.ResponseModel;
 using System;
 using System.Threading.Tasks;
 
-namespace HotBag.EntityFrameworkCore.Services.Identity
+namespace HotBag.Services.Identity
 {
     public interface IAppUserService
-    {
-
+    { 
         Task<ListResultDto<HotBagUserDto>> GetAll(string searchText);
         Task<PagedResultDto<HotBagUserDto>> GetAllPaged(int skip, int maxResultCount, string searchText);
         Task<ResultDto<HotBagUserDto>> Get(Guid id);

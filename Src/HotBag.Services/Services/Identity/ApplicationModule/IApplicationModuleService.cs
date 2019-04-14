@@ -4,7 +4,7 @@ using HotBag.ResultWrapper.ResponseModel;
 using System;
 using System.Threading.Tasks;
 
-namespace HotBag.EntityFrameworkCore.Services.Identity
+namespace HotBag.Services.Identity
 {
     public interface IApplicationModuleService
     {

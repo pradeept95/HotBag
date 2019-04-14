@@ -3,7 +3,7 @@ using HotBag.Authorization;
 using HotBag.BaseController;
 using HotBag.Constants;
 using HotBag.Core.EntityDto.Authenticate;
-using HotBag.EntityFrameworkCore.Services.Identity;
+using HotBag.Services.Identity;
 using HotBag.OptionConfigurer.Settings;
 using HotBag.ResultWrapper.ResponseModel;
 using HotBag.ResultWrapper.WrapperModel;

@@ -3,15 +3,13 @@ using HotBag.Authorization;
 using HotBag.Authorization.Attribute;
 using HotBag.BaseController;
 using HotBag.Core.EntityDto.Authenticate;
-using HotBag.EntityFrameworkCore.Services.Identity;
 using HotBag.ResultWrapper.ResponseModel;
-using Microsoft.AspNetCore.Authorization;
+using HotBag.Services.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading.Tasks;
 
 namespace Web.Host.Controllers
-{ 
+{
     public class ApplicationModuleController : BaseApiController
     {
         private readonly IApplicationModuleService _appUserService;

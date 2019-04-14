@@ -8,7 +8,7 @@ using HotBag.Identity.UserManagerResultDto;
 using HotBag.Security.PasswordHasher;
 using Microsoft.EntityFrameworkCore;
 
-namespace HotBag.EntityFrameworkCore.Services.Identity
+namespace HotBag.Services.Identity
 {
     public class UserManager : IUserManager, ITransientDependencies
     {

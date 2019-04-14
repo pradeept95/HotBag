@@ -1,6 +1,6 @@
 ﻿using HotBag.AppUserDto;
 using HotBag.BaseController;
-using HotBag.EntityFrameworkCore.Services.Identity;
+using HotBag.Services.Identity;
 using HotBag.ResultWrapper.ResponseModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

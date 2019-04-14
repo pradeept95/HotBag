@@ -12,7 +12,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HotBag.EntityFrameworkCore.Services.Identity
+namespace HotBag.Services.Identity
 {
     public class RoleService : IRoleService, ITransientDependencies
     {
