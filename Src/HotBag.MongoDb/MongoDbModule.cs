@@ -19,7 +19,7 @@ namespace HotBag.MongoDb
 
         public override bool IsInstalled
         {
-            get { return false; }
+            get { return true; }
 
         }
 

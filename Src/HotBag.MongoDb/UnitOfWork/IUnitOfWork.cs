@@ -1,13 +1,11 @@
-﻿using HotBag.MongoDb.Context;
-using System;
-using System.Threading.Tasks;
+﻿using HotBag.Data;
+using HotBag.DI.Base;
+using HotBag.MongoDb.Context;
 
 namespace HotBag.MongoDb.UnitOfWork
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IBaseUnitOfWork, ITransientDependencies
     {
-        IMongoDbContext Context { get; }
-        void SaveChanges();
-        Task SaveChangesAsync();
+        IMongoDbContext Context { get; } 
     } 
 }

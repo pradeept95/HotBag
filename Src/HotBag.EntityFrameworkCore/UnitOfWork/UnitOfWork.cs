@@ -1,4 +1,5 @@
-﻿using HotBag.DI.Base;
+﻿using HotBag.Data;
+using HotBag.DI.Base;
 using HotBag.EntityFrameworkCore.Context;
 using System.Threading.Tasks;
 

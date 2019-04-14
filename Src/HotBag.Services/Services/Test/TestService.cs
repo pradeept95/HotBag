@@ -5,10 +5,10 @@ using HotBag.AutoMaper;
 using HotBag.Core.Entity;
 using HotBag.Core.EntityDto;
 using HotBag.Data;
-using HotBag.DI.Base;
-using HotBag.EntityFrameworkCore.UnitOfWork;
+using HotBag.DI.Base; 
 using HotBag.ResultWrapper.ResponseModel;
 using HotBag.Services.RepositoryFactory;
+using HotBag.Services.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotBag.Services.Providers
@@ -16,12 +16,16 @@ namespace HotBag.Services.Providers
     public class TestService : ITestService, ITransientDependencies
     {
         private readonly IBaseRepository<TestEntity, Guid> _repository;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IBaseUnitOfWork _unitOfWork;
         private readonly IObjectMapper _objectMapper;
-        public TestService(IRepositoryFactory<TestEntity, Guid> repository, IUnitOfWork unitOfWork, IObjectMapper objectMapper)
+        public TestService(
+            IRepositoryFactory<TestEntity, Guid> repository, 
+            IUnitOfWorkFactory unitOfWork, 
+            IObjectMapper objectMapper
+        )
         {
             _repository = repository.GetRepository();
-            _unitOfWork = unitOfWork;
+            _unitOfWork = unitOfWork.GetCurrentUnitOfWork();
             _objectMapper = objectMapper;
         }
 

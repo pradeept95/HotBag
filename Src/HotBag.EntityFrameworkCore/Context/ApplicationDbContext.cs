@@ -113,7 +113,8 @@ namespace HotBag.EntityFrameworkCore.Context
         {
             ChangeTracker.DetectChanges();
             var auditEntries = new List<AuditEntry>();
-            foreach (var entry in ChangeTracker.Entries())
+            var entries = ChangeTracker.Entries();
+            foreach (var entry in entries)
             {
                 if (entry.Entity is Audit || entry.State == EntityState.Detached || entry.State == EntityState.Unchanged)
                     continue;

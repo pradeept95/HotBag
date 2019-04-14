@@ -1,13 +1,12 @@
-﻿using HotBag.EntityFrameworkCore.Context;
+﻿using HotBag.Data;
+using HotBag.EntityFrameworkCore.Context;
 using System;
 using System.Threading.Tasks;
 
 namespace HotBag.EntityFrameworkCore.UnitOfWork
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IBaseUnitOfWork 
     {
-        ApplicationDbContext Context { get; }
-        void SaveChanges();
-        Task SaveChangesAsync();
+        ApplicationDbContext Context { get; } 
     } 
 }

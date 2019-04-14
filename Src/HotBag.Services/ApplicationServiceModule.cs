@@ -1,5 +1,6 @@
 ﻿using HotBag.DI.Base;
 using HotBag.Modules;
+using HotBag.Services.UnitOfWork;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -47,7 +48,7 @@ namespace HotBag.Services
                               .AsImplementedInterfaces()
                               .WithSingletonLifetime());
 
-            serviceCollection.AddSingleton(serviceCollection);
+            serviceCollection.AddTransient<IUnitOfWorkFactory, UnitOfWorkFactory>();  
         }
     }
 }
