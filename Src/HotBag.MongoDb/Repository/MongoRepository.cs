@@ -1,4 +1,5 @@
-﻿using HotBag.DI.Base;
+﻿using HotBag.Data;
+using HotBag.DI.Base;
 using HotBag.EntityBase;
 using HotBag.OptionConfigurer.Settings;
 using Microsoft.Extensions.Options;
@@ -18,7 +19,7 @@ namespace HotBag.MongoDb.Repository
     /// <typeparam name="TEntity">Type of the Entity for this repository</typeparam>
     /// <typeparam name="TPrimaryKey">Primary key of the entity</typeparam>
     public class MongoRepository<TEntity, TPrimaryKey> : IMongoRepository<TEntity, TPrimaryKey>, ISingletonDependencies
-        where TEntity : class, IMongoEntityBase<TPrimaryKey>
+        where TEntity : class, IEntityBase<TPrimaryKey> 
     {
         private readonly IMongoDatabase _database = null;
 
@@ -324,22 +325,22 @@ namespace HotBag.MongoDb.Repository
             throw new NotImplementedException();
         }
 
-        TPrimaryKey IMongoRepository<TEntity, TPrimaryKey>.InsertAndGetId(TEntity entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        TPrimaryKey IMongoRepository<TEntity, TPrimaryKey>.InsertOrUpdateAndGetId(TEntity entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<TPrimaryKey> IMongoRepository<TEntity, TPrimaryKey>.InsertOrUpdateAndGetIdAsync(TEntity entity)
-        {
-            throw new NotImplementedException();
-        }
-
         public TEntity Load(TPrimaryKey id)
+        {
+            throw new NotImplementedException();
+        }
+
+        TPrimaryKey IBaseRepository<TEntity, TPrimaryKey>.InsertAndGetId(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        TPrimaryKey IBaseRepository<TEntity, TPrimaryKey>.InsertOrUpdateAndGetId(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<TPrimaryKey> IBaseRepository<TEntity, TPrimaryKey>.InsertOrUpdateAndGetIdAsync(TEntity entity)
         {
             throw new NotImplementedException();
         }

@@ -12,8 +12,7 @@ namespace HotBag.Services
     {
         public override string ModuleName
         {
-            get { return "ApplicationServiceModule"; }
-
+            get { return "ApplicationServiceModule"; } 
         }
 
         public override bool IsInstalled
@@ -47,6 +46,8 @@ namespace HotBag.Services
                    .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
                               .AsImplementedInterfaces()
                               .WithSingletonLifetime());
+
+            serviceCollection.AddSingleton(serviceCollection);
         }
     }
 }

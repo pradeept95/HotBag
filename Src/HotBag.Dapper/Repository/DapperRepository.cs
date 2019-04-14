@@ -1,13 +1,16 @@
 ﻿using Dapper;
 using HotBag.Dapper.CrudHelper;
 using HotBag.Dapper.DbFactory;
+using HotBag.Data;
 using HotBag.DI.Base;
 using HotBag.EntityBase;
 using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace HotBag.Dapper.Repository
@@ -18,7 +21,7 @@ namespace HotBag.Dapper.Repository
     /// <typeparam name="TEntity">Type of the Entity for this repository</typeparam>
     /// <typeparam name="TPrimaryKey">Primary key of the entity</typeparam>
     public class DapperRepository<TEntity, TPrimaryKey> : IDapperRepository<TEntity, TPrimaryKey>, ISingletonDependencies
-        where TEntity : class, IDapperEntityBase<TPrimaryKey>
+        where TEntity : class, IEntityBase<TPrimaryKey>
     {
         public DapperRepository(IDatabaseFactory dbFactory)
         {
@@ -471,6 +474,211 @@ namespace HotBag.Dapper.Repository
 
 
             }
+        }
+
+        public int Count()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Count(Expression<Func<TEntity, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> CountAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IBaseRepository<TEntity, TPrimaryKey>.Delete(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IBaseRepository<TEntity, TPrimaryKey>.Delete(TPrimaryKey id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Expression<Func<TEntity, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task IBaseRepository<TEntity, TPrimaryKey>.DeleteAsync(TPrimaryKey id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task DeleteAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task IBaseRepository<TEntity, TPrimaryKey>.DeleteAsync(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TEntity FirstOrDefault(Expression<Func<TEntity, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TEntity FirstOrDefault(TPrimaryKey id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TEntity> FirstOrDefaultAsync(TPrimaryKey id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<TEntity> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IQueryable<TEntity>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<TEntity> GetAllIncluding(params Expression<Func<TEntity, object>>[] propertySelectors)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<TEntity> GetAllList(Expression<Func<TEntity, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<TEntity> GetAllList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<TEntity>> GetAllListAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<TEntity>> GetAllListAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        TEntity IBaseRepository<TEntity, TPrimaryKey>.Insert(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TPrimaryKey InsertAndGetId(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TPrimaryKey> InsertAndGetIdAsync(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TEntity> InsertAsync(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TEntity InsertOrUpdate(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TPrimaryKey InsertOrUpdateAndGetId(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TPrimaryKey> InsertOrUpdateAndGetIdAsync(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TEntity> InsertOrUpdateAsync(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TEntity Load(TPrimaryKey id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public long LongCount(Expression<Func<TEntity, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public long LongCount()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<long> LongCountAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<long> LongCountAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Query<T>(Func<IQueryable<TEntity>, T> queryMethod)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TEntity Single(Expression<Func<TEntity, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TEntity> SingleAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        TEntity IBaseRepository<TEntity, TPrimaryKey>.Update(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TEntity Update(TPrimaryKey id, Action<TEntity> updateAction)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TEntity> UpdateAsync(TPrimaryKey id, Func<TEntity, Task> updateAction)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<TEntity> IBaseRepository<TEntity, TPrimaryKey>.UpdateAsync(TEntity entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }

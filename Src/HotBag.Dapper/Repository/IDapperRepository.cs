@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
+using HotBag.Data;
 using HotBag.EntityBase;
 
 namespace HotBag.Dapper.Repository
 {
-    public interface IDapperRepository<TEntity, TPrimaryKey> where TEntity : class, IDapperEntityBase<TPrimaryKey>
+    public interface IDapperRepository<TEntity, TPrimaryKey> : IBaseRepository<TEntity, TPrimaryKey>
+        where TEntity : class, IEntityBase<TPrimaryKey>
     {
         int Delete(IDbConnection db, TPrimaryKey id, IDbTransaction transaction, int? timeout);
         int Delete(int[] ids);

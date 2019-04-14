@@ -1,9 +1,11 @@
 ﻿using HotBag.AutoMaper;
 using HotBag.Core.Entity;
 using HotBag.Core.EntityDto;
+using HotBag.Data;
 using HotBag.DI.Base;
 using HotBag.MongoDb.Repository;
 using HotBag.ResultWrapper.ResponseModel;
+using HotBag.Services.RepositoryFactory;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -13,12 +15,12 @@ namespace HotBag.Services.MongoProviders
 {
     public class MTestService : IMTestService, ITransientDependencies
     {
-        private readonly IMongoRepository<MTestEntity, Guid> _repository;
+        private readonly IBaseRepository<MTestEntity, Guid> _repository;
         //private readonly IUnitOfWork _unitOfWork;
         private readonly IObjectMapper _objectMapper;
-        public MTestService(IMongoRepository<MTestEntity, Guid> repository, IObjectMapper objectMapper)
+        public MTestService(IRepositoryFactory<MTestEntity, Guid> repository, IObjectMapper objectMapper)
         {
-            _repository = repository;
+            _repository = repository.GetRepository();
             //_unitOfWork = unitOfWork;
             _objectMapper = objectMapper;
         }
@@ -71,14 +73,12 @@ namespace HotBag.Services.MongoProviders
 
         public async Task<PagedResultDto<MTestEntityDto>> GetAllPaged(int skip, int maxResultCount, string searchText)
         {
-            var result = await _repository.GetAllAsync();
+            var result = _repository.GetAll();
 
             if (!string.IsNullOrEmpty(searchText))
             {
                 result = result.Where(x => x.TestName.ToLower().Trim().Contains(searchText.ToLower().Trim()));
-            }
-
-            
+            }  
 
             var totalCount = await result.CountAsync();
             var finalResult = await result

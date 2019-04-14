@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HotBag.EntityBase
 {
-    public interface IEFEntityBase<TPrimaryKey>
+    public interface IEFEntityBase<TPrimaryKey> : IEntityBase<TPrimaryKey>
     {
         //
         // Summary:

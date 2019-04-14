@@ -2,7 +2,7 @@
 
 namespace HotBag.EntityBase
 {
-    public interface IMongoEntityBase<TPrimaryKey>
+    public interface IMongoEntityBase<TPrimaryKey> : IEntityBase<TPrimaryKey>
     {
         //
         // Summary:

@@ -1,26 +1,26 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using HotBag.Autofill;
 using HotBag.AutoMaper;
 using HotBag.Core.Entity;
 using HotBag.Core.EntityDto;
+using HotBag.Data;
 using HotBag.DI.Base;
-using HotBag.EntityFrameworkCore.Repository;
 using HotBag.EntityFrameworkCore.UnitOfWork;
 using HotBag.ResultWrapper.ResponseModel;
+using HotBag.Services.RepositoryFactory;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotBag.Services.Providers
 {
     public class TestService : ITestService, ITransientDependencies
     {
-        private readonly IEFRepository<TestEntity, Guid> _repository;
+        private readonly IBaseRepository<TestEntity, Guid> _repository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IObjectMapper _objectMapper;
-        public TestService(IEFRepository<TestEntity, Guid> repository, IUnitOfWork unitOfWork, IObjectMapper objectMapper)
+        public TestService(IRepositoryFactory<TestEntity, Guid> repository, IUnitOfWork unitOfWork, IObjectMapper objectMapper)
         {
-            _repository = repository;
+            _repository = repository.GetRepository();
             _unitOfWork = unitOfWork;
             _objectMapper = objectMapper;
         }
