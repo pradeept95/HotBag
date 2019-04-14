@@ -20,7 +20,7 @@ namespace HotBag.Services.RepositoryFactory
 
         public IBaseRepository<TEntity, TPrimaryKey> GetRepository()
         {
-            DatabaseORM databaseProvider = DatabaseORM.MongoDB;
+            DatabaseORM databaseProvider = DatabaseORM.EntityFrameworkCore;
             IBaseRepository<TEntity, TPrimaryKey> currentRepository = null;
             switch (databaseProvider)
             {

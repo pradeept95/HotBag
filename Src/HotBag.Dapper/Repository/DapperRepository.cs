@@ -548,12 +548,21 @@ namespace HotBag.Dapper.Repository
 
         public IQueryable<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            using (var db = (DbConnection)DbFactory.GetConnection())
+            {
+                db.Open();
+                return db.GetList<TEntity>().AsQueryable<TEntity>(); 
+            }
         }
 
-        public Task<IQueryable<TEntity>> GetAllAsync()
+        public async Task<IQueryable<TEntity>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            using (var db = (DbConnection)DbFactory.GetConnection())
+            {
+                await db.OpenAsync();
+                var result = db.GetListAsync<TEntity>().Result.AsQueryable();
+                return await Task.FromResult(result); 
+            }
         }
 
         public IQueryable<TEntity> GetAllIncluding(params Expression<Func<TEntity, object>>[] propertySelectors)

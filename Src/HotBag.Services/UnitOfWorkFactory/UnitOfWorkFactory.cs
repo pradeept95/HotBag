@@ -19,7 +19,7 @@ namespace HotBag.Services.UnitOfWork
 
         public IBaseUnitOfWork GetCurrentUnitOfWork()
         {
-            DatabaseORM databaseProvider = DatabaseORM.MongoDB; //get this value form globla setting
+            DatabaseORM databaseProvider = DatabaseORM.EntityFrameworkCore; //get this value form globla setting
             IBaseUnitOfWork currentRepository = null;
             switch (databaseProvider)
             {
