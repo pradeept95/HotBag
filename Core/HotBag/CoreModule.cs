@@ -2,6 +2,7 @@
 using AutoMapper;
 using HotBag.AuthConfiguration;
 using HotBag.AutoMaper;
+using HotBag.DI.Base;
 using HotBag.EntityFramework.Context;
 using HotBag.Identity.Profiller;
 using HotBag.Modules;
@@ -38,17 +39,26 @@ namespace HotBag
         }
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        { 
+        {
+            var applicatonName = HotBagConfiguration.Configurations.ApplicationSettings.ApplicationName;
+
+            HotBagConfiguration.Configurations.ApplicationSettings.ApplicationName = "ABC";
+
+            var nn = HotBagConfiguration.Configurations.ApplicationSettings.ApplicationName;
 
         }
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        {
+        { 
             serviceCollection.AddScoped<HotBagDbContext>();
             serviceCollection.AddAutoMapper();
             serviceCollection.AddTransient(typeof(HotBag.AutoMaper.IObjectMapper), typeof(HotBagAutoMapper));
             serviceCollection.ConfigureApplicationSettings(configuration);
-            AuthConfigurer.Configure(serviceCollection, configuration); 
+            AuthConfigurer.Configure(serviceCollection, configuration);
+
+            var applicatonName = HotBagConfiguration.Configurations.ApplicationSettings.ApplicationName;
+
+            HotBagConfiguration.Configurations.ApplicationSettings.SetApplicationSetting("changed at pre initialized");
         }
     }
 }

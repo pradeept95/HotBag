@@ -1,4 +1,5 @@
-﻿using HotBag.Dapper.Repository;
+﻿using HotBag.Configuration.Global.Application;
+using HotBag.Dapper.Repository;
 using HotBag.Data;
 using HotBag.DI.Base;
 using HotBag.EntityBase;
@@ -20,7 +21,12 @@ namespace HotBag.Services.RepositoryFactory
 
         public IBaseRepository<TEntity, TPrimaryKey> GetRepository()
         {
-            DatabaseORM databaseProvider = DatabaseORM.EntityFrameworkCore;
+            //test
+            var someclass = IocManager.Configurations.Manager.GetService<IApplicationSetting>();
+
+
+
+            DatabaseORM databaseProvider = HotBagConfiguration.Configurations.ObjectRelationMappings.CurrentSelectedORM;
             IBaseRepository<TEntity, TPrimaryKey> currentRepository = null;
             switch (databaseProvider)
             {

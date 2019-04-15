@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using HotBag.DI.Base;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyModel;
@@ -37,6 +38,21 @@ namespace HotBag.Modules
             var platform = Environment.OSVersion.Platform.ToString();
             var runtimeAssemblyNames = DependencyContext.Default.GetRuntimeAssemblyNames(platform);
 
+            _serviceCollection.Scan(scan => scan
+              .FromAssemblyOf<CoreModule>()
+                  .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
+                      .AsImplementedInterfaces()
+                      .WithTransientLifetime()
+
+                  .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
+                      .As<IScopedDependencies>()
+                      .WithScopedLifetime()
+
+           .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
+                      .AsImplementedInterfaces()
+                      .WithSingletonLifetime());
+
+            HotBagConfiguration.Configurations.Initialize(_serviceCollection);
             var instances = runtimeAssemblyNames
                 .Select(Assembly.Load)
                 .SelectMany(a => a.ExportedTypes)
@@ -59,7 +75,9 @@ namespace HotBag.Modules
             foreach (var instance in moduleInstances)
             {
                 if (instance.IsInstalled) instance.PostInitialize(_serviceCollection, _configuration);
-            } 
+            }
+
+            IocManager.Configurations.Initialize(_serviceCollection, _configuration); // allow applicaton usases the state through out  the applicaton
         }
 
     }
