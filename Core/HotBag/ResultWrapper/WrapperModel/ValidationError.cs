@@ -5,14 +5,14 @@ namespace HotBag.ResultWrapper.WrapperModel
     public class ValidationError
     {
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Field { get; }
+        public string field { get; }
 
-        public string Message { get; }
+        public string message { get; }
 
-        public ValidationError(string field, string message)
+        public ValidationError(string errorField, string errorMessage)
         {
-            Field = field != string.Empty ? field : null;
-            Message = message;
+            field = errorField != string.Empty ? errorField : null;
+            message = errorMessage;
         }
     }
 }

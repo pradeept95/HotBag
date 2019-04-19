@@ -79,12 +79,12 @@ namespace HotBag.ResultWrapper
                 var ex = exception as ApiException;
                 apiError = new ApiError(ex.Message)
                 {
-                    ValidationErrors = ex.Errors,
-                    IsValidationError = ex.Errors.Any(),
-                    ReferenceErrorCode = ex.ReferenceErrorCode,
-                    ReferenceDocumentLink = ex.ReferenceDocumentLink
+                    validationErrors = ex.errors,
+                    isValidationError = ex.errors.Any(),
+                    referenceErrorCode = ex.referenceErrorCode,
+                    referenceDocumentLink = ex.referenceDocumentLink
                 };
-                code = ex.StatusCode;
+                code = ex.statusCode;
                 context.Response.StatusCode = code;
 
             }
@@ -112,7 +112,7 @@ namespace HotBag.ResultWrapper
 
                 apiError = new ApiError(msg)
                 {
-                    Details = stack
+                    details = stack
                 };
                 code = (int)HttpStatusCode.InternalServerError;
                 context.Response.StatusCode = code;
@@ -200,14 +200,14 @@ namespace HotBag.ResultWrapper
             if (type.Equals(typeof(Newtonsoft.Json.Linq.JObject)))
             {
                 apiResponse = JsonConvert.DeserializeObject<APIResponse>(bodyText);
-                if (!apiResponse.IsSuccess)
+                if (!apiResponse.isSuccess)
                 {
                     apiResponse = new APIResponse(code, ResponseMessageEnum.Success.GetDescription(), bodyContent, true, null);
                     jsonString = JsonConvert.SerializeObject(apiResponse);
                 }
-                if (apiResponse.StatusCode != code)
+                if (apiResponse.statusCode != code)
                     jsonString = JsonConvert.SerializeObject(apiResponse);
-                else if (apiResponse.Result != null)
+                else if (apiResponse.result != null)
                     jsonString = JsonConvert.SerializeObject(apiResponse);
                 else
                 {

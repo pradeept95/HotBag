@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -58,25 +59,7 @@ namespace Web.Host
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
-            });
-
-            // Configure CORS for angular2 UI
-            services.AddCors(
-                options => options.AddPolicy(
-                    _defaultCorsPolicyName,
-                    builder => builder
-                        .WithOrigins(
-                                // CORS:Url in appsettings.json can contain more than one address separated by comma.
-                                Configuration.GetSection("App:CorsOrigins").Value
-                                .Split(",", StringSplitOptions.RemoveEmptyEntries)
-                                .Select(o => Regex.Replace(o, @"/", ""))
-                               .ToArray()
-                        )
-                        .AllowAnyHeader()
-                        .AllowAnyMethod()
-                        .AllowCredentials()
-                )
-            );
+            }); 
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -116,6 +99,28 @@ namespace Web.Host
                 c.AddSecurityRequirement(security); 
             });
 
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new CorsAuthorizationFilterFactory(_defaultCorsPolicyName));
+            });
+
+            // Configure CORS for angular2 UI
+            var cors = Configuration.GetSection("App:CorsOrigins").Value
+                                .Split(",", StringSplitOptions.RemoveEmptyEntries)
+                                .Select(o => Regex.Replace(o, @"/", ""))
+                               .ToArray();
+
+            services.AddCors(
+                options => options.AddPolicy(
+                    _defaultCorsPolicyName,
+                    builder => builder
+                        .WithOrigins(cors)
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials()
+                )
+            );
+
             services.AddMvc(
                 options =>
                 {
@@ -143,9 +148,7 @@ namespace Web.Host
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
-            app.UseCors(_defaultCorsPolicyName);
-
+             
             app.UseAuthentication();
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
@@ -176,7 +179,9 @@ namespace Web.Host
             app.UseWhen(context => context.Request.Path.StartsWithSegments("/api"), appBuilder =>
             {
                 appBuilder.UseHotBagResultWrapper();
-            });
+            }); 
+
+            app.UseCors(_defaultCorsPolicyName);
 
             app.UseMvc(routes =>
             {
