@@ -22,6 +22,9 @@
     <Content Update="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="modulesettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 

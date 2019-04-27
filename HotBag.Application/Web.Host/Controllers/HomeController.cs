@@ -12,11 +12,11 @@ namespace Web.Host.Controllers
           
         public IActionResult Install()
         {
-            string json = System.IO.File.ReadAllText("modulesettings.json");
-            dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-            jsonObj["Modules"]["Installed"] = "ABC, BCD";
-            string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
-            System.IO.File.WriteAllText("modulesettings.json", output);
+            //string json = System.IO.File.ReadAllText("modulesettings.json");
+            //dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+            //jsonObj["Modules"]["Installed"] = "ABC, BCD";
+            //string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+            //System.IO.File.WriteAllText("modulesettings.json", output);
             return View();
         }
     }

@@ -16,44 +16,22 @@
               integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" />
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
-    <script src="~/vue/vue.js"></script>
-    <script src="~/App/insteller.js"></script>
+    <!-- CSS Files -->
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/css/paper-bootstrap-wizard.css" rel="stylesheet" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="~/assets/css/demo.css" rel="stylesheet" />
+
+    <!-- Fonts and Icons -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href="~/assets/css/themify-icons.css" rel="stylesheet">
+    <script src="~/vue/vue.js"></script> 
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Web.Host</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - Web.Host - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-
+    <partial name="_CookieConsentPartial" />
+    @RenderBody()
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
@@ -72,8 +50,15 @@
                 integrity="sha256-E/V4cWE4qvAeO5MOhjtGtqDzPndRO1LBk8lJ/PR7CA4=">
         </script>
     </environment>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/assets/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+    <!--  Plugin for the Wizard -->
+    <script src="~/assets/js/demo.js" type="text/javascript"></script>
+    <script src="~/assets/js/paper-bootstrap-wizard.js" type="text/javascript"></script>
 
+    <!--  More information about jquery.validate here: https://jqueryvalidation.org/	 -->
+    <script src="~/assets/js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/App/insteller.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
