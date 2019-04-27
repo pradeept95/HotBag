@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Core\HotBag\HotBag.csproj" />
+    <ProjectReference Include="..\..\Src\HotBag.Core\HotBag.Core.csproj" />
   </ItemGroup>
 
 </Project>

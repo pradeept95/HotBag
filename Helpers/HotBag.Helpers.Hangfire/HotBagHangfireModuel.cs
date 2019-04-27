@@ -15,12 +15,7 @@ namespace HotBag.Plugins.Hangfire
             get { return "HotBagHangfireModuel"; }
 
         }
-
-        public override bool IsInstalled
-        {
-            get { return false; }
-
-        }
+ 
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
             string connectionString = configuration["Configuration:EntityFramework:ConnectionString:Default"];
@@ -44,8 +39,7 @@ namespace HotBag.Plugins.Hangfire
             serviceCollection.AddHangfire(config =>
             {
                 config.UseSqlServerStorage(connectionString);
-            });
-
+            }); 
         }
     }
 }

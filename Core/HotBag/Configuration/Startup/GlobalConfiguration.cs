@@ -1,4 +1,5 @@
 ﻿using HotBag.Configuration.Global.Application;
+using HotBag.Configuration.Global.ModuleInstallation;
 using HotBag.Configuration.Global.ORM;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -44,7 +45,9 @@ namespace HotBag
         public IApplicationSetting ApplicationSettings { get; private set; }
 
         public IObjectRelationMapping ObjectRelationMappings { get; private set; }
-         
+
+        public IModuleSetting ModuleSetting { get; private set; }
+
         /// <summary>
         /// Private constructor for singleton pattern.
         /// </summary>
@@ -58,10 +61,11 @@ namespace HotBag
         /// </summary>
         public void Initialize(IServiceCollection serviceCollection)
         {
-            this.serviceProvider = serviceCollection.BuildServiceProvider();
+            this.serviceProvider = serviceCollection.BuildServiceProvider(); 
 
             this.ApplicationSettings = this.serviceProvider.GetService<IApplicationSetting>();
             this.ObjectRelationMappings = this.serviceProvider.GetService<IObjectRelationMapping>();
+            this.ModuleSetting = this.serviceProvider.GetService<IModuleSetting>();
         }
     }
 }

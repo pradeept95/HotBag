@@ -15,13 +15,7 @@ namespace HotBag.Web.Core
             get { return "WebCoreModule"; }
 
         }
-
-        public override bool IsInstalled
-        {
-            get { return true; }
-
-        }
-
+ 
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
             //throw new NotImplementedException(); 

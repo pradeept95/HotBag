@@ -13,15 +13,9 @@ namespace HotBag.MongoDb
     {
         public override string ModuleName
         {
-            get { return "EntityFrameworkCoreModule"; }
+            get { return "MongoDbModule"; }
 
-        }
-
-        public override bool IsInstalled
-        {
-            get { return true; }
-
-        }
+        } 
 
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {

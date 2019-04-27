@@ -5,7 +5,7 @@ using System;
 
 namespace HotBag.Core.EntityDto
 {
-    //[AutoMapTo(typeof(TestEntity))]
+   // [AutoMapTo(typeof(TestEntity))]
     public class TestEntityDto  : EntityBaseDto<Guid>
     { 
         public string TestName { get; set; }

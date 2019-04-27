@@ -12,13 +12,7 @@ namespace HotBag.Dapper
         {
             get { return "DapperModule"; }
 
-        }
-
-        public override bool IsInstalled
-        {
-            get { return true; }
-
-        }
+        } 
 
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {

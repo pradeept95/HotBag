@@ -18,7 +18,7 @@ namespace HotBag.Dapper
         public DbLogger(IHostingEnvironment hostingEnvironment, ILoggerSetting loggerSetting)
         {
             _loggerSetting = loggerSetting;
-            Basedir = hostingEnvironment.ContentRootPath + "\\DbLogs\\";
+            Basedir = hostingEnvironment.ContentRootPath + "\\DbLogs\\Dapper\\";
             _todaysDate = DateTime.Now.ToString("yyyy_MM_dd");
 
             if (!Directory.Exists(Basedir))

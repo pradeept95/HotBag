@@ -12,13 +12,7 @@ namespace HotBag.Plugins.Email
         {
             get { return "HotBagEmailModuel"; }
 
-        }
-
-        public override bool IsInstalled
-        {
-            get { return false; }
-
-        }
+        } 
 
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {

@@ -202,9 +202,7 @@ namespace HotBag.Dapper
 
             return new QueryRequest { QuerySql = sb.ToString(), Parameters = parameters };
         }
-
-
-
+         
         public QueryRequest GetList<T>()
         {
             return GetList<T>(new { });
@@ -271,9 +269,7 @@ namespace HotBag.Dapper
             return new QueryRequest { QuerySql = query, Parameters = parameters };
             //return connection.Query<T>(query, parameters, transaction, true, commandTimeout);
         }
-
-
-
+         
         public QueryRequest Insert<TKey>(object entityToInsert)
         {
             var idProps = GetIdProperties(entityToInsert).ToList();
@@ -490,8 +486,7 @@ namespace HotBag.Dapper
 
             return new QueryRequest { QuerySql = sb.ToString(), Parameters = param };
         }
-
-
+         
         public QueryRequest DeleteList<T>(object whereConditions)
         {
 
@@ -535,8 +530,7 @@ namespace HotBag.Dapper
             sb.Append(" " + conditions);
             return new QueryRequest { QuerySql = sb.ToString(), Parameters = parameters };
         }
-
-
+         
         public QueryRequest RecordCount<T>(object whereConditions)
         {
             var currenttype = typeof(T);
@@ -875,7 +869,6 @@ namespace HotBag.Dapper
             //return new QueryRequest { QuerySql = multitblQuery.ToString(), Parameters = parameters };
 
         }
-
-
+         
     }
 }

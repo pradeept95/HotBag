@@ -15,13 +15,7 @@ namespace HotBag.Core
             get { return "AppCoreModule"; }
 
         }
-
-        public override bool IsInstalled
-        {
-            get { return true; }
-
-        }
-
+         
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
             // Auto Mapper Configurations

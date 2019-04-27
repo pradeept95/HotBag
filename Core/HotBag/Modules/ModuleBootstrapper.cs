@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using HotBag.DI.Base;
+using HotBag.Installer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyModel;
@@ -58,23 +59,28 @@ namespace HotBag.Modules
                 .SelectMany(a => a.ExportedTypes)
                 .Where(t => TypeExtensions.GetInterfaces(t).Contains(typeof(IApplicationModule)) && t.GetConstructor(Type.EmptyTypes) != null)
                 .Select(y => (IApplicationModule)Activator.CreateInstance(y));
-                moduleInstances.AddRange(instances);
+                moduleInstances.AddRange(instances); 
 
-            
+            DefaultInstaller.RegisterAllModule(moduleInstances);
+            DefaultInstaller.InstallDefaultModule();
+            DefaultInstaller.InstallApplicationModule();
+
             foreach (var instance in moduleInstances)
-            {   //TODO::check module is installed or not
-                if (instance.IsInstalled) instance.PreInitialize(_serviceCollection, _configuration);
-
+            {   //TODO::check module is installed or not 
+                if (HotBagConfiguration.Configurations.ModuleSetting.IsModuleInstalled(instance.ModuleName))
+                    instance.PreInitialize(_serviceCollection, _configuration); 
             } 
 
             foreach (var instance in moduleInstances)
             {
-                if (instance.IsInstalled) instance.Initialize(_serviceCollection, _configuration);
+                if (HotBagConfiguration.Configurations.ModuleSetting.IsModuleInstalled(instance.ModuleName))
+                    instance.Initialize(_serviceCollection, _configuration);
             }
 
             foreach (var instance in moduleInstances)
             {
-                if (instance.IsInstalled) instance.PostInitialize(_serviceCollection, _configuration);
+                if (HotBagConfiguration.Configurations.ModuleSetting.IsModuleInstalled(instance.ModuleName))
+                    instance.PostInitialize(_serviceCollection, _configuration);
             }
 
             IocManager.Configurations.Initialize(_serviceCollection, _configuration); // allow applicaton usases the state through out  the applicaton

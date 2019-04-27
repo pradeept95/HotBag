@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Web.Host.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Host.Controllers
 {
@@ -15,5 +9,15 @@ namespace Web.Host.Controllers
             return Redirect("/swagger");
             //return View();
         } 
+          
+        public IActionResult Install()
+        {
+            string json = System.IO.File.ReadAllText("modulesettings.json");
+            dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+            jsonObj["Modules"]["Installed"] = "ABC, BCD";
+            string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
+            System.IO.File.WriteAllText("modulesettings.json", output);
+            return View();
+        }
     }
 }

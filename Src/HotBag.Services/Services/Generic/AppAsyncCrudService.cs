@@ -16,23 +16,23 @@ namespace HotBag.Services.Base
         where TEntityDto : IEntityBaseDto<TPrimaryKey>
     {
         private readonly IBaseRepository<TEntity, TPrimaryKey> _repository;
-        private readonly IUnitOfWork _unitOfWork;
+        //private readonly IUnitOfWork _unitOfWork;
         private readonly IObjectMapper _objectMapper;
         public AppAsyncCrudService(
             IRepositoryFactory<TEntity, TPrimaryKey> repository
             , IObjectMapper objectMapper
-            ,IUnitOfWork unitOfWork
+            //,IUnitOfWork unitOfWork
             )
         {
             _repository = repository.GetRepository();
-            _unitOfWork = unitOfWork;
+            //_unitOfWork = unitOfWork;
             _objectMapper = objectMapper;
         }
 
         public override async Task Delete(TPrimaryKey id)
         {
             await _repository.DeleteAsync(id);
-            await _unitOfWork.SaveChangesAsync();
+            await _repository.SaveChangeAsync();
         }
 
         public override async Task<ResultDto<TEntityDto>> Get(TPrimaryKey id)

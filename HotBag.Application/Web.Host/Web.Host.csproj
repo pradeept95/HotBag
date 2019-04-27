@@ -24,4 +24,9 @@
     </Content>
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="DbLogs\" />
+  </ItemGroup>
+
 </Project>

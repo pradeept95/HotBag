@@ -135,8 +135,7 @@ namespace HotBag.Dapper.CrudHelper
             return connection.QueryAsync<T>(sql.QuerySql, sql.Parameters, transaction, commandTimeout);
 
         }
-
-
+         
         public static int? Insert(this IDbConnection connection, object entityToInsert,
             IDbTransaction transaction = null, int? commandTimeout = null)
         {
@@ -173,8 +172,7 @@ namespace HotBag.Dapper.CrudHelper
                 return (TKey)sql.Id;
             }
             return (TKey)result.First().id;
-        }
-
+        } 
 
         public static int Update(this IDbConnection connection, object entityToUpdate, IDbTransaction transaction = null, int? commandTimeout = null)
         {
@@ -192,10 +190,7 @@ namespace HotBag.Dapper.CrudHelper
             var sql = factory.QueryBuilder.Update(entityToUpdate);
             factory.DbLogger.Log(LogType.Trace, () => $"starting--{sql.QuerySql} --datetime-->{DateTime.Now:yyyy_MM_d_hh_mm}");
             System.Threading.CancellationToken cancelToken = token ?? default(System.Threading.CancellationToken);
-            return connection.ExecuteAsync(new CommandDefinition(sql.QuerySql, sql.Parameters, transaction, commandTimeout, cancellationToken: cancelToken));
-
-            //return connection.Execute(sql.QuerySql, sql.Parameters, transaction, commandTimeout);
-
+            return connection.ExecuteAsync(new CommandDefinition(sql.QuerySql, sql.Parameters, transaction, commandTimeout, cancellationToken: cancelToken)); 
         }
         //new added
         public static Task<int> UpdateAsync(this IDbConnection connection, object entityToUpdate,
@@ -253,8 +248,7 @@ namespace HotBag.Dapper.CrudHelper
             IDatabaseFactory factory = connection.GetFactory();
             var sql = factory.QueryBuilder.Delete<T>(id);
             factory.DbLogger.Log(LogType.Trace, () => $"starting--{sql.QuerySql} --datetime-->{DateTime.Now:yyyy_MM_d_hh_mm}");
-            return connection.ExecuteAsync(sql.QuerySql, sql.Parameters, transaction, commandTimeout);
-
+            return connection.ExecuteAsync(sql.QuerySql, sql.Parameters, transaction, commandTimeout); 
         }
         public static Task<int> UpdateAsDeleted<T>(this IDbConnection connection, object id,
             IDbTransaction transaction = null, int? commandTimeout = null)
@@ -318,9 +312,7 @@ namespace HotBag.Dapper.CrudHelper
             return connection.ExecuteAsync(sql.QuerySql, sql.Parameters, transaction, commandTimeout);
 
         }
-
-
-
+         
         public static int RecordCount<T>(this IDbConnection connection, string conditions = "", object parameters = null,
             IDbTransaction transaction = null, int? commandTimeout = null)
         {

@@ -18,8 +18,7 @@ namespace Web.Host
         public static void Main(string[] args)
         {
             log.Info("Application configuration completed");
-            CreateWebHostBuilder(args).Build().Run();
-           
+            CreateWebHostBuilder(args).Build().Run(); 
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

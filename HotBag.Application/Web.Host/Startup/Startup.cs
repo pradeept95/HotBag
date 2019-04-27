@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Core;
 using HotBag.EntityFrameworkCore;
 using HotBag.EntityFrameworkCore.Context;
-using HotBag.Plugins.Hangfire;
 using HotBag.ResultWrapper.Extensions;
 using HotBag.ResultWrapper.Filters;
+using HotBag.SB.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -113,7 +111,8 @@ namespace Web.Host
                     In = "header",
                     Type = "apiKey"
                 });
-                c.AddSecurityRequirement(security); 
+                c.AddSecurityRequirement(security);
+                c.DocumentFilter<CustomDocumentFilter>();
             });
 
             services.AddMvc(
@@ -124,7 +123,7 @@ namespace Web.Host
                 })
                 .AddApplicationPart(Assembly.Load(new AssemblyName("HotBag.Web.Core")))
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
+             
             services.AddSingleton(Configuration);
             var serviceProvider = services.BuildServiceProvider();
             services.RegisterHotBagCore(serviceProvider);
@@ -163,7 +162,13 @@ namespace Web.Host
             app.UseCookiePolicy();
 
             //Use HotBag EfCore 
-            app.UseHotBagEfCore(env);
+            //app.UseHotBagEfCore(env);
+
+            //use HotBag Dapper
+            //app.UseHotBagDapper(env);
+
+            //use HotBag MongoDb
+            app.UseHotBagMondoDb(env);
 
             //Use HotBag Hangfire
             //app.UseHotBagHangfire(env);
@@ -183,6 +188,7 @@ namespace Web.Host
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+               // routes.UseHotBagODataRoute();
             });
         }
     }

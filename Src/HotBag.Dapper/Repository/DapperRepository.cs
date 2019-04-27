@@ -292,11 +292,8 @@ namespace HotBag.Dapper.Repository
         }
         public virtual async Task<int> UpdateAsync(IDbConnection db, TEntity entityToUpdate, IDbTransaction transaction, int? commandTimeout)
         {
-            {
-
-                return await db.UpdateAsync(entityToUpdate, transaction, commandTimeout);
-
-
+            { 
+                return await db.UpdateAsync(entityToUpdate, transaction, commandTimeout); 
             }
         }
         public async Task UpdateAsync(TEntity entityToUpdate, string condition, object paramters = null)
@@ -309,15 +306,13 @@ namespace HotBag.Dapper.Repository
             }
         }
         public virtual async Task<bool> UpdateAsync(TEntity entityToUpdate)
-        {
-
+        { 
             using (var db = (DbConnection)DbFactory.GetConnection())
             {
                 await db.OpenAsync();
                 await db.UpdateAsync(entityToUpdate);
                 return await Task.FromResult(true);
-            }
-
+            } 
         }
         public virtual int Delete(TEntity entityToDelete)
         {
@@ -399,12 +394,9 @@ namespace HotBag.Dapper.Repository
             using (var db = (DbConnection)DbFactory.GetConnection())
             {
                 await db.OpenAsync();
-                await db.DeleteAsync<TEntity>(condition, parameters);
-
-
+                await db.DeleteAsync<TEntity>(condition, parameters); 
             }
-        }
-        // int DeleteList(object whereConditions);
+        } 
         public virtual async Task<int> DeleteListAsync(object whereConditions)
         {
             {
@@ -592,22 +584,50 @@ namespace HotBag.Dapper.Repository
 
         TEntity IBaseRepository<TEntity, TPrimaryKey>.Insert(TEntity entity)
         {
-            throw new NotImplementedException();
+            {
+                using (var db = (DbConnection)DbFactory.GetConnection())
+                {
+                    db.Open();
+                    var id = db.Insert<TPrimaryKey>(entity);
+                    entity.Id = id;
+                    return entity;
+                }
+            }
         }
 
         public TPrimaryKey InsertAndGetId(TEntity entity)
         {
-            throw new NotImplementedException();
+            {
+                using (var db = (DbConnection)DbFactory.GetConnection())
+                {
+                    db.Open();
+                    return db.Insert<TPrimaryKey>(entity); 
+                }
+            }
         }
 
-        public Task<TPrimaryKey> InsertAndGetIdAsync(TEntity entity)
+        public async Task<TPrimaryKey> InsertAndGetIdAsync(TEntity entity)
         {
-            throw new NotImplementedException();
+            {
+                using (var db = (DbConnection)DbFactory.GetConnection())
+                {
+                    await db.OpenAsync();
+                    return (TPrimaryKey)await db.InsertAsync<TPrimaryKey>(entity); 
+                }
+            }
         }
 
-        public Task<TEntity> InsertAsync(TEntity entity)
+        public async Task<TEntity> InsertAsync(TEntity entity)
         {
-            throw new NotImplementedException();
+            {
+                using (var db = (DbConnection)DbFactory.GetConnection())
+                {
+                    await db.OpenAsync();
+                    var key = (TPrimaryKey)await db.InsertAsync<TPrimaryKey>(entity);
+                    entity.Id = key;
+                    return entity;
+                }
+            }
         }
 
         public TEntity InsertOrUpdate(TEntity entity)
@@ -685,19 +705,22 @@ namespace HotBag.Dapper.Repository
             throw new NotImplementedException();
         }
 
-        Task<TEntity> IBaseRepository<TEntity, TPrimaryKey>.UpdateAsync(TEntity entity)
+        async Task<TEntity> IBaseRepository<TEntity, TPrimaryKey>.UpdateAsync(TEntity entity)
         {
-            throw new NotImplementedException();
+            using (var db = (DbConnection)DbFactory.GetConnection())
+            {
+                await db.OpenAsync();
+                await db.UpdateAsync(entity);
+                return await Task.FromResult(entity);
+            }
         }
 
-        public Task SaveChangeAsync()
-        {
-            throw new NotImplementedException();
+        public async Task SaveChangeAsync()
+        {  
         }
 
         public void SaveChange()
-        {
-            throw new NotImplementedException();
+        { 
         }
     }
 }

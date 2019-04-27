@@ -1,0 +1,6 @@
+{
+  "Modules": {
+    "Installed": "MongoDbModule",
+    "Default": "CoreModule,AppCoreModule,ApplicationServiceModule,WebCoreModule,HostModule"
+  }
+}

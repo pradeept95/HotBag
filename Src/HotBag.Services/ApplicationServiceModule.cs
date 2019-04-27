@@ -11,13 +11,7 @@ namespace HotBag.Services
         public override string ModuleName
         {
             get { return "ApplicationServiceModule"; } 
-        }
-
-        public override bool IsInstalled
-        {
-            get { return true; }
-
-        }
+        } 
 
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
