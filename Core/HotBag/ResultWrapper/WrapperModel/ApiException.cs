@@ -4,12 +4,12 @@ namespace HotBag.ResultWrapper.WrapperModel
 {
     public class ApiException : System.Exception
     {
-        public int StatusCode { get; set; }
+        public int statusCode { get; set; }
 
-        public IEnumerable<ValidationError> Errors { get; set; }
+        public IEnumerable<ValidationError> errors { get; set; }
 
-        public string ReferenceErrorCode { get; set; }
-        public string ReferenceDocumentLink { get; set; }
+        public string referenceErrorCode { get; set; }
+        public string referenceDocumentLink { get; set; }
 
         public ApiException(string message,
                             int statusCode = 500,
@@ -18,15 +18,15 @@ namespace HotBag.ResultWrapper.WrapperModel
                             string refLink = "") :
             base(message)
         {
-            this.StatusCode = statusCode;
-            this.Errors = errors;
-            this.ReferenceErrorCode = errorCode;
-            this.ReferenceDocumentLink = refLink;
+            this.statusCode = statusCode;
+            this.errors = errors;
+            this.referenceErrorCode = errorCode;
+            this.referenceDocumentLink = refLink;
         }
 
-        public ApiException(System.Exception ex, int statusCode = 500) : base(ex.Message)
+        public ApiException(System.Exception ex, int httpStatusCode = 500) : base(ex.Message)
         {
-            StatusCode = statusCode;
+            statusCode = httpStatusCode;
         }
     }
 }
