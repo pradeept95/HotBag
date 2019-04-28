@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HotBag.EntityFrameworkCore
+namespace HotBag
 {
     public static class HotBagEfExtension
     {

@@ -5,16 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="emailsettings.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="emailsettings.json">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Core\HotBag\HotBag.csproj" />
   </ItemGroup>
 

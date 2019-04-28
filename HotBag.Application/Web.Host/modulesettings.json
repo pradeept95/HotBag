@@ -1,6 +1,6 @@
 {
   "Modules": {
-    "Installed": "MongoDbModule",
+    "Installed": "EntityFrameworkCoreModule,HotBagEmailModuel",
     "Default": "CoreModule,AppCoreModule,ApplicationServiceModule,WebCoreModule,HostModule"
   }
 }

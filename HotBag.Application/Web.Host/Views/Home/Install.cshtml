@@ -2,19 +2,18 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="installer">
-    <div class="image-container set-full-height">
-        <!--   Creative Tim Branding   -->
-        <a href="#">
+<div id="installer" v-clock>
+    <div class="image-container set-full-height"> 
+        @*<a href="#">
             <div class="logo-container">
                 <div class="logo">
                     <img src="~/assets/img/new_logo.png">
                 </div>
-                <div class="brand">
+                <div class="brand" v-clock>
                     {{appname}}
                 </div>
             </div>
-        </a>
+        </a>*@
 
         <!--   Big container   -->
         <div class="container">
@@ -110,82 +109,23 @@
                                         <h5 class="info-text">Select all the module you want to install. </h5>
                                         <div class="row installation-item-area">
                                             <div class="col-sm-12">
-                                                <div class="col-sm-3">
-                                                    <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="jobb" value="Design">
+                                                <div class="col-sm-3" v-for="(module, index) in allmodules" @@click="moduleSelectChanged(index)" v-clock>
+                                                    <div class="choice" data-toggle="wizard-checkbox" v-bind:class="{ active: module.isInstalled }">
+                                                        <input type="checkbox" name="jobb" v-bind:checked="{ 'checked' : module.isInstalled}">
                                                         <div class="card card-checkboxes card-hover-effect">
                                                             <i class="ti-time"></i>
-                                                            <p>By hour</p>
+                                                            <p>{{module.moduleName}}</p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="jobb" value="Design">
-                                                        <div class="card card-checkboxes card-hover-effect">
-                                                            <i class="ti-calendar"></i>
-                                                            <p>By day</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="jobb" value="Design">
-                                                        <div class="card card-checkboxes card-hover-effect">
-                                                            <i class="ti-time"></i>
-                                                            <p>By hour</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="jobb" value="Design">
-                                                        <div class="card card-checkboxes card-hover-effect">
-                                                            <i class="ti-calendar"></i>
-                                                            <p>By day</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="jobb" value="Design">
-                                                        <div class="card card-checkboxes card-hover-effect">
-                                                            <i class="ti-time"></i>
-                                                            <p>By hour</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="jobb" value="Design">
-                                                        <div class="card card-checkboxes card-hover-effect">
-                                                            <i class="ti-calendar"></i>
-                                                            <p>By day</p>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                <div class="col-sm-3">
-                                                    <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="jobb" value="Design">
-                                                        <div class="card card-checkboxes card-hover-effect">
-                                                            <i class="ti-time"></i>
-                                                            <p>By hour</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="choice" data-toggle="wizard-checkbox">
-                                                        <input type="checkbox" name="jobb" value="Design">
-                                                        <div class="card card-checkboxes card-hover-effect">
-                                                            <i class="ti-calendar"></i>
-                                                            <p>By day</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                </div>  
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <input type='button' class='btn btn-fill btn-primary btn-wd pull-right' name='update' value='Update Installation' />
+                                        <div class="row" style="padding-top : 5px;">
+                                            <input @@click="installModules()" type='button' class='btn btn-fill btn-primary btn-wd pull-right' name='update' value='Update Installation' />
+                                            <input @@click="restartApplication()" type='button' class='btn btn-fill btn-success btn-wd pull-right' name='update' value='Restart Application' /> 
+                                            <div>
+                                                You have to Restart your application in order to reflect the chang in module insatllation.
+                                            </div>
                                         </div> 
                                     </div>
                                     <div class="tab-pane" id="description">
@@ -237,8 +177,4 @@
         overflow-x : hidden;
         overflow-y: scroll;
     }
-</style>
- 
-@section scripts {
- 
-}
+</style> 

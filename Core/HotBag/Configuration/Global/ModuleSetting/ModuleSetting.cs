@@ -68,13 +68,21 @@ namespace HotBag.Configuration.Global.ModuleInstallation
             return this.Modules.Any()
                  ? this.Modules.Select(x => new ModuleInfo { ModuleName = x.Key, IsInstalled = x.Value }).ToList()
                  : null;
-        } 
+        }
+
+        public List<ModuleInfo> GetAllInstalledModuleInfo()
+        {
+            return this.Modules.Any()
+                 ? this.Modules.Select(x => new ModuleInfo { ModuleName = x.Key, IsInstalled = x.Value }).Where(x => x.IsInstalled).ToList()
+                 : null;
+        }
     }
 
     public class ModuleInfo
     {
         public string ModuleName { get; set; }
         public bool IsInstalled { get; set; }
+        public bool IsCoreModule { get; set; }
     }
 
     public interface IModuleSetting
@@ -84,5 +92,6 @@ namespace HotBag.Configuration.Global.ModuleInstallation
         void InstallModule(string moduleName);
         ModuleInfo GetModuleInfo(string moduleName);
         List<ModuleInfo> GetAllModuleInfo();
+        List<ModuleInfo> GetAllInstalledModuleInfo();
     }
 }

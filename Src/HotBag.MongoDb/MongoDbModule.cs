@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HotBag.MongoDb
+namespace HotBag
 {
     public class MongoDbModule : ApplicationModule
     {

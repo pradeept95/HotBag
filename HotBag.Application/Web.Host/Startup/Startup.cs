@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using Core;
 using HotBag.EntityFrameworkCore;
 using HotBag.EntityFrameworkCore.Context;
+using HotBag.ORM;
 using HotBag.ResultWrapper.Extensions;
 using HotBag.ResultWrapper.Filters;
 using HotBag.SB.Helpers;
@@ -164,14 +165,8 @@ namespace Web.Host
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            //Use HotBag EfCore 
-            //app.UseHotBagEfCore(env);
-
-            //use HotBag Dapper
-            //app.UseHotBagDapper(env);
-
-            //use HotBag MongoDb
-            app.UseHotBagMondoDb(env);
+            //use Hotbag ORM Option
+            app.UseHotBagORMOptions(env);
 
             //Use HotBag Hangfire
             //app.UseHotBagHangfire(env);

@@ -3,7 +3,7 @@ using HotBag.Modules;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace HotBag.EntityFrameworkCore
+namespace HotBag
 {
     public class EntityFrameworkCoreModule : ApplicationModule
     {
