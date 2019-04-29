@@ -51,7 +51,7 @@ namespace HotBag.Services.Base
             }
              
             IQueryable<TEntityDto> finalResult = _objectMapper.ProjectTo<TEntity ,TEntityDto>(result); 
-            var res = await finalResult.ToListAsync(); 
+            var res = finalResult.ToList(); 
             return new ListResultDto<TEntityDto>(res, "Test summary");
 
         }
@@ -65,12 +65,12 @@ namespace HotBag.Services.Base
                 //result = result.Where(x => x.TestName.ToLower().Trim().Contains(searchText.ToLower().Trim()));
             }  
 
-            var totalCount = await result.CountAsync();
+            var totalCount = result.Count();
 
             IQueryable<TEntityDto> finalResult = _objectMapper.ProjectTo<TEntity, TEntityDto>(result);
-            var res = await finalResult.Skip(skip)
+            var res = finalResult.Skip(skip)
                 .Take(maxResultCount)
-                .ToListAsync(); 
+                .ToList(); 
             return new PagedResultDto<TEntityDto>(totalCount, res, skip + maxResultCount < totalCount, "Total Data With summary");
         }
 

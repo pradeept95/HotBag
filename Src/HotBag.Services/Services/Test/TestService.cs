@@ -15,8 +15,7 @@ namespace HotBag.Services.Providers
 {
     public class TestService : ITestService, ITransientDependencies
     {
-        private readonly IBaseRepository<TestEntity, Guid> _repository;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IBaseRepository<TestEntity, Guid> _repository; 
         private readonly IObjectMapper _objectMapper;
         public TestService(
             IRepositoryFactory<TestEntity, Guid> repository,
@@ -24,15 +23,14 @@ namespace HotBag.Services.Providers
             IObjectMapper objectMapper
         )
         {
-            _repository = repository.GetRepository();
-            _unitOfWork = unitOfWork;
+            _repository = repository.GetRepository(); 
             _objectMapper = objectMapper;
         }
 
         public async Task Delete(Guid id)
         {
             await _repository.DeleteAsync(id);
-            await _unitOfWork.SaveChangesAsync();
+            await _repository.SaveChangeAsync();
         }
 
         public async Task<ResultDto<TestEntityDto>> Get(Guid id)
@@ -118,7 +116,7 @@ namespace HotBag.Services.Providers
 
             var saveModel = _objectMapper.Map<TestEntity>(entity); 
             var result = await _repository.InsertAsync(saveModel);
-            await _unitOfWork.SaveChangesAsync();
+            await _repository.SaveChangeAsync();
             var res = _objectMapper.Map<TestEntityDto>(result);
             return new ResultDto<TestEntityDto>(res);
         }
@@ -137,7 +135,7 @@ namespace HotBag.Services.Providers
             var updateModel = _objectMapper.Map<TestEntity>(entity);
  
             var result = await _repository.UpdateAsync(updateModel);
-            await _unitOfWork.SaveChangesAsync();
+            await _repository.SaveChangeAsync();
             var res = _objectMapper.Map<TestEntityDto>(result);
             return new ResultDto<TestEntityDto>(res);
         }

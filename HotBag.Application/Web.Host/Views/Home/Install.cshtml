@@ -122,10 +122,7 @@
                                         </div>
                                         <div class="row" style="padding-top : 5px;">
                                             <input @@click="installModules()" type='button' class='btn btn-fill btn-primary btn-wd pull-right' name='update' value='Update Installation' />
-                                            <input @@click="restartApplication()" type='button' class='btn btn-fill btn-success btn-wd pull-right' name='update' value='Restart Application' /> 
-                                            <div>
-                                                You have to Restart your application in order to reflect the chang in module insatllation.
-                                            </div>
+                                            <input v-if="isRestartIsRequired" @@click="restartApplication()" type='button' class='btn btn-fill btn-success btn-wd pull-right' name='update' value='Restart Application' />  
                                         </div> 
                                     </div>
                                     <div class="tab-pane" id="description">

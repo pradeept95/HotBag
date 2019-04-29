@@ -4,8 +4,10 @@
             el: '#installer',
             data: function () {
                 return {
+                    isRestartIsRequired: false,
                     appname: 'HotBag',
-                    allmodules: modules
+                    allmodules: modules,
+                    
                 }
             },
             created: function () {
@@ -26,8 +28,7 @@
                     })
                     .done(
                         function (result) {
-                            if (result && result.success) {
-                                console.log(result.message)
+                            if (result && result.success) { 
                                 swal({
                                     title: "Success",
                                     text: result.message + ", You have to Restart your application in order to reflect the chang in module insatllation.",
@@ -39,12 +40,12 @@
                                         if (restart) {
                                             vm.restartApplication()
                                         } else {
+                                            vm.isRestartIsRequired = true;
                                             swal("Application will restart letter.", { icon: "success" });
                                         }
                                     });
                             }
-                            else {
-                                console.log(result.message)
+                            else { 
                                 swal("Ooooh, Got Error!", result.message, "error", { icon: "error" });
                             }
                         });
@@ -56,8 +57,8 @@
                     })
                     .done(
                     function (result) {
-                        if (result && result.success) {
-                            console.log(result.message)
+                        if (result && result.success) { 
+                            vm.isRestartIsRequired = false;
                             swal("Good job!", result.message, "success", { icon: "success"});
                         }
                         else {
