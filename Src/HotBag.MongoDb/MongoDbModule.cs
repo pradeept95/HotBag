@@ -3,9 +3,6 @@ using HotBag.Modules;
 using HotBag.MongoDb.Seed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace HotBag
 {
@@ -19,7 +16,7 @@ namespace HotBag
 
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-          
+             
         }
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)

@@ -44,6 +44,13 @@ namespace Web.Host.Controllers
             {
                 coreModuleList.Add(item);
             }
+
+            var allORMModuel = (jsonObj["Modules"]["ORM"]).ToString().Split(",");
+            foreach (var item in allORMModuel)
+            {
+                coreModuleList.Add(item);
+            }
+
             return Json(new { data = modules.Where(x => !coreModuleList.Contains(x.ModuleName)).ToList() });
         }
 

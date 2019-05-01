@@ -5,8 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Helpers\HotBag.Plugins.Email\HotBag.Plugins.Email.csproj" />
     <ProjectReference Include="..\..\Helpers\HotBag.Plugins.Hangfire\HotBag.Plugins.Hangfire.csproj" />
     <ProjectReference Include="..\..\Helpers\HotBag.Plugins.OData\HotBag.Plugins.OData.csproj" />
+    <ProjectReference Include="..\..\Helpers\HotBag.Plugins.PushNotification\HotBag.Plugins.PushNotification.csproj" />
+    <ProjectReference Include="..\..\Helpers\HotBag.Plugins.SignalR\HotBag.Plugins.SignalR.csproj" />
+    <ProjectReference Include="..\..\Helpers\HotBag.Plugins.Swagger\HotBag.Plugins.Swagger.csproj" />
     <ProjectReference Include="..\HotBag.Services\HotBag.Services.csproj" />
   </ItemGroup>
 

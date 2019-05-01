@@ -7,10 +7,10 @@ namespace HotBag.Configuration.Global.Application
 {
     public class ApplicationSetting : IApplicationSetting, ISingletonDependencies
     {
-        public string ApplicationName { get; set; }
-        public string ApplicationVersion { get; set; }
 
-
+        public string ApplicationName { get; private set; }
+        public string ApplicationVersion { get; private set; }
+         
         public ApplicationSetting()
         {
             this.ApplicationName = "HotBag Enterprise Boilerplate Framework";
@@ -25,8 +25,8 @@ namespace HotBag.Configuration.Global.Application
 
     public interface IApplicationSetting
     {
-        string ApplicationName { get; set; }
-        string ApplicationVersion { get; set; }
+        string ApplicationName { get; }
+        string ApplicationVersion { get; }
         void SetApplicationSetting(string name);
     }
 }

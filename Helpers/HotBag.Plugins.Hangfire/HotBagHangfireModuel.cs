@@ -12,8 +12,7 @@ namespace HotBag.Plugins.Hangfire
     {
         public override string ModuleName
         {
-            get { return "HotBagHangfireModuel"; }
-
+            get { return "HotBagHangfireModuel"; } 
         }
  
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)

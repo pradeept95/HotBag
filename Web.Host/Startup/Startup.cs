@@ -4,9 +4,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using Core;
-using HotBag.EntityFrameworkCore;
+using HotBag;
 using HotBag.EntityFrameworkCore.Context;
 using HotBag.ORM;
+using HotBag.Plugins.Hangfire;
 using HotBag.ResultWrapper.Extensions;
 using HotBag.ResultWrapper.Filters;
 using HotBag.SB.Helpers;
@@ -19,7 +20,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Swashbuckle.AspNetCore.Swagger;
 
 [assembly: ApiConventionType(typeof(DefaultApiConventions))]
 namespace Web.Host
@@ -59,46 +59,7 @@ namespace Web.Host
             {
                 options.SuppressModelStateInvalidFilter = true;
             }); 
-
-            // Register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Info
-                {
-                    Version = "v1",
-                    Title = $"{Configuration.GetSection("App:Name").Value} Api",
-                    Description = $"{Configuration.GetSection("App:Description").Value}",
-                    TermsOfService = "None",
-                    Contact = new Contact
-                    {
-                        Name = "Pradeep Raj Thapaliya",
-                        Email = "pradeep.thapaliya@amniltech.com",
-                        Url = "https://www.pradeeprajthapaliya.com.np"
-                    },
-                    License = new License
-                    {
-                        Name = "Git Source Url",
-                        Url = "https://github.com/pradeep9860/HotBag"
-                    }
-                });
-
-                // Swagger 2.+ support
-                var security = new Dictionary<string, IEnumerable<string>>
-                {
-                    {"Bearer", new string[] { }},
-                };
-
-                c.AddSecurityDefinition("Bearer", new ApiKeyScheme
-                {
-                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
-                    Name = "Authorization",
-                    In = "header",
-                    Type = "apiKey"
-                });
-                c.AddSecurityRequirement(security);
-                c.DocumentFilter<CustomDocumentFilter>();
-            });
-
+             
             services.Configure<MvcOptions>(options =>
             {
                 options.Filters.Add(new CorsAuthorizationFilterFactory(_defaultCorsPolicyName));
@@ -150,26 +111,19 @@ namespace Web.Host
             }
              
             app.UseAuthentication();
-
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
-
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
-            // specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{Configuration.GetSection("App: Name").Value} Enterprise Application Framework");
-            });
-
+              
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            //use hotbag swagger for swagger api documentation
+            app.UseHotBagSwagger();
 
             //use Hotbag ORM Option
             app.UseHotBagORMOptions(env);
 
             //Use HotBag Hangfire
-            //app.UseHotBagHangfire(env);
+            app.UseHotBagHangfire(env);
 
             // Add Log4Net
             var loggingOptions = this.Configuration.GetSection("Log4NetCore")

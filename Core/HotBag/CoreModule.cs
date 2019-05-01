@@ -35,9 +35,7 @@ namespace HotBag
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
             var applicatonName = HotBagConfiguration.Configurations.ApplicationSettings.ApplicationName;
-
-            HotBagConfiguration.Configurations.ApplicationSettings.ApplicationName = "ABC";
-
+             
             var nn = HotBagConfiguration.Configurations.ApplicationSettings.ApplicationName;
 
         }

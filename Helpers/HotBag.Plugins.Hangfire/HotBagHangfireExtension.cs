@@ -2,14 +2,17 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 
-namespace HotBag.Plugins.Hangfire
+namespace HotBag
 {
     public static class HotBagHangfireExtension
     {
         public static IApplicationBuilder UseHotBagHangfire(this IApplicationBuilder applicationBuilder, IHostingEnvironment env)
         {
-            applicationBuilder.UseHangfireDashboard("/hangfire");
-            applicationBuilder.UseHangfireServer();  
+            if(HotBagConfiguration.Configurations.ModuleSetting.IsModuleInstalled("HotBagHangfireModuel"))
+            {
+                applicationBuilder.UseHangfireDashboard("/hangfire");
+                applicationBuilder.UseHangfireServer();
+            } 
             return applicationBuilder;
         }
     }
