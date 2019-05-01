@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Helpers\HotBag.Helpers.Hangfire\HotBag.Plugins.Hangfire.csproj" />
-    <ProjectReference Include="..\..\HotBag.Application\Application.Helpers.OData\HotBag.Plugins.OData.csproj" />
+    <ProjectReference Include="..\..\Helpers\HotBag.Plugins.Hangfire\HotBag.Plugins.Hangfire.csproj" />
+    <ProjectReference Include="..\..\Helpers\HotBag.Plugins.OData\HotBag.Plugins.OData.csproj" />
     <ProjectReference Include="..\HotBag.Services\HotBag.Services.csproj" />
   </ItemGroup>
 
