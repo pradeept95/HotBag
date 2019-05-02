@@ -66,7 +66,7 @@ namespace Web.Host
             });
 
             // Configure CORS for angular2 UI
-            var cors = Configuration.GetSection("App:CorsOrigins").Value
+            var cors = Configuration["App:CorsOrigins"]
                                 .Split(",", StringSplitOptions.RemoveEmptyEntries)
                                 .Select(o => Regex.Replace(o, @"/", ""))
                                .ToArray();

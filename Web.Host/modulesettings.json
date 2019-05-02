@@ -1,6 +1,6 @@
 {
   "Modules": {
-    "Installed": "HotBagEmailModuel,HotBagSwaggerModuel",
+    "Installed": "HotBagEmailModuel,HotBagHangfireModuel,HotBagSwaggerModuel",
     "Default": "CoreModule,AppCoreModule,ApplicationServiceModule,WebCoreModule,HostModule",
     "ORM": "EntityFrameworkCoreModule,DapperModule,MongoDbModule",
     "ORMInstalled": "MongoDbModule"
