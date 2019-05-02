@@ -63,6 +63,7 @@ namespace HotBag.Modules
 
             DefaultInstaller.RegisterAllModule(moduleInstances);
             DefaultInstaller.InstallDefaultModule();
+            DefaultInstaller.InstallApplicationORMModule();
             DefaultInstaller.InstallApplicationModule();
 
             foreach (var instance in moduleInstances)

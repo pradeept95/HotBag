@@ -4,71 +4,26 @@ using HotBag.Core.EntityDto;
 using HotBag.ResultWrapper.ResponseModel;
 using HotBag.Services.Base;
 using HotBag.Services.Providers;
+using HotBag.Web.GenericBase;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
 namespace Web.Host.Controllers
 {
-    public class GenericTestController : BaseApiController
-    {
-        private readonly IAppAsyncCrudService<TestEntityDto, TestEntity, Guid> _testService;
-        public GenericTestController(IAppAsyncCrudService<TestEntityDto, TestEntity, Guid> testService)
-        {
-            _testService = testService;
-        }
+    //public class GenericTestController : GenericBaseController<TestEntity,TestEntityDto, Guid>
+    //{
+    //    private IAppAsyncCrudService<TestEntityDto, TestEntity, Guid> _service;
+    //    public GenericTestController(IAppAsyncCrudService<TestEntityDto, TestEntity, Guid> service) : base(service)
+    //    {
+    //        _service = service;
+    //    }
 
-        [HttpGet]
-        [Route("Get")]
-        public async Task<ResultDto<TestEntityDto>> Get(Guid id)
-        {
-            return await _testService.Get(id);
-        }
+    //    [HttpGet]
+    //    [Route("EM")]
+    //    public async Task ExtraMethod()
+    //    {
 
-        [HttpGet]
-        [Route("GetAll")]
-        public async Task<ListResultDto<TestEntityDto>> GetAll(string searchText)
-        {
-            return await _testService.GetAll(searchText);
-        }
-
-        [HttpGet]
-        [Route("GetAllPaged")]
-
-        public async Task<PagedResultDto<TestEntityDto>> GetAllPaged(int skip, int maxResultCount, string searchText)
-        {
-            return await _testService.GetAllPaged(skip, maxResultCount, searchText);
-        }
-
-        [HttpGet]
-        [Route("Count")]
-        public async Task<ResultDto<int>> GetCount()
-        {
-            return await _testService.GetCount();
-        }
-
-        [HttpPost]
-        [Route("Save")]
-        public async Task<ResultDto<TestEntityDto>> Save(TestEntityDto entity)
-        {
-            return await _testService.Save(entity);
-        }
-
-
-        [HttpPut]
-        [Route("Update")]
-
-        public async Task<ResultDto<TestEntityDto>> Update(TestEntityDto entity)
-        {
-            return await _testService.Update(entity);
-        } 
-
-        [HttpDelete]
-        [Route("Delete")]
-
-        public async Task Delete(Guid id)
-        {
-            await _testService.Delete(id);
-        }
-    }
+    //    }
+    //}
 }

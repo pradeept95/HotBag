@@ -18,8 +18,7 @@ namespace HotBag.Services.Providers
         private readonly IBaseRepository<TestEntity, Guid> _repository; 
         private readonly IObjectMapper _objectMapper;
         public TestService(
-            IRepositoryFactory<TestEntity, Guid> repository,
-            IUnitOfWork unitOfWork, 
+            IRepositoryFactory<TestEntity, Guid> repository, 
             IObjectMapper objectMapper
         )
         {

@@ -55,6 +55,7 @@ namespace HotBag.Plugins.Swagger
                 });
                 c.AddSecurityRequirement(security);
                 c.DocumentFilter<CustomDocumentFilter>();
+                c.OperationFilter<GenericOperationFilter>();
             });
 
         }

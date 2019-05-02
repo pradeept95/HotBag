@@ -23,6 +23,18 @@ namespace HotBag.Installer
             }
         }
 
+        public static void InstallApplicationORMModule()
+        {
+            string json = System.IO.File.ReadAllText("modulesettings.json");
+            dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+            var modules = (jsonObj["Modules"]["ORMInstalled"]).ToString().Split(",");
+            foreach (var module in modules)
+            {
+                if (string.IsNullOrEmpty(module)) continue;
+                HotBagConfiguration.Configurations.ModuleSetting.InstallModule(module.Trim());
+            }
+        }
+
         public static void InstallApplicationModule()
         {
             string json = System.IO.File.ReadAllText("modulesettings.json");
@@ -33,7 +45,7 @@ namespace HotBag.Installer
                 if (string.IsNullOrEmpty(module)) continue;
                 HotBagConfiguration.Configurations.ModuleSetting.InstallModule(module.Trim());
             }
-        }
+        } 
 
         public static void RegisterAllModule(List<IApplicationModule> moduleInstances)
         { 
