@@ -16,34 +16,34 @@ namespace HotBag.EntityBase
         public TPrimaryKey Id { get; set; }
         #endregion
 
-        #region create audit entities
-        [IgnoreUpdate]
-        [BsonDateTimeOptions]
-        [IgnoreMap]
-        [AutoFill(AutoFillProperty.CurrentDate)]
-        public DateTime CreatedDateTime { get; set; } 
-        [IgnoreUpdate]
-        [IgnoreMap]
-        [ForeignKey("CreatedByUserEntity")]
-        public Guid? CreatedByUser { get; set; }
-        [IgnoreMap]
-        public virtual HotBagUser CreatedByUserEntity { get; set; }
-        #endregion
+        //#region create audit entities
+        //[IgnoreUpdate]
+        //[BsonDateTimeOptions]
+        //[IgnoreMap]
+        //[AutoFill(AutoFillProperty.CurrentDate)]
+        //public DateTime CreatedDateTime { get; set; } 
+        //[IgnoreUpdate]
+        //[IgnoreMap]
+        //[ForeignKey("CreatedByUserEntity")]
+        //public Guid? CreatedByUser { get; set; }
+        //[IgnoreMap]
+        //public virtual HotBagUser CreatedByUserEntity { get; set; }
+        //#endregion
 
-        #region update audit entities
-        [IgnoreInsert]
-        [BsonDateTimeOptions]
-        [IgnoreMap]
-        [AutoFill(AutoFillProperty.CurrentDate)]
-        public DateTime? ModifiedDateTime { get; set; } 
+        //#region update audit entities
+        //[IgnoreInsert]
+        //[BsonDateTimeOptions]
+        //[IgnoreMap]
+        //[AutoFill(AutoFillProperty.CurrentDate)]
+        //public DateTime? ModifiedDateTime { get; set; } 
 
-        [IgnoreInsert] 
-        [ForeignKey("UpdatedByUserEntity")]
-        [IgnoreMap]
-        public Guid? UpdatedByUser { get; set; }
-        [IgnoreMap]
-        public virtual HotBagUser UpdatedByUserEntity { get; set; }
-        #endregion
+        //[IgnoreInsert] 
+        //[ForeignKey("UpdatedByUserEntity")]
+        //[IgnoreMap]
+        //public Guid? UpdatedByUser { get; set; }
+        //[IgnoreMap]
+        //public virtual HotBagUser UpdatedByUserEntity { get; set; }
+        //#endregion
     }
 
     public class EntityBaseDto<TPrimaryKey> : IEntityBaseDto<TPrimaryKey>
@@ -53,15 +53,15 @@ namespace HotBag.EntityBase
         public TPrimaryKey Id { get; set; }
         #endregion
 
-        #region create audit entities 
-        public DateTime CreatedDateTime { get; set; } 
-        public Guid? CreatedByUser { get; set; } 
-        #endregion
+        //#region create audit entities 
+        //public DateTime CreatedDateTime { get; set; } 
+        //public Guid? CreatedByUser { get; set; } 
+        //#endregion
 
-        #region update audit entities 
-        public DateTime? ModifiedDateTime { get; set; } 
-        public Guid? UpdatedByUser { get; set; }  
-        #endregion
+        //#region update audit entities 
+        //public DateTime? ModifiedDateTime { get; set; } 
+        //public Guid? UpdatedByUser { get; set; }  
+        //#endregion
     }
 
 }

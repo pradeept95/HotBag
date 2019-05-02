@@ -21,9 +21,9 @@ namespace HotBag.Web.Core
         {
             //throw new NotImplementedException(); 
             serviceCollection
-                   .AddMvc(o => o.Conventions.Add(
-                        new GenericControllerRouteConvention()
-                    )).
+                   .AddMvc(
+                        //o => o.Conventions.Add(new GenericControllerRouteConvention())
+                   ).
                     ConfigureApplicationPartManager(m =>
                         m.FeatureProviders.Add(new GenericTypeControllerFeatureProvider()
                     ));

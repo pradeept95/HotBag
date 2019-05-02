@@ -1,4 +1,5 @@
 ﻿using HotBag.BaseController;
+using HotBag.DI.Base;
 using HotBag.EntityBase;
 using HotBag.ResultWrapper.ResponseModel;
 using HotBag.Services.Base;
@@ -6,15 +7,16 @@ using HotBag.Web.Core.Web.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
+using static HotBag.Web.GenericTypeControllerFeatureProvider;
 
 namespace HotBag.Web.GenericBase
 {
     [GenericControllerName]
     [Route("api/app/v1/[controller]")]
     [ApiController]
-    public class GenericBaseController<TEntity, TEntityDto, TPrimaryKey> : ControllerBase
-         where TEntity : IEntityBase<TPrimaryKey>
-         where TEntityDto : IEntityBaseDto<TPrimaryKey> 
+    public class GenericBaseController<TEntity, TEntityDto, TPrimaryKey> 
+        where TEntity : IEntityBase<TPrimaryKey>
+        where TEntityDto : IEntityBaseDto<TPrimaryKey> 
     {
         private readonly IAppAsyncCrudService<TEntityDto, TEntity, TPrimaryKey> _service;
         public GenericBaseController(IAppAsyncCrudService<TEntityDto, TEntity, TPrimaryKey> service)

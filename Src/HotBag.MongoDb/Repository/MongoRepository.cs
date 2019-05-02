@@ -162,12 +162,12 @@ namespace HotBag.MongoDb.Repository
 
         public int Count()
         {
-            throw new NotImplementedException();
+            return (int)Collection.CountDocuments(new BsonDocument());
         }
 
         public int Count(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return (int)Collection.CountDocuments(new BsonDocument());
         }
 
         public Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate)
@@ -175,15 +175,10 @@ namespace HotBag.MongoDb.Repository
             throw new NotImplementedException();
         }
 
-        public Task<int> CountAsync()
+        public async Task<int> CountAsync()
         {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(ObjectId id)
-        {
-            throw new NotImplementedException();
-        }
+           return Convert.ToInt32(await Collection.CountDocumentsAsync(new BsonDocument()));
+        } 
 
         public void Delete(Expression<Func<TEntity, bool>> predicate)
         {
@@ -355,14 +350,14 @@ namespace HotBag.MongoDb.Repository
             throw new NotImplementedException();
         }
 
-        public Task SaveChangeAsync()
+        public async Task SaveChangeAsync()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void SaveChange()
         {
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
         }
     }
 }

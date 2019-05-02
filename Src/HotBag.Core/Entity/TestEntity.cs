@@ -2,6 +2,7 @@
 using HotBag.AutoMaper.Attributes;
 using HotBag.Core.EntityDto;
 using HotBag.EntityBase;
+using HotBag.Web.Core.Web.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,5 +18,37 @@ namespace HotBag.Core.Entity
 
         [AutoFill(AutoFillProperty.CurrentDate)]
         public DateTime TestProp3 { get; set; }
+    }
+
+    //[GeneratedController("api/book")]
+    [GeneratedController(typeof(BookDto), typeof(Guid))]
+    public class Book : EntityBase<Guid>
+    {
+        public string Title { get; set; }
+
+        public string Author { get; set; }
+    }
+
+    public class BookDto : EntityBaseDto<Guid>
+    {
+        public string Title { get; set; }
+
+        public string Author { get; set; }
+    }
+
+    //[GeneratedController("api/v1/album")]
+    [GeneratedController(typeof(AlbumDto), typeof(Guid))]
+    public class Album : EntityBase<Guid>
+    {
+        public string Title { get; set; }
+
+        public string Artist { get; set; }
+    }
+
+    public class AlbumDto : EntityBaseDto<Guid>
+    {
+        public string Title { get; set; }
+
+        public string Artist { get; set; }
     }
 }
