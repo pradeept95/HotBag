@@ -2,13 +2,17 @@
 using HotBag.EntityBase;
 using HotBag.ResultWrapper.ResponseModel;
 using HotBag.Services.Base;
+using HotBag.Web.Core.Web.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
 namespace HotBag.Web.GenericBase
 {
-    public class GenericBaseController<TEntity, TEntityDto, TPrimaryKey>
+    [GenericControllerName]
+    [Route("api/app/v1/[controller]")]
+    [ApiController]
+    public class GenericBaseController<TEntity, TEntityDto, TPrimaryKey> : ControllerBase
          where TEntity : IEntityBase<TPrimaryKey>
          where TEntityDto : IEntityBaseDto<TPrimaryKey> 
     {

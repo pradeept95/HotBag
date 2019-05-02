@@ -17,7 +17,7 @@ namespace HotBag.Web.Core.Web
             var candidates = currentAssembly.GetExportedTypes().Where(x => x.GetCustomAttributes<GeneratedControllerAttribute>().Any());
 
             foreach (var candidate in candidates)
-            {
+            { 
                 var dto = candidate.GetCustomAttribute<GeneratedControllerDtoAttribute>();
                 if(dto == null)
                 {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HotBag.Web.GenericBase;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
+using System;
 
 namespace HotBag.Web.Core.Web.Attributes
 {
@@ -23,5 +25,18 @@ namespace HotBag.Web.Core.Web.Attributes
             EntityDtoType = typeOfEntityDto;
             PrimaryKeyType = typeOfPrimaryKey;
         } 
+    }
+
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
+    public class GenericControllerNameAttribute : Attribute, IControllerModelConvention
+    {
+        public void Apply(ControllerModel controller)
+        {
+            if (controller.ControllerType.GetGenericTypeDefinition() == typeof(GenericBaseController<,,>))
+            {
+                var entityType = controller.ControllerType.GenericTypeArguments[0];
+                controller.ControllerName = entityType.Name;
+            }
+        }
     }
 }
