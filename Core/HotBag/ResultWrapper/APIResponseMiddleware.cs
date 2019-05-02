@@ -82,7 +82,8 @@ namespace HotBag.ResultWrapper
                     validationErrors = ex.errors,
                     isValidationError = ex.errors.Any(),
                     referenceErrorCode = ex.referenceErrorCode,
-                    referenceDocumentLink = ex.referenceDocumentLink
+                    referenceDocumentLink = ex.referenceDocumentLink,
+                    details = HotBagConfiguration.Configurations.ApplicationSettings.SentDetailExceptionMessage ? ex.StackTrace : ""
                 };
                 code = ex.statusCode;
                 context.Response.StatusCode = code;
@@ -91,12 +92,14 @@ namespace HotBag.ResultWrapper
             else if (exception is UnauthorizedAccessException)
             {
                 apiError = new ApiError($"Unauthorized Access : {exception.Message}");
+                apiError.details = HotBagConfiguration.Configurations.ApplicationSettings.SentDetailExceptionMessage ? exception.StackTrace : ""; 
                 code = (int)HttpStatusCode.Unauthorized;
                 context.Response.StatusCode = code;
             }
             else if(exception is Exception)
             {
                 apiError = new ApiError(exception.Message);
+                apiError.details = HotBagConfiguration.Configurations.ApplicationSettings.SentDetailExceptionMessage ? exception.StackTrace : "";
                 code = (int)HttpStatusCode.InternalServerError;
                 context.Response.StatusCode = code;
             } 
@@ -114,13 +117,15 @@ namespace HotBag.ResultWrapper
                 {
                     details = stack
                 };
+                apiError.details = HotBagConfiguration.Configurations.ApplicationSettings.SentDetailExceptionMessage ? exception.StackTrace : "";
+
                 code = (int)HttpStatusCode.InternalServerError;
                 context.Response.StatusCode = code;
             }
 
             context.Response.ContentType = "application/json";
 
-            apiResponse = new APIResponse(code, ResponseMessageEnum.Exception.GetDescription(), null, false, apiError);
+            apiResponse = new APIResponse(code, ResponseMessageEnum.Exception.GetDescription(), null , false, apiError);
 
             var json = JsonConvert.SerializeObject(apiResponse);
 
@@ -148,7 +153,8 @@ namespace HotBag.ResultWrapper
             else
                 apiError = new ApiError("Your request cannot be processed. Please contact a support.");
 
-            apiResponse = new APIResponse(code, ResponseMessageEnum.Failure.GetDescription(), null, false, apiError);
+             apiResponse = new APIResponse(code, ResponseMessageEnum.Failure.GetDescription(), null, false, apiError);
+           
             context.Response.StatusCode = code;
 
             var json = JsonConvert.SerializeObject(apiResponse);

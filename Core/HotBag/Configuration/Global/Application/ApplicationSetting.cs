@@ -10,7 +10,8 @@ namespace HotBag.Configuration.Global.Application
 
         public string ApplicationName { get; private set; }
         public string ApplicationVersion { get; private set; }
-         
+        public bool SentDetailExceptionMessage { get; set; } = true;
+
         public ApplicationSetting()
         {
             this.ApplicationName = "HotBag Enterprise Boilerplate Framework";
@@ -26,6 +27,7 @@ namespace HotBag.Configuration.Global.Application
     public interface IApplicationSetting
     {
         string ApplicationName { get; }
+        bool SentDetailExceptionMessage { get; set; }
         string ApplicationVersion { get; }
         void SetApplicationSetting(string name);
     }
