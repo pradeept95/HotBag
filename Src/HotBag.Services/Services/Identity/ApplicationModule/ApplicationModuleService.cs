@@ -22,19 +22,20 @@ namespace HotBag.Services.Identity
     {
         private readonly IBaseRepository<HotBagApplicationModule, long> _applicationModuleRepository;
         private readonly IBaseRepository<HotBagApplicationModulePermissionLevel, long> _roleApplicationModulePermissionLevelRepository;
-        private readonly IUnitOfWork _unitOfWork;
+       // private readonly IUnitOfWork _unitOfWork;
         private readonly IObjectMapper _objectMapper;
 
         public ApplicationModuleService(
             IRepositoryFactory<HotBagApplicationModulePermissionLevel, long> roleApplicationModulePermissionLevelRepository,
             IRepositoryFactory<HotBagApplicationModule, long> ApplicationModuleRepository, 
-            IUnitOfWork unitOfWork, IObjectMapper objectMapper
+           // IUnitOfWork unitOfWork, 
+           IObjectMapper objectMapper
             )
         {
 
             _applicationModuleRepository = ApplicationModuleRepository.GetRepository();
             this._roleApplicationModulePermissionLevelRepository = roleApplicationModulePermissionLevelRepository.GetRepository();
-            _unitOfWork = unitOfWork;
+           // _unitOfWork = unitOfWork;
             _objectMapper = objectMapper;
         }
         public async Task Delete(long id)
@@ -49,7 +50,7 @@ namespace HotBag.Services.Identity
 
         public async Task<ResultDto<ApplicationModuleDto>> Get(long id)
         {
-            var result = await (from applicatonModule in _applicationModuleRepository.GetAll()
+            var result = (from applicatonModule in _applicationModuleRepository.GetAll()
                                 join applicationModulePermission in _roleApplicationModulePermissionLevelRepository.GetAll()
                                 on applicatonModule.Id equals applicationModulePermission.HotBagApplicationModuleId into temp
                                 from applicationModulePermission in temp.DefaultIfEmpty()
@@ -65,7 +66,8 @@ namespace HotBag.Services.Identity
                               Id = g.First().Id, 
                               ModuleName = g.First().ModuleName,
                               PermissionLevels = PermissionLevelFactory.GetAllPermissionLevel(g.Select(x => x.ModulePermissions).ToList())
-                          }).FirstOrDefaultAsync();
+                          }).FirstOrDefault();
+            result = await Task.FromResult(result);
             if (result == null)
             {
                 result = new ApplicationModuleDto();
@@ -84,15 +86,15 @@ namespace HotBag.Services.Identity
             }
 
             //var totalCount = await result.CountAsync();
-            var finalResult = await result
+            var finalResult = result
                 .Select(x => new HotBagApplicationModuleDto
                 {
                     Id = x.Id,
                     ModuleName = x.ModuleName 
-                })
-                .ToListAsync();
+                });
 
-            return new ListResultDto<HotBagApplicationModuleDto>(finalResult, "Roles");
+            finalResult = await Task.FromResult(finalResult); 
+            return new ListResultDto<HotBagApplicationModuleDto>(finalResult.ToList(), "Roles");
         }
 
         public async Task<PagedResultDto<HotBagApplicationModuleDto>> GetAllPaged(int skip, int maxResultCount, string searchText)
@@ -104,18 +106,19 @@ namespace HotBag.Services.Identity
                 result = result.Where(x => x.ModuleName.ToLower().Trim().Contains(searchText.ToLower().Trim()));
             }
 
-            var totalCount = await result.CountAsync();
-            var finalResult = await result
+            var totalCount = result.Count();
+            var finalResult = result
                 .Select(x => new HotBagApplicationModuleDto
                 {
                     Id = x.Id,
                     ModuleName = x.ModuleName 
                 })
                 .Skip(skip)
-                .Take(maxResultCount)
-                .ToListAsync();
+                .Take(maxResultCount);
 
-            return new PagedResultDto<HotBagApplicationModuleDto>(totalCount, finalResult, skip + maxResultCount < totalCount, "Total Data With summary");
+            finalResult = await Task.FromResult(finalResult);
+
+            return new PagedResultDto<HotBagApplicationModuleDto>(totalCount, finalResult.ToList(), skip + maxResultCount < totalCount, "Total Data With summary");
         }
 
         public async Task<ResultDto<int>> GetCount()
@@ -128,17 +131,23 @@ namespace HotBag.Services.Identity
             if (entity.Id == 0)
             {
                 //create module
+                var id = _applicationModuleRepository.GetAll().Any() ? _applicationModuleRepository.GetAll().Max(x => x.Id) + 1 : 1;
                 var createModel = new HotBagApplicationModule
                 {
+                    Id = id,
                     ModuleName = entity.ModuleName 
                 };
                 var result = await _applicationModuleRepository.InsertAsync(createModel);
                 entity.Id = result.Id;
+                var innerId = _roleApplicationModulePermissionLevelRepository.GetAll().Any() ?
+                                _roleApplicationModulePermissionLevelRepository.GetAll().Max(x => x.Id) + 1 : 1;
                 foreach (var item in entity.PermissionLevels.Where(x => x.IsAssigned))
                 {
-                    if (!item.IsAssigned) continue;
+                    if (!item.IsAssigned) continue; 
+                    
                     var modelPermission = new HotBagApplicationModulePermissionLevel
                     {
+                        Id = innerId++,
                         HotBagApplicationModuleId = result.Id, 
                         PermissionLevel = item.PermissionLevelName 
                     };
@@ -178,7 +187,7 @@ namespace HotBag.Services.Identity
                    
                 }
             }
-            await _unitOfWork.SaveChangesAsync();
+            await _applicationModuleRepository.SaveChangeAsync();
             return new ResultDto<ApplicationModuleDto>(entity);
         }
     }

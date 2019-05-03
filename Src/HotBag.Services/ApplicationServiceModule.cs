@@ -25,19 +25,19 @@ namespace HotBag.Services
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            serviceCollection.Scan(scan => scan
-              .FromAssemblyOf<ApplicationServiceModule>()
-                  .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
-                      .AsImplementedInterfaces()
-                      .WithTransientLifetime()
+            //serviceCollection.Scan(scan => scan
+            //  .FromAssemblyOf<ApplicationServiceModule>()
+            //      .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
+            //          .AsImplementedInterfaces()
+            //          .WithTransientLifetime()
 
-                  .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
-                      .As<IScopedDependencies>()
-                      .WithScopedLifetime()
+            //      .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
+            //          .As<IScopedDependencies>()
+            //          .WithScopedLifetime()
 
-                   .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
-                              .AsImplementedInterfaces()
-                              .WithSingletonLifetime());
+            //       .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
+            //                  .AsImplementedInterfaces()
+            //                  .WithSingletonLifetime());
 
             //serviceCollection.AddScoped(typeof(IRepositoryFactory<,>), typeof(RepositoryFactory<,>));  
         }

@@ -1,4 +1,5 @@
-﻿using HotBag.AppUserDto;
+﻿using AutoMapper;
+using HotBag.AppUserDto;
 using HotBag.AutoMaper.Attributes;
 using HotBag.EntityBase;
 using HotBag.Tanents;
@@ -23,11 +24,13 @@ namespace HotBag.AppUser
         public string Email { get; set; }
 
         [Required(ErrorMessage ="Password is Required")]
+        [IgnoreMap]
         public string HashedPassword { get; set; }
         public string Phone { get; set; }
         public UserStatus Status { get; set; }
 
         [ForeignKey("Tanents")]
+        [IgnoreMap]
         public int? TanentIdId { get; set; }  
         public virtual Tenant Tanents { get; set; }
     }

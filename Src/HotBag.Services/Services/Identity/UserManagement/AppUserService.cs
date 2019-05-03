@@ -21,18 +21,19 @@ namespace HotBag.Services.Identity
         private readonly IBaseRepository<HotBagUser, Guid> _repository;
         private readonly IBaseRepository<HotBagPasswordHistoryLog, long> _passwordHistoryLogRepository;
         private readonly IBaseRepository<HotBagUserStatusLog, long> _userStatusLogRepository;
-        private readonly IUnitOfWork _unitOfWork;
+       // private readonly IUnitOfWork _unitOfWork;
         private readonly IObjectMapper _objectMapper;
         public AppUserService(
             IRepositoryFactory<HotBagUser, Guid> repository,
             IRepositoryFactory<HotBagPasswordHistoryLog, long> passwordHistoryLogRepository,
             IRepositoryFactory<HotBagUserStatusLog, long> userStatusLogRepository,
-            IUnitOfWork unitOfWork, IObjectMapper objectMapper)
+           // IUnitOfWork unitOfWork,
+            IObjectMapper objectMapper)
         {
             _repository = repository.GetRepository();
             this._passwordHistoryLogRepository = passwordHistoryLogRepository.GetRepository();
             this._userStatusLogRepository = userStatusLogRepository.GetRepository();
-            _unitOfWork = unitOfWork;
+           // _unitOfWork = unitOfWork;
             _objectMapper = objectMapper;
         }
 
@@ -58,7 +59,7 @@ namespace HotBag.Services.Identity
             }
 
             //var totalCount = await result.CountAsync();
-            var finalResult = await result
+            var finalResult = result
                 .Select(x => new HotBagUserDto
                 {
                     Id = x.Id,
@@ -70,10 +71,9 @@ namespace HotBag.Services.Identity
                     Phone = x.Phone,
                     Status = x.Status,
                     TanentIdId = x.TanentIdId
-                })
-                .ToListAsync();
-
-            return new ListResultDto<HotBagUserDto>(finalResult, "Users");
+                });
+            result = await Task.FromResult(result);
+            return new ListResultDto<HotBagUserDto>(finalResult.ToList(), "Users");
         }
 
         public async Task<PagedResultDto<HotBagUserDto>> GetAllPaged(int skip = 0, int maxResultCount = 10, string searchText = "")
@@ -83,10 +83,10 @@ namespace HotBag.Services.Identity
             if (!string.IsNullOrEmpty(searchText))
             {
                 result = result.Where(x => x.Username.ToLower().Trim().Contains(searchText.ToLower().Trim()));
-            }
+            } 
 
-            var totalCount = await result.CountAsync();
-            var finalResult = await result
+            var totalCount = result.Count();
+            var finalResult = result
                 .Select(x => new HotBagUserDto
                 {
                     Id = x.Id,
@@ -100,10 +100,10 @@ namespace HotBag.Services.Identity
                     TanentIdId = x.TanentIdId
                 })
                 .Skip(skip)
-                .Take(maxResultCount)
-                .ToListAsync();
+                .Take(maxResultCount);
 
-            return new PagedResultDto<HotBagUserDto>(totalCount, finalResult, skip + maxResultCount < totalCount, "Total Data With summary");
+            finalResult = await Task.FromResult(finalResult);
+            return new PagedResultDto<HotBagUserDto>(totalCount, finalResult.ToList(), skip + maxResultCount < totalCount, "Total Data With summary");
         }
 
         public async Task<ResultDto<int>> GetCount()
@@ -141,7 +141,7 @@ namespace HotBag.Services.Identity
             await _userStatusLogRepository.InsertAsync(userStatusHistory);
             #endregion 
 
-            await _unitOfWork.SaveChangesAsync();
+            await _repository.SaveChangeAsync();
             var res = _objectMapper.Map<HotBagUserDto>(result);
             return new ResultDto<HotBagUserDto>(res);
         }
@@ -150,7 +150,7 @@ namespace HotBag.Services.Identity
         {
             var updateModel = _objectMapper.Map<HotBagUser>(entity);
             var result = await _repository.UpdateAsync(updateModel);
-            await _unitOfWork.SaveChangesAsync();
+            await _repository.SaveChangeAsync();
             var res = _objectMapper.Map<HotBagUserDto>(result);
             return new ResultDto<HotBagUserDto>(res);
         }

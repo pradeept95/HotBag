@@ -9,6 +9,8 @@ using HotBag.Modules;
 using HotBag.OptionConfigurer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
+using System.Reflection;
 
 namespace HotBag
 {
@@ -22,14 +24,18 @@ namespace HotBag
 
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            // Auto Mapper Configurations
-            var mappingConfig = new MapperConfiguration(mc =>
-            {
-                mc.AddProfile(new MappingProfile());
-            });
+           //Auto Mapper Configurations
+           var mappingConfig = new MapperConfiguration(mc =>
+           {
+               mc.ValidateInlineMaps = false;
+               mc.AddProfile(new MappingProfile());
+           });
 
             IMapper mapper = mappingConfig.CreateMapper();
-            serviceCollection.AddSingleton(mapper); 
+            serviceCollection.AddSingleton(mapper);
+
+            //Mappings.RegisterMappings();
+            serviceCollection.AddSingleton(typeof(HotBag.AutoMaper.IObjectMapper), typeof(HotBagAutoMapper));
         }
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
@@ -43,14 +49,17 @@ namespace HotBag
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         { 
             serviceCollection.AddScoped<HotBagDbContext>();
-            serviceCollection.AddAutoMapper();
-            serviceCollection.AddTransient(typeof(HotBag.AutoMaper.IObjectMapper), typeof(HotBagAutoMapper));
+
+            var all =
+               Assembly
+                  .GetEntryAssembly()
+                  .GetReferencedAssemblies()
+                  .Select(Assembly.Load);
+
+            serviceCollection.AddAutoMapper(all);
+             
             serviceCollection.ConfigureApplicationSettings(configuration);
-            AuthConfigurer.Configure(serviceCollection, configuration);
-
-            var applicatonName = HotBagConfiguration.Configurations.ApplicationSettings.ApplicationName;
-
-            HotBagConfiguration.Configurations.ApplicationSettings.SetApplicationSetting("changed at pre initialized");
+            AuthConfigurer.Configure(serviceCollection, configuration); 
         }
     }
 }

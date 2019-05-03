@@ -1,6 +1,6 @@
 ﻿namespace HotBag.AutoMaper
 {
-    internal interface IProfile
+    public interface IProfile
     {
     }
 }

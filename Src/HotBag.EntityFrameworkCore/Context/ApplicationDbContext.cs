@@ -44,6 +44,9 @@ namespace HotBag.EntityFrameworkCore.Context
         #endregion
 
         public DbSet<TestEntity> TestEntity { get; set; }
+        public DbSet<Album> Album { get; set; }
+        public DbSet<Book> Book { get; set; }
+        public DbSet<Pradeep> Pradeep { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

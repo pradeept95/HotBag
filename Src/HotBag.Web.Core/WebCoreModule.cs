@@ -40,19 +40,19 @@ namespace HotBag.Web.Core
         {
             //throw new NotImplementedException();
 
-            serviceCollection.Scan(scan => scan
-                .FromAssemblyOf<WebCoreModule>()
-                    .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
-                        .AsImplementedInterfaces()
-                        .WithTransientLifetime()
+            //serviceCollection.Scan(scan => scan
+            //    .FromAssemblyOf<WebCoreModule>()
+            //        .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
+            //            .AsImplementedInterfaces()
+            //            .WithTransientLifetime()
 
-                    .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
-                        .As<IScopedDependencies>()
-                        .WithScopedLifetime()
+            //        .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
+            //            .As<IScopedDependencies>()
+            //            .WithScopedLifetime()
 
-             .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
-                        .AsImplementedInterfaces()
-                        .WithSingletonLifetime());
+            // .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
+            //            .AsImplementedInterfaces()
+            //            .WithSingletonLifetime());
         }
     }
 }

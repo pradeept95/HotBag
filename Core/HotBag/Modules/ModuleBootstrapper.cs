@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using HotBag.DI;
 using HotBag.DI.Base;
 using HotBag.Installer;
 using Microsoft.Extensions.Configuration;
@@ -39,21 +40,25 @@ namespace HotBag.Modules
             var platform = Environment.OSVersion.Platform.ToString();
             var runtimeAssemblyNames = DependencyContext.Default.GetRuntimeAssemblyNames(platform);
 
-            _serviceCollection.Scan(scan => scan
-              .FromAssemblyOf<CoreModule>()
-                  .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
-                      .AsImplementedInterfaces()
-                      .WithTransientLifetime()
+            // _serviceCollection.Scan(scan => scan
+            //   .FromAssemblyOf<CoreModule>()
+            //       .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
+            //           .AsImplementedInterfaces()
+            //           .WithTransientLifetime()
 
-                  .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
-                      .As<IScopedDependencies>()
-                      .WithScopedLifetime()
+            //       .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
+            //           .As<IScopedDependencies>()
+            //           .WithScopedLifetime()
 
-           .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
-                      .AsImplementedInterfaces()
-                      .WithSingletonLifetime());
+            //.AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
+            //           .AsImplementedInterfaces()
+            //           .WithSingletonLifetime());
 
+            RegisterDependency.RegisterAll(_serviceCollection); 
             HotBagConfiguration.Configurations.Initialize(_serviceCollection);
+
+            IocManager.Configurations.Initialize(_serviceCollection, _configuration); // allow applicaton usases the state through out  the applicaton
+
             var instances = runtimeAssemblyNames
                 .Select(Assembly.Load)
                 .SelectMany(a => a.ExportedTypes)
@@ -82,9 +87,7 @@ namespace HotBag.Modules
             {
                 if (HotBagConfiguration.Configurations.ModuleSetting.IsModuleInstalled(instance.ModuleName))
                     instance.PostInitialize(_serviceCollection, _configuration);
-            }
-
-            IocManager.Configurations.Initialize(_serviceCollection, _configuration); // allow applicaton usases the state through out  the applicaton
+            } 
         }
 
     }

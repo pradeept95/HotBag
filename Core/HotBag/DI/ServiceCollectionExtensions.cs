@@ -1,6 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using HotBag.DI.Base;
+using HotBag.Modules;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.DependencyModel;
+using System;
 using System.Linq;
+using System.Reflection;
 
 namespace HotBag.DI
 {
@@ -55,6 +60,32 @@ namespace HotBag.DI
             services.Add(descriptorToAdd);
 
             return services;
+        }
+    }
+
+    public static class RegisterDependency
+    {
+        public static void RegisterAll(IServiceCollection serviceCollection)
+        {
+            var platform = Environment.OSVersion.Platform.ToString();
+            var runtimeAssemblyNames = DependencyContext.Default.GetRuntimeAssemblyNames(platform);
+            var allAssembly = runtimeAssemblyNames
+                .Select(Assembly.Load)
+                .Where(x => x.FullName.Contains("HotBag"));
+
+            serviceCollection.Scan(scan => scan
+             .FromAssemblies(allAssembly)
+             .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
+                 .AsImplementedInterfaces()
+                 .WithTransientLifetime()
+
+             .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
+                 .AsImplementedInterfaces()
+                 .WithScopedLifetime()
+
+              .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
+                         .AsImplementedInterfaces()
+                         .WithSingletonLifetime());
         }
     }
 }

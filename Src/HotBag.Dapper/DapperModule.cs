@@ -31,19 +31,19 @@ namespace HotBag.Dapper
             IDatabaseFactory dbFactory = DatabaseFactories.SetFactory(Dialect.SQLServer, serviceProvider, configuration);
             serviceCollection.AddSingleton(dbFactory);
 
-            serviceCollection.Scan(scan => scan
-             .FromAssemblyOf<DapperModule>()
-                 .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
-                     .AsImplementedInterfaces()
-                     .WithTransientLifetime()
+            //serviceCollection.Scan(scan => scan
+            // .FromAssemblyOf<DapperModule>()
+            //     .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
+            //         .AsImplementedInterfaces()
+            //         .WithTransientLifetime()
 
-                 .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
-                     .AsImplementedInterfaces()
-                     .WithScopedLifetime()
+            //     .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
+            //         .AsImplementedInterfaces()
+            //         .WithScopedLifetime()
 
-                  .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
-                             .AsImplementedInterfaces()
-                             .WithSingletonLifetime());
+            //      .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
+            //                 .AsImplementedInterfaces()
+            //                 .WithSingletonLifetime());
 
         } 
     }
