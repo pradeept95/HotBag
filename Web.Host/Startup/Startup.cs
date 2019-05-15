@@ -7,6 +7,7 @@ using Core;
 using HotBag;
 using HotBag.EntityFrameworkCore.Context;
 using HotBag.ORM;
+using HotBag.Plugins.GraphQl;
 using HotBag.Plugins.Hangfire;
 using HotBag.ResultWrapper.Extensions;
 using HotBag.ResultWrapper.Filters;
@@ -48,7 +49,7 @@ namespace Web.Host
             //validation. But, then you will lose the other benefits of this attribute like disabling 
             //conventional routing and allowing model binding without adding[FromBody] parameter attributes.
 
-            string connectionString = Configuration["Configuration:EntityFramework:ConnectionString:Default"];
+            string connectionString = Configuration.GetSection("Configuration:EntityFramework:ConnectionString:Default").Value;
             services.AddDbContext<ApplicationDbContext>
                         (options => options.UseSqlServer(connectionString));
 
@@ -124,6 +125,9 @@ namespace Web.Host
 
             //Use HotBag Hangfire
             app.UseHotBagHangfire(env);
+
+            //user GraphQl
+            app.UseHotGraphQL();
 
             // Add Log4Net
             var loggingOptions = this.Configuration.GetSection("Log4NetCore")

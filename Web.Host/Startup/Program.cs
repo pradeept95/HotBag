@@ -22,10 +22,8 @@ namespace Web.Host
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-            .UseContentRoot(Directory.GetCurrentDirectory())
-             .UseIISIntegration()
-               .UseStartup<Startup>();
+            WebHost.CreateDefaultBuilder(args) 
+            .UseStartup<Startup>();
                // .UseStartup<HotBag.Web.Core.Startup>();
     }
 }

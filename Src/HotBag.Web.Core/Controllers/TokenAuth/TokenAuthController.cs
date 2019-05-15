@@ -39,7 +39,7 @@ namespace HotBag.Web.Core.Controllers.TokenAuth
 
             if (!loginResutl.IsLoginSuccess)
             {
-                throw new ApiException(loginResutl.LoginErrorMessage, 403); 
+                throw new UnauthorizedAccessException(loginResutl.LoginErrorMessage); 
             }
 
             var result = new LoginResponseDto

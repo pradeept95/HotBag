@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Helpers\HotBag.Plugins.Email\HotBag.Plugins.Email.csproj" />
+    <ProjectReference Include="..\..\Helpers\HotBag.Plugins.GraphQL\HotBag.Plugins.GraphQL.csproj" />
     <ProjectReference Include="..\..\Helpers\HotBag.Plugins.Hangfire\HotBag.Plugins.Hangfire.csproj" />
     <ProjectReference Include="..\..\Helpers\HotBag.Plugins.OData\HotBag.Plugins.OData.csproj" />
     <ProjectReference Include="..\..\Helpers\HotBag.Plugins.PushNotification\HotBag.Plugins.PushNotification.csproj" />

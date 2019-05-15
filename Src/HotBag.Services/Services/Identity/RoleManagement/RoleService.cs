@@ -58,15 +58,14 @@ namespace HotBag.Services.Identity
             }
 
             //var totalCount = await result.CountAsync();
-            var finalResult = await result
+            var finalResult = result
                 .Select(x => new HotBagRoleDto
                 {
                     Id = x.Id,
                     RoleName = x.RoleName 
-                })
-                .ToListAsync();
+                });
 
-            return new ListResultDto<HotBagRoleDto>(finalResult, "Roles");
+            return new ListResultDto<HotBagRoleDto>(await Task.FromResult(finalResult.ToList()), "Roles");
         }
 
         public async Task<PagedResultDto<HotBagRoleDto>> GetAllPaged(int skip, int maxResultCount, string searchText)
@@ -78,18 +77,17 @@ namespace HotBag.Services.Identity
                 result = result.Where(x => x.RoleName.ToLower().Trim().Contains(searchText.ToLower().Trim()));
             }
 
-            var totalCount = await result.CountAsync();
-            var finalResult = await result
+            var totalCount = result.Count();
+            var finalResult = result
                 .Select(x => new HotBagRoleDto
                 {
                     Id = x.Id,
-                    RoleName = x.RoleName 
+                    RoleName = x.RoleName
                 })
                 .Skip(skip)
-                .Take(maxResultCount)
-                .ToListAsync();
+                .Take(maxResultCount); 
 
-            return new PagedResultDto<HotBagRoleDto>(totalCount, finalResult, skip + maxResultCount < totalCount, "Total Data With summary");
+            return new PagedResultDto<HotBagRoleDto>(totalCount, await Task.FromResult(finalResult.ToList()), skip + maxResultCount < totalCount, "Total Data With summary");
         }
 
         public async Task<ResultDto<int>> GetCount()

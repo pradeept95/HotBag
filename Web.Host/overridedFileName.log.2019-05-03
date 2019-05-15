@@ -1,0 +1,606 @@
+2019-05-03 10:15:25,357  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/App/insteller.js  
+ 2019-05-03 10:15:25,340  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\js\site.js'
+ 2019-05-03 10:15:25,105  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/js/jquery.validate.min.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\js\jquery.validate.min.js'
+ 2019-05-03 10:15:24,319  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 578.271ms 200 text/css
+ 2019-05-03 10:15:25,586  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 364.8581ms 200 application/javascript
+ 2019-05-03 10:15:25,871  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 740.7579ms 200 application/javascript
+ 2019-05-03 10:15:26,069  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/App/insteller.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\App\insteller.js'
+ 2019-05-03 10:15:26,247  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\lib\jquery\dist\jquery.js'
+ 2019-05-03 10:15:26,356  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1015.5052ms 200 application/javascript
+ 2019-05-03 10:15:26,335  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/vue/vue.js  
+ 2019-05-03 10:15:26,409  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1637.8202ms 200 application/javascript
+ 2019-05-03 10:15:26,498  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/vue/vue.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\vue\vue.js'
+ 2019-05-03 10:15:26,623  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1074.727ms 200 application/javascript
+ 2019-05-03 10:15:27,601  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/img/paper-1.jpeg  
+ 2019-05-03 10:15:27,631  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/fonts/themify.woff?-fvbane  
+ 2019-05-03 10:15:27,653  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/Home/GetAllModule  
+ 2019-05-03 10:15:28,504  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.GetAllModule (Web.Host)'
+ 2019-05-03 10:15:28,585  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/fonts/themify.woff'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\fonts\themify.woff'
+ 2019-05-03 10:15:28,735  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetAllModule", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.GetAllModule (Web.Host)
+ 2019-05-03 10:15:28,772  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1253.1211ms 200 application/font-woff
+ 2019-05-03 10:15:29,487  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.GetAllModule (Web.Host) - Validation state: Valid
+ 2019-05-03 10:15:30,091  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/img/paper-1.jpeg'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\img\paper-1.jpeg'
+ 2019-05-03 10:15:30,235  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.GetAllModule (Web.Host), returned result Microsoft.AspNetCore.Mvc.JsonResult in 84.2624ms.
+ 2019-05-03 10:15:30,438  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 2958.7849ms 200 image/jpeg
+ 2019-05-03 10:15:30,465  INFO Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type '<>f__AnonymousType0`1[[System.Collections.Generic.List`1[[HotBag.Configuration.Global.ModuleInstallation.ModuleInfo, HotBag, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+ 2019-05-03 10:15:30,513  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico  
+ 2019-05-03 10:15:30,599  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.GetAllModule (Web.Host) in 1732.8063ms
+ 2019-05-03 10:15:30,646  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\favicon.ico'
+ 2019-05-03 10:15:30,679  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.GetAllModule (Web.Host)'
+ 2019-05-03 10:15:30,771  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 207.9504ms 200 image/x-icon
+ 2019-05-03 10:15:30,866  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 3251.9453ms 200 application/json; charset=utf-8
+ 2019-05-03 10:15:45,873  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/  
+ 2019-05-03 10:15:45,945  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-05-03 10:15:45,987  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Index", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.Index (Web.Host)
+ 2019-05-03 10:15:46,132  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.Index (Web.Host) - Validation state: Valid
+ 2019-05-03 10:15:46,190  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.Index (Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.0049ms.
+ 2019-05-03 10:15:46,227  INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor.? [?] - MESSAGE: Executing RedirectResult, redirecting to /home/install.
+ 2019-05-03 10:15:46,254  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.Index (Web.Host) in 239.2417ms
+ 2019-05-03 10:15:46,289  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-05-03 10:15:46,322  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 473.4743ms 302 
+ 2019-05-03 10:15:46,374  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/home/install  
+ 2019-05-03 10:15:46,408  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.Install (Web.Host)'
+ 2019-05-03 10:15:46,433  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Install", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.Install (Web.Host)
+ 2019-05-03 10:15:46,588  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.Install (Web.Host) - Validation state: Valid
+ 2019-05-03 10:15:46,655  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.Install (Web.Host), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0472ms.
+ 2019-05-03 10:15:46,681  INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.? [?] - MESSAGE: Executing ViewResult, running view Install.
+ 2019-05-03 10:15:46,959  INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.? [?] - MESSAGE: Executed ViewResult - view Install executed in 31.0016ms.
+ 2019-05-03 10:15:47,002  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/css/demo.css  
+ 2019-05-03 10:15:47,034  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.css  
+ 2019-05-03 10:15:46,981  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+ 2019-05-03 10:15:47,088  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.Install (Web.Host) in 616.6564ms
+ 2019-05-03 10:15:47,186  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.Install (Web.Host)'
+ 2019-05-03 10:15:47,222  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/css/demo.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\css\demo.css'
+ 2019-05-03 10:15:47,200  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/css/bootstrap.min.css  
+ 2019-05-03 10:15:47,286  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 301.3694ms 200 text/css
+ 2019-05-03 10:15:47,238  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\css\site.css'
+ 2019-05-03 10:15:47,272  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 893.622ms 200 text/html; charset=utf-8
+ 2019-05-03 10:15:47,381  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/css/paper-bootstrap-wizard.css  
+ 2019-05-03 10:15:47,443  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/css/bootstrap.min.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\css\bootstrap.min.css'
+ 2019-05-03 10:15:47,412  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 370.4899ms 200 text/css
+ 2019-05-03 10:15:47,532  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 300.5685ms 200 text/css
+ 2019-05-03 10:15:47,605  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/css/themify-icons.css  
+ 2019-05-03 10:15:47,620  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/vue/vue.js  
+ 2019-05-03 10:15:47,644  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery/dist/jquery.js  
+ 2019-05-03 10:15:47,653  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/css/paper-bootstrap-wizard.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\css\paper-bootstrap-wizard.css'
+ 2019-05-03 10:15:47,704  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.bundle.js  
+ 2019-05-03 10:15:47,682  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+ 2019-05-03 10:15:47,946  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/css/themify-icons.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\css\themify-icons.css'
+ 2019-05-03 10:15:47,972  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 435.2274ms 200 text/css
+ 2019-05-03 10:15:48,054  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 481.1216ms 200 text/css
+ 2019-05-03 10:15:48,011  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+ 2019-05-03 10:15:48,252  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/js/paper-bootstrap-wizard.js  
+ 2019-05-03 10:15:48,228  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/js/demo.js  
+ 2019-05-03 10:15:48,418  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 629.2972ms 200 application/javascript
+ 2019-05-03 10:15:48,491  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/js/demo.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\js\demo.js'
+ 2019-05-03 10:15:48,480  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/js/paper-bootstrap-wizard.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\js\paper-bootstrap-wizard.js'
+ 2019-05-03 10:15:48,559  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 444.7675ms 200 application/javascript
+ 2019-05-03 10:15:48,541  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/App/insteller.js  
+ 2019-05-03 10:15:48,631  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/img/paper-1.jpeg  
+ 2019-05-03 10:15:48,618  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 397.4485ms 200 application/javascript
+ 2019-05-03 10:15:48,108  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\lib\jquery\dist\jquery.js'
+ 2019-05-03 10:15:48,323  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 937.0191ms 200 text/css
+ 2019-05-03 10:15:48,740  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/App/insteller.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\App\insteller.js'
+ 2019-05-03 10:15:48,786  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/fonts/themify.woff?-fvbane  
+ 2019-05-03 10:15:49,028  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 369.9466ms 200 application/javascript
+ 2019-05-03 10:15:49,081  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/img/paper-1.jpeg'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\img\paper-1.jpeg'
+ 2019-05-03 10:15:49,127  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/fonts/themify.woff'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\fonts\themify.woff'
+ 2019-05-03 10:15:48,809  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1200.5503ms 200 application/javascript
+ 2019-05-03 10:15:49,258  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 498.4425ms 200 application/font-woff
+ 2019-05-03 10:15:49,193  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 577.9712ms 200 image/jpeg
+ 2019-05-03 10:15:49,318  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+ 2019-05-03 10:15:48,936  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/js/jquery.bootstrap.wizard.js  
+ 2019-05-03 10:15:48,455  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/vue/vue.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\vue\vue.js'
+ 2019-05-03 10:15:49,467  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\js\site.js'
+ 2019-05-03 10:15:49,482  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/js/jquery.bootstrap.wizard.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\js\jquery.bootstrap.wizard.js'
+ 2019-05-03 10:15:49,514  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 206.384ms 200 application/javascript
+ 2019-05-03 10:15:49,505  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1945.7883ms 200 application/javascript
+ 2019-05-03 10:15:49,555  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 702.5403ms 200 application/javascript
+ 2019-05-03 10:15:49,614  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/js/jquery.validate.min.js  
+ 2019-05-03 10:15:49,729  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/js/jquery.validate.min.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\js\jquery.validate.min.js'
+ 2019-05-03 10:15:49,771  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 171.5945ms 200 application/javascript
+ 2019-05-03 10:15:49,808  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/Home/GetAllModule  
+ 2019-05-03 10:15:49,892  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.GetAllModule (Web.Host)'
+ 2019-05-03 10:15:49,930  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetAllModule", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.GetAllModule (Web.Host)
+ 2019-05-03 10:15:50,410  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.GetAllModule (Web.Host) - Validation state: Valid
+ 2019-05-03 10:15:50,635  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.GetAllModule (Web.Host), returned result Microsoft.AspNetCore.Mvc.JsonResult in 1.8971ms.
+ 2019-05-03 10:15:50,661  INFO Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type '<>f__AnonymousType0`1[[System.Collections.Generic.List`1[[HotBag.Configuration.Global.ModuleInstallation.ModuleInfo, HotBag, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+ 2019-05-03 10:15:50,695  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.GetAllModule (Web.Host) in 646.2951ms
+ 2019-05-03 10:15:50,832  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.GetAllModule (Web.Host)'
+ 2019-05-03 10:15:50,972  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1115.8759ms 200 application/json; charset=utf-8
+ 2019-05-03 10:15:51,409  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+ 2019-05-03 10:15:51,440  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 28.9658ms 301 
+ 2019-05-03 10:15:51,472  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+ 2019-05-03 10:15:51,588  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 115.9279ms 200 text/html
+ 2019-05-03 10:15:52,189  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger  
+ 2019-05-03 10:15:52,227  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 29.1493ms 301 
+ 2019-05-03 10:15:52,253  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+ 2019-05-03 10:15:52,318  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 25.0471ms 200 text/html
+ 2019-05-03 10:15:52,333  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-bundle.js  
+ 2019-05-03 10:15:52,408  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui-standalone-preset.js  
+ 2019-05-03 10:15:52,416  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css  
+ 2019-05-03 10:15:52,521  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+ 2019-05-03 10:15:52,544  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+ 2019-05-03 10:15:52,575  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 168.7588ms 200 text/css
+ 2019-05-03 10:15:52,593  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 219.358ms 200 application/javascript
+ 2019-05-03 10:15:52,677  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+ 2019-05-03 10:15:52,718  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 385.1324ms 200 application/javascript
+ 2019-05-03 10:15:53,593  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+ 2019-05-03 10:15:54,633  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1045.5298ms 200 application/json;charset=utf-8
+ 2019-05-03 10:16:21,767  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/api/app/v1/Unit/Save application/json-patch+json 53
+ 2019-05-03 10:16:21,815  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:16:21,847  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:16:21,893  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core)'
+ 2019-05-03 10:16:21,972  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Save", controller = "Unit"}. Executing action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core)
+ 2019-05-03 10:16:21,992  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:16:22,013  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:16:22,406  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core) with arguments (HotBag.Core.Entity.UnitDto) - Validation state: Valid
+ 2019-05-03 10:16:23,332  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 898.1885ms.
+ 2019-05-03 10:16:23,399  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HotBag.ResultWrapper.ResponseModel.ResultDto`1[[HotBag.Core.Entity.UnitDto, HotBag.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2019-05-03 10:16:23,434  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core) in 1441.9193ms
+ 2019-05-03 10:16:23,456  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core)'
+ 2019-05-03 10:16:23,563  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1796.5906ms 200 application/json
+ 2019-05-03 10:16:55,628  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/api/app/v1/Unit/GetAll  
+ 2019-05-03 10:16:55,692  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAll (HotBag.Web.Core)'
+ 2019-05-03 10:16:55,864  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetAll", controller = "Unit"}. Executing action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAll (HotBag.Web.Core)
+ 2019-05-03 10:16:56,213  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAll (HotBag.Web.Core) with arguments () - Validation state: Valid
+ 2019-05-03 10:16:56,792  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAll (HotBag.Web.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 512.0304ms.
+ 2019-05-03 10:16:56,899  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HotBag.ResultWrapper.ResponseModel.ListResultDto`1[[HotBag.Core.Entity.UnitDto, HotBag.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2019-05-03 10:16:56,943  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAll (HotBag.Web.Core) in 1031.641ms
+ 2019-05-03 10:16:56,979  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAll (HotBag.Web.Core)'
+ 2019-05-03 10:16:57,041  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1486.5069ms 200 application/json
+ 2019-05-03 10:17:14,506  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/api/app/v1/Unit/GetAllPaged?skip=0&maxResultCount=2  
+ 2019-05-03 10:17:14,624  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core)'
+ 2019-05-03 10:17:14,698  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetAllPaged", controller = "Unit"}. Executing action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core)
+ 2019-05-03 10:17:14,908  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core) with arguments (0, 2, ) - Validation state: Valid
+ 2019-05-03 10:17:14,993  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 40.2723ms.
+ 2019-05-03 10:17:15,088  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HotBag.ResultWrapper.ResponseModel.PagedResultDto`1[[HotBag.Core.Entity.UnitDto, HotBag.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2019-05-03 10:17:15,273  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core) in 511.8123ms
+ 2019-05-03 10:17:15,386  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core)'
+ 2019-05-03 10:17:15,495  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 976.9106ms 200 application/json
+ 2019-05-03 10:17:37,694  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/api/app/v1/Unit/Save application/json-patch+json 53
+ 2019-05-03 10:17:37,713  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:17:37,735  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:17:37,768  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core)'
+ 2019-05-03 10:17:37,801  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Save", controller = "Unit"}. Executing action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core)
+ 2019-05-03 10:17:37,851  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:17:37,876  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:17:38,098  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core) with arguments (HotBag.Core.Entity.UnitDto) - Validation state: Valid
+ 2019-05-03 10:17:38,143  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 17.9128ms.
+ 2019-05-03 10:17:38,181  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HotBag.ResultWrapper.ResponseModel.ResultDto`1[[HotBag.Core.Entity.UnitDto, HotBag.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2019-05-03 10:17:38,220  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core) in 369.3206ms
+ 2019-05-03 10:17:38,248  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core)'
+ 2019-05-03 10:17:38,293  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 596.2615ms 200 application/json
+ 2019-05-03 10:17:39,709  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/api/app/v1/Unit/Save application/json-patch+json 53
+ 2019-05-03 10:17:39,741  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:17:39,763  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:17:39,784  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core)'
+ 2019-05-03 10:17:39,809  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Save", controller = "Unit"}. Executing action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core)
+ 2019-05-03 10:17:39,828  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:17:39,858  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:17:39,973  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core) with arguments (HotBag.Core.Entity.UnitDto) - Validation state: Valid
+ 2019-05-03 10:17:40,014  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 12.1204ms.
+ 2019-05-03 10:17:40,035  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HotBag.ResultWrapper.ResponseModel.ResultDto`1[[HotBag.Core.Entity.UnitDto, HotBag.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2019-05-03 10:17:40,060  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core) in 230.4446ms
+ 2019-05-03 10:17:40,081  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core)'
+ 2019-05-03 10:17:40,113  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 420.3025ms 200 application/json
+ 2019-05-03 10:17:41,027  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/api/app/v1/Unit/Save application/json-patch+json 53
+ 2019-05-03 10:17:41,048  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:17:41,067  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:17:41,124  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core)'
+ 2019-05-03 10:17:41,163  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Save", controller = "Unit"}. Executing action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core)
+ 2019-05-03 10:17:41,190  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:17:41,232  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:17:41,377  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core) with arguments (HotBag.Core.Entity.UnitDto) - Validation state: Valid
+ 2019-05-03 10:17:41,424  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 9.3013ms.
+ 2019-05-03 10:17:41,449  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HotBag.ResultWrapper.ResponseModel.ResultDto`1[[HotBag.Core.Entity.UnitDto, HotBag.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2019-05-03 10:17:41,507  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core) in 285.6204ms
+ 2019-05-03 10:17:41,576  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.Save (HotBag.Web.Core)'
+ 2019-05-03 10:17:41,606  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 578.3004ms 200 application/json
+ 2019-05-03 10:17:44,985  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/api/app/v1/Unit/GetAllPaged?skip=0&maxResultCount=2  
+ 2019-05-03 10:17:45,016  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core)'
+ 2019-05-03 10:17:45,089  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetAllPaged", controller = "Unit"}. Executing action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core)
+ 2019-05-03 10:17:45,359  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core) with arguments (0, 2, ) - Validation state: Valid
+ 2019-05-03 10:17:45,403  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 5.0237ms.
+ 2019-05-03 10:17:45,426  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HotBag.ResultWrapper.ResponseModel.PagedResultDto`1[[HotBag.Core.Entity.UnitDto, HotBag.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2019-05-03 10:17:45,454  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core) in 332.1743ms
+ 2019-05-03 10:17:45,533  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core)'
+ 2019-05-03 10:17:45,562  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 573.3232ms 200 application/json
+ 2019-05-03 10:17:58,444  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/api/app/v1/Unit/GetAllPaged?skip=2&maxResultCount=2  
+ 2019-05-03 10:17:58,466  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core)'
+ 2019-05-03 10:17:58,510  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetAllPaged", controller = "Unit"}. Executing action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core)
+ 2019-05-03 10:17:58,656  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core) with arguments (2, 2, ) - Validation state: Valid
+ 2019-05-03 10:17:58,693  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 7.1414ms.
+ 2019-05-03 10:17:58,748  INFO Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.? [?] - MESSAGE: Executing ObjectResult, writing value of type 'HotBag.ResultWrapper.ResponseModel.PagedResultDto`1[[HotBag.Core.Entity.UnitDto, HotBag.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+ 2019-05-03 10:17:58,798  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core) in 263.6714ms
+ 2019-05-03 10:17:58,829  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'HotBag.Web.GenericBase.GenericBaseController<HotBag.Core.Entity.Unit, HotBag.Core.Entity.UnitDto, System.Guid>.GetAllPaged (HotBag.Web.Core)'
+ 2019-05-03 10:17:58,876  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 423.8158ms 200 application/json
+ 2019-05-03 10:21:57,685  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire  
+ 2019-05-03 10:21:59,865  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 2224.6486ms 200 text/html
+ 2019-05-03 10:22:00,092  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/js1623  
+ 2019-05-03 10:22:00,228  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/css1623  
+ 2019-05-03 10:22:00,541  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 421.2402ms 200 text/css
+ 2019-05-03 10:22:00,729  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 566.4863ms 200 application/javascript
+ 2019-05-03 10:22:01,058  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/fonts/glyphicons-halflings-regular/woff2  
+ 2019-05-03 10:22:01,282  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 317.0813ms 200 font/woff2
+ 2019-05-03 10:22:01,562  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico  
+ 2019-05-03 10:22:02,606  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\favicon.ico'
+ 2019-05-03 10:22:02,624  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1145.4664ms 200 image/x-icon
+ 2019-05-03 10:22:03,364  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 228
+ 2019-05-03 10:22:03,642  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/jobs/enqueued  
+ 2019-05-03 10:22:03,777  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 331.0057ms 200 application/json
+ 2019-05-03 10:22:04,503  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 872.7564ms 200 text/html
+ 2019-05-03 10:22:04,573  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/js1623  
+ 2019-05-03 10:22:04,592  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/css1623  
+ 2019-05-03 10:22:04,637  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 64.1157ms 200 text/css
+ 2019-05-03 10:22:04,690  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 147.8479ms 200 application/javascript
+ 2019-05-03 10:22:04,786  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/fonts/glyphicons-halflings-regular/woff2  
+ 2019-05-03 10:22:04,830  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 56.5049ms 200 font/woff2
+ 2019-05-03 10:22:05,568  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/recurring  
+ 2019-05-03 10:22:06,564  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 974.1831ms 200 text/html
+ 2019-05-03 10:22:06,680  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/css1623  
+ 2019-05-03 10:22:06,805  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/js1623  
+ 2019-05-03 10:22:06,853  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 146.703ms 200 text/css
+ 2019-05-03 10:22:06,888  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 162.1959ms 200 application/javascript
+ 2019-05-03 10:22:07,032  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/fonts/glyphicons-halflings-regular/woff2  
+ 2019-05-03 10:22:07,103  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 33.0883ms 200 font/woff2
+ 2019-05-03 10:22:09,153  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 167
+ 2019-05-03 10:22:09,407  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 253.4805ms 200 application/json
+ 2019-05-03 10:22:11,144  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 167
+ 2019-05-03 10:22:11,386  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 232.5008ms 200 application/json
+ 2019-05-03 10:22:13,142  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 167
+ 2019-05-03 10:22:13,407  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 262.8416ms 200 application/json
+ 2019-05-03 10:22:15,150  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 167
+ 2019-05-03 10:22:15,521  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 360.472ms 200 application/json
+ 2019-05-03 10:22:16,069  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/jobs/enqueued  
+ 2019-05-03 10:22:16,527  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 457.389ms 200 text/html
+ 2019-05-03 10:22:16,592  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/js1623  
+ 2019-05-03 10:22:16,600  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/css1623  
+ 2019-05-03 10:22:16,652  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 50.1723ms 200 text/css
+ 2019-05-03 10:22:16,689  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 111.9834ms 200 application/javascript
+ 2019-05-03 10:22:16,743  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/fonts/glyphicons-halflings-regular/woff2  
+ 2019-05-03 10:22:16,793  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 25.5111ms 200 font/woff2
+ 2019-05-03 10:22:18,557  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/jobs/succeeded  
+ 2019-05-03 10:22:19,019  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:19,474  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 474.0286ms 200 application/json
+ 2019-05-03 10:22:19,598  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1037.5129ms 200 text/html
+ 2019-05-03 10:22:19,659  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/js1623  
+ 2019-05-03 10:22:19,676  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/css1623  
+ 2019-05-03 10:22:19,758  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 89.9962ms 200 text/css
+ 2019-05-03 10:22:19,818  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 160.1761ms 200 application/javascript
+ 2019-05-03 10:22:19,870  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/fonts/glyphicons-halflings-regular/woff2  
+ 2019-05-03 10:22:19,899  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 30.6753ms 200 font/woff2
+ 2019-05-03 10:22:22,017  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:22,274  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/jobs/details/383  
+ 2019-05-03 10:22:22,360  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 333.8322ms 200 application/json
+ 2019-05-03 10:22:23,013  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 732.9353ms 200 text/html
+ 2019-05-03 10:22:23,049  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/css1623  
+ 2019-05-03 10:22:23,062  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/js1623  
+ 2019-05-03 10:22:23,100  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 46.3556ms 200 text/css
+ 2019-05-03 10:22:23,149  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 84.13ms 200 application/javascript
+ 2019-05-03 10:22:23,289  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/fonts/glyphicons-halflings-regular/woff2  
+ 2019-05-03 10:22:23,318  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 30.2639ms 200 font/woff2
+ 2019-05-03 10:22:25,448  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:25,787  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 336.8253ms 200 application/json
+ 2019-05-03 10:22:27,448  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:27,707  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 254.8447ms 200 application/json
+ 2019-05-03 10:22:29,448  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:29,796  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 345.0358ms 200 application/json
+ 2019-05-03 10:22:31,446  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:31,715  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 265.5986ms 200 application/json
+ 2019-05-03 10:22:33,447  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:33,714  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 264.4722ms 200 application/json
+ 2019-05-03 10:22:35,447  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:36,039  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 567.6189ms 200 application/json
+ 2019-05-03 10:22:36,852  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+ 2019-05-03 10:22:36,950  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 72.962ms 200 text/html
+ 2019-05-03 10:22:37,035  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/swagger-ui.css  
+ 2019-05-03 10:22:37,151  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+ 2019-05-03 10:22:37,209  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 186.2548ms 200 text/css
+ 2019-05-03 10:22:37,816  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:38,352  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 522.4664ms 200 application/json
+ 2019-05-03 10:22:38,628  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/v1/swagger.json  
+ 2019-05-03 10:22:38,677  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/favicon-32x32.png  
+ 2019-05-03 10:22:38,701  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+ 2019-05-03 10:22:38,719  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 40.2023ms 200 image/png
+ 2019-05-03 10:22:39,470  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 839.1089ms 200 application/json;charset=utf-8
+ 2019-05-03 10:22:39,809  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:40,144  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/  
+ 2019-05-03 10:22:40,271  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 459.5156ms 200 application/json
+ 2019-05-03 10:22:40,461  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-05-03 10:22:40,517  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Index", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.Index (Web.Host)
+ 2019-05-03 10:22:40,859  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.Index (Web.Host) - Validation state: Valid
+ 2019-05-03 10:22:40,883  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.Index (Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.7728ms.
+ 2019-05-03 10:22:40,918  INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor.? [?] - MESSAGE: Executing RedirectResult, redirecting to /home/install.
+ 2019-05-03 10:22:40,944  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.Index (Web.Host) in 402.9469ms
+ 2019-05-03 10:22:40,985  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-05-03 10:22:41,031  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 875.6025ms 302 
+ 2019-05-03 10:22:41,055  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/home/install  
+ 2019-05-03 10:22:41,082  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.Install (Web.Host)'
+ 2019-05-03 10:22:41,107  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Install", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.Install (Web.Host)
+ 2019-05-03 10:22:41,275  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.Install (Web.Host) - Validation state: Valid
+ 2019-05-03 10:22:41,303  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.Install (Web.Host), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.6523ms.
+ 2019-05-03 10:22:41,424  INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.? [?] - MESSAGE: Executing ViewResult, running view Install.
+ 2019-05-03 10:22:41,884  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:42,303  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 425.7814ms 200 application/json
+ 2019-05-03 10:22:42,418  INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.? [?] - MESSAGE: Executed ViewResult - view Install executed in 1044.5138ms.
+ 2019-05-03 10:22:42,515  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.Install (Web.Host) in 1316.0495ms
+ 2019-05-03 10:22:42,556  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.css  
+ 2019-05-03 10:22:42,570  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.Install (Web.Host)'
+ 2019-05-03 10:22:42,801  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1622.7069ms 200 text/html; charset=utf-8
+ 2019-05-03 10:22:42,825  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+ 2019-05-03 10:22:42,866  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/css/demo.css  
+ 2019-05-03 10:22:43,054  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 338.4428ms 200 text/css
+ 2019-05-03 10:22:43,328  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/css/bootstrap.min.css  
+ 2019-05-03 10:22:43,456  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/css/themify-icons.css  
+ 2019-05-03 10:22:43,422  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+ 2019-05-03 10:22:43,446  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/css/demo.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\css\demo.css'
+ 2019-05-03 10:22:43,514  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\css\site.css'
+ 2019-05-03 10:22:43,524  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 688.3555ms 200 text/css
+ 2019-05-03 10:22:43,555  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 214.2749ms 200 text/css
+ 2019-05-03 10:22:43,544  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/css/themify-icons.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\css\themify-icons.css'
+ 2019-05-03 10:22:43,586  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/css/paper-bootstrap-wizard.css  
+ 2019-05-03 10:22:43,649  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 190.3479ms 200 text/css
+ 2019-05-03 10:22:43,663  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/css/bootstrap.min.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\css\bootstrap.min.css'
+ 2019-05-03 10:22:43,643  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/vue/vue.js  
+ 2019-05-03 10:22:43,802  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/css/paper-bootstrap-wizard.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\css\paper-bootstrap-wizard.css'
+ 2019-05-03 10:22:43,814  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 554.8249ms 200 text/css
+ 2019-05-03 10:22:43,777  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery/dist/jquery.js  
+ 2019-05-03 10:22:43,885  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 306.8147ms 200 text/css
+ 2019-05-03 10:22:43,915  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/js/jquery.bootstrap.wizard.js  
+ 2019-05-03 10:22:43,926  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.bundle.js  
+ 2019-05-03 10:22:43,951  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/js/demo.js  
+ 2019-05-03 10:22:44,022  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/js/jquery.bootstrap.wizard.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\js\jquery.bootstrap.wizard.js'
+ 2019-05-03 10:22:44,078  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/js/paper-bootstrap-wizard.js  
+ 2019-05-03 10:22:44,096  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/js/demo.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\js\demo.js'
+ 2019-05-03 10:22:44,121  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/vue/vue.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\vue\vue.js'
+ 2019-05-03 10:22:44,145  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/js/paper-bootstrap-wizard.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\js\paper-bootstrap-wizard.js'
+ 2019-05-03 10:22:44,225  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 208.0831ms 200 application/javascript
+ 2019-05-03 10:22:44,352  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 617.1853ms 200 application/javascript
+ 2019-05-03 10:22:44,369  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 190.2555ms 200 application/javascript
+ 2019-05-03 10:22:44,484  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+ 2019-05-03 10:22:44,601  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/App/insteller.js  
+ 2019-05-03 10:22:44,537  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\lib\jquery\dist\jquery.js'
+ 2019-05-03 10:22:44,928  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/fonts/themify.woff?-fvbane  
+ 2019-05-03 10:22:44,704  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+ 2019-05-03 10:22:45,107  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1382.1945ms 200 application/javascript
+ 2019-05-03 10:22:45,215  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/fonts/themify.woff'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\fonts\themify.woff'
+ 2019-05-03 10:22:45,278  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/img/paper-1.jpeg  
+ 2019-05-03 10:22:45,122  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\js\site.js'
+ 2019-05-03 10:22:45,365  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 415.9337ms 200 application/font-woff
+ 2019-05-03 10:22:45,269  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1322.224ms 200 application/javascript
+ 2019-05-03 10:22:45,491  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 963.6898ms 200 application/javascript
+ 2019-05-03 10:22:45,233  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/App/insteller.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\App\insteller.js'
+ 2019-05-03 10:22:44,428  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 169.5458ms 200 application/javascript
+ 2019-05-03 10:22:45,911  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1384.6544ms 200 application/javascript
+ 2019-05-03 10:22:45,923  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/js/jquery.validate.min.js  
+ 2019-05-03 10:22:45,964  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/img/paper-1.jpeg'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\img\paper-1.jpeg'
+ 2019-05-03 10:22:46,152  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/js/jquery.validate.min.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\js\jquery.validate.min.js'
+ 2019-05-03 10:22:46,180  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 789.4838ms 200 image/jpeg
+ 2019-05-03 10:22:46,242  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 318.542ms 200 application/javascript
+ 2019-05-03 10:22:46,342  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/Home/GetAllModule  
+ 2019-05-03 10:22:46,393  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico  
+ 2019-05-03 10:22:46,510  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.GetAllModule (Web.Host)'
+ 2019-05-03 10:22:46,581  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\favicon.ico'
+ 2019-05-03 10:22:46,595  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetAllModule", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.GetAllModule (Web.Host)
+ 2019-05-03 10:22:46,630  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 330.4996ms 200 image/x-icon
+ 2019-05-03 10:22:46,876  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.GetAllModule (Web.Host) - Validation state: Valid
+ 2019-05-03 10:22:46,888  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:46,919  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:47,834  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 867.9063ms 200 application/json
+ 2019-05-03 10:22:47,843  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 923.3382ms 200 application/json
+ 2019-05-03 10:22:47,874  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:48,320  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 475.0887ms 200 application/json
+ 2019-05-03 10:22:48,365  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.GetAllModule (Web.Host), returned result Microsoft.AspNetCore.Mvc.JsonResult in 1443.9659ms.
+ 2019-05-03 10:22:48,395  INFO Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type '<>f__AnonymousType0`1[[System.Collections.Generic.List`1[[HotBag.Configuration.Global.ModuleInstallation.ModuleInfo, HotBag, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+ 2019-05-03 10:22:48,509  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.GetAllModule (Web.Host) in 1883.1949ms
+ 2019-05-03 10:22:48,541  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.GetAllModule (Web.Host)'
+ 2019-05-03 10:22:48,570  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 2299.8251ms 200 application/json; charset=utf-8
+ 2019-05-03 10:22:49,838  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:50,203  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 348.5877ms 200 application/json
+ 2019-05-03 10:22:51,810  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:52,162  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 350.214ms 200 application/json
+ 2019-05-03 10:22:53,351  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/Home/UpdateInstall application/x-www-form-urlencoded; charset=UTF-8 811
+ 2019-05-03 10:22:53,382  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:22:53,430  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:22:53,450  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.UpdateInstall (Web.Host)'
+ 2019-05-03 10:22:53,493  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "UpdateInstall", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.UpdateInstall (Web.Host)
+ 2019-05-03 10:22:53,507  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:22:53,523  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:22:53,696  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.UpdateInstall (Web.Host) with arguments (Web.Host.Controllers.ModuleList) - Validation state: Valid
+ 2019-05-03 10:22:53,833  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.UpdateInstall (Web.Host), returned result Microsoft.AspNetCore.Mvc.JsonResult in 84.6394ms.
+ 2019-05-03 10:22:53,869  INFO Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+ 2019-05-03 10:22:53,912  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.UpdateInstall (Web.Host) in 394.1626ms
+ 2019-05-03 10:22:53,935  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.UpdateInstall (Web.Host)'
+ 2019-05-03 10:22:54,018  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 609.3876ms 200 application/json; charset=utf-8
+ 2019-05-03 10:22:54,179  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:22:54,633  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 454.8409ms 200 application/json
+ 2019-05-03 10:22:55,374  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/Home/RestartApplication  
+ 2019-05-03 10:22:55,444  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.RestartApplication (Web.Host)'
+ 2019-05-03 10:22:55,483  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "RestartApplication", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.RestartApplication (Web.Host)
+ 2019-05-03 10:22:55,702  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.RestartApplication (Web.Host) - Validation state: Valid
+ 2019-05-03 10:22:55,728 DEBUG Hangfire.BackgroundJobServer.? [?] - MESSAGE: Hangfire Server is stopping...
+ 2019-05-03 10:22:55,817 DEBUG Hangfire.SqlServer.ExpirationManager.? [?] - MESSAGE: Background process 'Hangfire.SqlServer.ExpirationManager' stopped.
+ 2019-05-03 10:22:55,849 DEBUG Hangfire.Server.ServerHeartbeat.? [?] - MESSAGE: Background process 'ServerHeartbeat' stopped.
+ 2019-05-03 10:22:55,858 DEBUG Hangfire.Server.ServerWatchdog.? [?] - MESSAGE: Background process 'ServerWatchdog' stopped.
+ 2019-05-03 10:22:55,894 DEBUG Hangfire.SqlServer.CountersAggregator.? [?] - MESSAGE: Background process 'Hangfire.SqlServer.CountersAggregator' stopped.
+ 2019-05-03 10:22:55,916 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #51667daf' stopped.
+ 2019-05-03 10:22:55,970 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #e1d0be2f' stopped.
+ 2019-05-03 10:22:56,031 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #1074cd41' stopped.
+ 2019-05-03 10:22:56,095 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #dc3f9068' stopped.
+ 2019-05-03 10:22:56,138 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #e8f173bb' stopped.
+ 2019-05-03 10:22:56,172 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #734fa237' stopped.
+ 2019-05-03 10:22:56,220 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #cb3a7cba' stopped.
+ 2019-05-03 10:22:56,250 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #b78fc5ee' stopped.
+ 2019-05-03 10:22:56,294 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #5cb26e24' stopped.
+ 2019-05-03 10:22:56,325 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #c931579d' stopped.
+ 2019-05-03 10:22:56,363 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #f3afb7b4' stopped.
+ 2019-05-03 10:22:56,384 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #f5ea74ea' stopped.
+ 2019-05-03 10:22:56,445 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #785dd577' stopped.
+ 2019-05-03 10:22:56,472 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #a04191a4' stopped.
+ 2019-05-03 10:22:56,506 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #a84c17af' stopped.
+ 2019-05-03 10:22:56,537 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #7519ef82' stopped.
+ 2019-05-03 10:22:56,570 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #be943c38' stopped.
+ 2019-05-03 10:22:56,600 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #975dd4c5' stopped.
+ 2019-05-03 10:22:56,623 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #d17e74ad' stopped.
+ 2019-05-03 10:22:56,665 DEBUG Hangfire.Server.Worker.? [?] - MESSAGE: Background process 'Worker #6da3be20' stopped.
+ 2019-05-03 10:22:56,688 DEBUG Hangfire.Server.DelayedJobScheduler.? [?] - MESSAGE: Background process 'DelayedJobScheduler' stopped.
+ 2019-05-03 10:22:56,724 DEBUG Hangfire.Server.RecurringJobScheduler.? [?] - MESSAGE: Background process 'RecurringJobScheduler' stopped.
+ 2019-05-03 10:22:56,799  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.RestartApplication (Web.Host), returned result Microsoft.AspNetCore.Mvc.JsonResult in 34.5151ms.
+ 2019-05-03 10:22:56,872  INFO Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+ 2019-05-03 10:22:56,958  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.RestartApplication (Web.Host) in 1366.3579ms
+ 2019-05-03 10:22:57,023 DEBUG Hangfire.Server.BackgroundProcessingServer.? [?] - MESSAGE: Background process 'BackgroundProcessingServer' stopped.
+ 2019-05-03 10:22:57,038  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.RestartApplication (Web.Host)'
+ 2019-05-03 10:22:57,115  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1710.7079ms 200 application/json; charset=utf-8
+ 2019-05-03 10:22:57,397  INFO Hangfire.BackgroundJobServer.? [?] - MESSAGE: Hangfire Server stopped.
+ 2019-05-03 10:23:33,689  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:23:33,689  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/  
+ 2019-05-03 10:23:33,908  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:23:33,938  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:23:34,033  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:23:34,054  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:23:34,083  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:23:34,144  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-05-03 10:23:34,192  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 527.1035ms 404 
+ 2019-05-03 10:23:34,199  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 160.8263ms 404 
+ 2019-05-03 10:23:34,220  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Index", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.Index (Web.Host)
+ 2019-05-03 10:23:34,252  INFO Microsoft.AspNetCore.Server.Kestrel.? [?] - MESSAGE: Connection id "0HLMFG4OV7CVR", Request id "0HLMFG4OV7CVR:00000001": the application completed without reading the entire request body.
+ 2019-05-03 10:23:34,258  INFO Microsoft.AspNetCore.Server.Kestrel.? [?] - MESSAGE: Connection id "0HLMFG4OV7CVT", Request id "0HLMFG4OV7CVT:00000001": the application completed without reading the entire request body.
+ 2019-05-03 10:23:35,455  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.Index (Web.Host) - Validation state: Valid
+ 2019-05-03 10:23:35,481  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.Index (Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 1.1857ms.
+ 2019-05-03 10:23:35,559  INFO Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor.? [?] - MESSAGE: Executing RedirectResult, redirecting to /home/install.
+ 2019-05-03 10:23:35,599  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.Index (Web.Host) in 1348.4592ms
+ 2019-05-03 10:23:35,617  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.Index (Web.Host)'
+ 2019-05-03 10:23:35,632  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1965.6152ms 302 
+ 2019-05-03 10:23:35,655  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/home/install  
+ 2019-05-03 10:23:35,675  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.Install (Web.Host)'
+ 2019-05-03 10:23:35,710  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "Install", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.Install (Web.Host)
+ 2019-05-03 10:23:35,966  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.Install (Web.Host) - Validation state: Valid
+ 2019-05-03 10:23:35,999  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.Install (Web.Host), returned result Microsoft.AspNetCore.Mvc.ViewResult in 4.7376ms.
+ 2019-05-03 10:23:36,107  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:23:36,162  INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.? [?] - MESSAGE: Executing ViewResult, running view Install.
+ 2019-05-03 10:23:36,173  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:23:36,222  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:23:36,256  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 143.7926ms 404 
+ 2019-05-03 10:23:36,274  INFO Microsoft.AspNetCore.Server.Kestrel.? [?] - MESSAGE: Connection id "0HLMFG4OV7CVT", Request id "0HLMFG4OV7CVT:00000002": the application completed without reading the entire request body.
+ 2019-05-03 10:23:37,129  INFO Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.? [?] - MESSAGE: Executed ViewResult - view Install executed in 1102.0549ms.
+ 2019-05-03 10:23:37,172  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.Install (Web.Host) in 1420.9714ms
+ 2019-05-03 10:23:37,197  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.Install (Web.Host)'
+ 2019-05-03 10:23:37,240  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 1578.9526ms 200 text/html; charset=utf-8
+ 2019-05-03 10:23:37,291  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/css/site.css  
+ 2019-05-03 10:23:37,302  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.css  
+ 2019-05-03 10:23:37,385  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\css\site.css'
+ 2019-05-03 10:23:37,426  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 122.4215ms 200 text/css
+ 2019-05-03 10:23:37,466  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:23:37,486  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:23:37,500  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:23:37,517  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+ 2019-05-03 10:23:37,527  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/css/bootstrap.min.css  
+ 2019-05-03 10:23:37,550  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 249.4729ms 200 text/css
+ 2019-05-03 10:23:37,541  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 67.0636ms 404 
+ 2019-05-03 10:23:37,580  INFO Microsoft.AspNetCore.Server.Kestrel.? [?] - MESSAGE: Connection id "0HLMFG4OV7CVT", Request id "0HLMFG4OV7CVT:00000004": the application completed without reading the entire request body.
+ 2019-05-03 10:23:37,598  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/css/bootstrap.min.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\css\bootstrap.min.css'
+ 2019-05-03 10:23:37,603  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/css/paper-bootstrap-wizard.css  
+ 2019-05-03 10:23:37,646  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 108.0402ms 200 text/css
+ 2019-05-03 10:23:37,665  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/css/paper-bootstrap-wizard.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\css\paper-bootstrap-wizard.css'
+ 2019-05-03 10:23:37,681  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 82.2868ms 200 text/css
+ 2019-05-03 10:23:37,697  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/css/demo.css  
+ 2019-05-03 10:23:37,717  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/css/demo.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\css\demo.css'
+ 2019-05-03 10:23:37,731  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 33.5413ms 200 text/css
+ 2019-05-03 10:23:37,783  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/css/themify-icons.css  
+ 2019-05-03 10:23:37,789  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/vue/vue.js  
+ 2019-05-03 10:23:37,828  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/css/themify-icons.css'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\css\themify-icons.css'
+ 2019-05-03 10:23:37,841  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/vue/vue.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\vue\vue.js'
+ 2019-05-03 10:23:37,871  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 89.8699ms 200 text/css
+ 2019-05-03 10:23:37,881  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 82.2941ms 200 application/javascript
+ 2019-05-03 10:23:37,966  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery/dist/jquery.js  
+ 2019-05-03 10:23:37,996  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\lib\jquery\dist\jquery.js'
+ 2019-05-03 10:23:38,012  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 48.3898ms 200 application/javascript
+ 2019-05-03 10:23:38,181  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.bundle.js  
+ 2019-05-03 10:23:38,188  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/js/jquery.bootstrap.wizard.js  
+ 2019-05-03 10:23:38,304  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+ 2019-05-03 10:23:38,396  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/js/jquery.bootstrap.wizard.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\js\jquery.bootstrap.wizard.js'
+ 2019-05-03 10:23:38,401  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 217.377ms 200 application/javascript
+ 2019-05-03 10:23:38,430  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 236.31ms 200 application/javascript
+ 2019-05-03 10:23:38,580  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/js/demo.js  
+ 2019-05-03 10:23:38,600  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/js/demo.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\js\demo.js'
+ 2019-05-03 10:23:38,615  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 35.2062ms 200 application/javascript
+ 2019-05-03 10:23:38,682  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/js/paper-bootstrap-wizard.js  
+ 2019-05-03 10:23:38,702  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/js/paper-bootstrap-wizard.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\js\paper-bootstrap-wizard.js'
+ 2019-05-03 10:23:38,722  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 40.1367ms 200 application/javascript
+ 2019-05-03 10:23:38,778  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/js/jquery.validate.min.js  
+ 2019-05-03 10:23:38,797  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/js/jquery.validate.min.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\js\jquery.validate.min.js'
+ 2019-05-03 10:23:38,813  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 35.6737ms 200 application/javascript
+ 2019-05-03 10:23:39,048  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+ 2019-05-03 10:23:39,116  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\js\site.js'
+ 2019-05-03 10:23:39,196  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 91.2852ms 200 application/javascript
+ 2019-05-03 10:23:39,323  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/App/insteller.js  
+ 2019-05-03 10:23:39,345  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/App/insteller.js'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\App\insteller.js'
+ 2019-05-03 10:23:39,361  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 38.5272ms 200 application/javascript
+ 2019-05-03 10:23:39,470  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:23:39,489  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:23:39,513  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:23:39,535  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 79.3132ms 404 
+ 2019-05-03 10:23:39,580  INFO Microsoft.AspNetCore.Server.Kestrel.? [?] - MESSAGE: Connection id "0HLMFG4OV7CVT", Request id "0HLMFG4OV7CVT:0000000E": the application completed without reading the entire request body.
+ 2019-05-03 10:23:39,811  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/Home/GetAllModule  
+ 2019-05-03 10:23:39,836  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.GetAllModule (Web.Host)'
+ 2019-05-03 10:23:39,856  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "GetAllModule", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.GetAllModule (Web.Host)
+ 2019-05-03 10:23:40,042  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.GetAllModule (Web.Host) - Validation state: Valid
+ 2019-05-03 10:23:40,194  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.GetAllModule (Web.Host), returned result Microsoft.AspNetCore.Mvc.JsonResult in 75.4135ms.
+ 2019-05-03 10:23:40,227  INFO Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type '<>f__AnonymousType0`1[[System.Collections.Generic.List`1[[HotBag.Configuration.Global.ModuleInstallation.ModuleInfo, HotBag, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+ 2019-05-03 10:23:40,411  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.GetAllModule (Web.Host) in 519.8879ms
+ 2019-05-03 10:23:40,429  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.GetAllModule (Web.Host)'
+ 2019-05-03 10:23:40,445  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 636.3927ms 200 application/json; charset=utf-8
+ 2019-05-03 10:23:40,490  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/img/paper-1.jpeg  
+ 2019-05-03 10:23:40,559  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/img/paper-1.jpeg'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\img\paper-1.jpeg'
+ 2019-05-03 10:23:40,579  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 88.3997ms 200 image/jpeg
+ 2019-05-03 10:23:40,724  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/assets/fonts/themify.woff?-fvbane  
+ 2019-05-03 10:23:40,739  INFO Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.? [?] - MESSAGE: Sending file. Request path: '/assets/fonts/themify.woff'. Physical path: 'C:\Users\IMS\Documents\Projects\MyProjects\HotBag\Web.Host\wwwroot\assets\fonts\themify.woff'
+ 2019-05-03 10:23:40,760  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 30.4473ms 200 application/font-woff
+ 2019-05-03 10:23:41,450  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:23:41,462  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:23:41,475  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:23:41,489  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 40.2003ms 404 
+ 2019-05-03 10:23:41,502  INFO Microsoft.AspNetCore.Server.Kestrel.? [?] - MESSAGE: Connection id "0HLMFG4OV7CVT", Request id "0HLMFG4OV7CVT:00000012": the application completed without reading the entire request body.
+ 2019-05-03 10:23:43,445  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:23:43,462  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:23:43,509  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:23:43,545  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 84.1836ms 404 
+ 2019-05-03 10:23:43,569  INFO Microsoft.AspNetCore.Server.Kestrel.? [?] - MESSAGE: Connection id "0HLMFG4OV7CVT", Request id "0HLMFG4OV7CVT:00000013": the application completed without reading the entire request body.
+ 2019-05-03 10:23:45,833  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:23:45,852  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:23:45,873  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:23:45,909  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 80.7005ms 404 
+ 2019-05-03 10:23:46,022  INFO Microsoft.AspNetCore.Server.Kestrel.? [?] - MESSAGE: Connection id "0HLMFG4OV7CVT", Request id "0HLMFG4OV7CVT:00000014": the application completed without reading the entire request body.
+ 2019-05-03 10:23:47,445  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/hangfire/stats application/x-www-form-urlencoded; charset=UTF-8 392
+ 2019-05-03 10:23:47,460  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:23:47,475  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:23:47,491  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 45.692ms 404 
+ 2019-05-03 10:23:47,509  INFO Microsoft.AspNetCore.Server.Kestrel.? [?] - MESSAGE: Connection id "0HLMFG4OV7CVT", Request id "0HLMFG4OV7CVT:00000015": the application completed without reading the entire request body.
+ 2019-05-03 10:23:48,619  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/hangfire/jobs/details/383  
+ 2019-05-03 10:23:48,640  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 43.177ms 404 
+ 2019-05-03 10:23:51,225  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/swagger/index.html  
+ 2019-05-03 10:23:51,244  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 14.3982ms 404 
+ 2019-05-03 10:24:02,287  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 POST https://localhost:5001/Home/UpdateInstall application/x-www-form-urlencoded; charset=UTF-8 810
+ 2019-05-03 10:24:02,298  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:24:02,311  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:24:02,325  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.UpdateInstall (Web.Host)'
+ 2019-05-03 10:24:02,372  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "UpdateInstall", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.UpdateInstall (Web.Host)
+ 2019-05-03 10:24:02,385  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: CORS policy execution failed.
+ 2019-05-03 10:24:02,411  INFO Microsoft.AspNetCore.Cors.Infrastructure.CorsService.? [?] - MESSAGE: Request origin https://localhost:5001 does not have permission to access the resource.
+ 2019-05-03 10:24:02,646  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.UpdateInstall (Web.Host) with arguments (Web.Host.Controllers.ModuleList) - Validation state: Valid
+ 2019-05-03 10:24:02,790  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.UpdateInstall (Web.Host), returned result Microsoft.AspNetCore.Mvc.JsonResult in 123.1983ms.
+ 2019-05-03 10:24:02,809  INFO Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+ 2019-05-03 10:24:02,896  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.UpdateInstall (Web.Host) in 485.0674ms
+ 2019-05-03 10:24:02,924  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.UpdateInstall (Web.Host)'
+ 2019-05-03 10:24:03,012  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 678.915ms 200 application/json; charset=utf-8
+ 2019-05-03 10:24:04,146  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request starting HTTP/1.1 GET https://localhost:5001/Home/RestartApplication  
+ 2019-05-03 10:24:04,173  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executing endpoint 'Web.Host.Controllers.HomeController.RestartApplication (Web.Host)'
+ 2019-05-03 10:24:04,229  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Route matched with {action = "RestartApplication", controller = "Home"}. Executing action Web.Host.Controllers.HomeController.RestartApplication (Web.Host)
+ 2019-05-03 10:24:04,354  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executing action method Web.Host.Controllers.HomeController.RestartApplication (Web.Host) - Validation state: Valid
+ 2019-05-03 10:24:04,414  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action method Web.Host.Controllers.HomeController.RestartApplication (Web.Host), returned result Microsoft.AspNetCore.Mvc.JsonResult in 3.4434ms.
+ 2019-05-03 10:24:04,436  INFO Microsoft.AspNetCore.Mvc.Formatters.Json.Internal.JsonResultExecutor.? [?] - MESSAGE: Executing JsonResult, writing value of type '<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+ 2019-05-03 10:24:04,455  INFO Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.? [?] - MESSAGE: Executed action Web.Host.Controllers.HomeController.RestartApplication (Web.Host) in 202.7143ms
+ 2019-05-03 10:24:04,471  INFO Microsoft.AspNetCore.Routing.EndpointMiddleware.? [?] - MESSAGE: Executed endpoint 'Web.Host.Controllers.HomeController.RestartApplication (Web.Host)'
+ 2019-05-03 10:24:04,490  INFO Microsoft.AspNetCore.Hosting.Internal.WebHost.? [?] - MESSAGE: Request finished in 342.3308ms 200 application/json; charset=utf-8
+ 

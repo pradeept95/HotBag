@@ -3,6 +3,7 @@ using HotBag.Modules;
 using Microsoft.Extensions.DependencyModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -13,7 +14,8 @@ namespace HotBag.Installer
     {
         public static void InstallDefaultModule()
         {
-            string json = System.IO.File.ReadAllText("modulesettings.json");
+            var filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "modulesettings.json");
+            string json = System.IO.File.ReadAllText(filePath);
             dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
             var modules = (jsonObj["Modules"]["Default"]).ToString().Split(",");
             foreach (var module in modules)
@@ -25,7 +27,8 @@ namespace HotBag.Installer
 
         public static void InstallApplicationORMModule()
         {
-            string json = System.IO.File.ReadAllText("modulesettings.json");
+            var filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "modulesettings.json");
+            string json = System.IO.File.ReadAllText(filePath);
             dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
             var modules = (jsonObj["Modules"]["ORMInstalled"]).ToString().Split(",");
             foreach (var module in modules)
@@ -37,7 +40,8 @@ namespace HotBag.Installer
 
         public static void InstallApplicationModule()
         {
-            string json = System.IO.File.ReadAllText("modulesettings.json");
+            var filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "modulesettings.json");
+            string json = System.IO.File.ReadAllText(filePath);
             dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
             var modules = (jsonObj["Modules"]["Installed"]).ToString().Split(",");
             foreach (var module in modules)

@@ -59,8 +59,24 @@ namespace HotBag.Core.Entity
 
         public string Artist { get; set; }
     }
-
+    
     public class PradeepDto : EntityBaseDto<Guid>
+    {
+        public string Title { get; set; }
+
+        public string Artist { get; set; }
+    }
+
+
+    [GeneratedController(typeof(UnitDto), typeof(Guid))]
+    public class Unit : EntityBase<Guid>
+    {
+        public string Title { get; set; }
+
+        public string Artist { get; set; }
+    }
+
+    public class UnitDto : EntityBaseDto<Guid>
     {
         public string Title { get; set; }
 

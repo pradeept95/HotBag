@@ -27,11 +27,11 @@ namespace HotBag.Services.Identity
             IRepositoryFactory<HotBagRole, long> roleRepository,
             IRepositoryFactory<HotBagRoleApplicationModule, long> roleApplicationModuleRepository,
             IRepositoryFactory<HotBagApplicationModulePermissionLevel, long> roleApplicationModulePermissionLevelRepository,
-            IRepositoryFactory<HotBagApplicationModule, long> ApplicationModuleRepository 
+            IRepositoryFactory<HotBagApplicationModule, long> applicationModuleRepository 
             )
         {
             _userRepository = userRepository.GetRepository();
-            _applicationModuleRepository = ApplicationModuleRepository.GetRepository();
+            _applicationModuleRepository = applicationModuleRepository.GetRepository();
             this._roleApplicationModulePermissionLevelRepository = roleApplicationModulePermissionLevelRepository.GetRepository();
             this._roleApplicationModuleRepository = roleApplicationModuleRepository.GetRepository();
             this._roleRepository = roleRepository.GetRepository();
@@ -55,7 +55,8 @@ namespace HotBag.Services.Identity
 
         public async Task<LoginResultDto> GetLoginAsync(string userNameOrEmail, string password)
         {
-            var user = await _userRepository.GetAll().FirstOrDefaultAsync(x =>
+            var a = _userRepository.GetAll().ToList();
+            var user = _userRepository.GetAll().FirstOrDefault(x =>
                  x.Email.ToLower() == userNameOrEmail.ToLower()
                  || x.Username.ToLower() == userNameOrEmail.ToLower()
             );
@@ -75,13 +76,13 @@ namespace HotBag.Services.Identity
             if (user == null)
             {
                 result.LoginErrorMessage = "Username or Password is invalid";
-                return result;
+                return await Task.FromResult(result);
             } 
 
             if (!PasswordHasher.VerifyHashedPassword(user.HashedPassword, password))
             {
                 result.LoginErrorMessage = "Username or Password is invalid";
-                return result;
+                return await Task.FromResult(result); ;
             }
 
             var userStatusResult = CheckUserStatus(user);
@@ -90,14 +91,14 @@ namespace HotBag.Services.Identity
                 result.IsLoginSuccess = true;
                 result.LoginErrorMessage = string.Empty;
                 result.User = user;
-                return result;
+                return await Task.FromResult(result); ;
             }
             else
             {
                 result.IsLoginSuccess = false;
                 result.LoginErrorMessage = userStatusResult.errorMessage;
                 result.User = null;
-                return result;
+                return await Task.FromResult(result); ;
             }
         }
 

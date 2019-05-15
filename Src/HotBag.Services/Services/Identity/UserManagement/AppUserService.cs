@@ -113,6 +113,9 @@ namespace HotBag.Services.Identity
 
         public async Task<ResultDto<HotBagUserDto>> Save(HotBagUserDto entity)
         {
+            var a = PasswordHasher.HashPassword(entity.Password);
+
+
             var saveModel = _objectMapper.Map<HotBagUser>(entity);
 
             saveModel.HashedPassword = PasswordHasher.HashPassword(entity.Password);

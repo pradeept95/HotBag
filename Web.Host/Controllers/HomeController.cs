@@ -3,7 +3,9 @@ using HotBag.Configuration.Global.ModuleInstallation;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace Web.Host.Controllers
 {
@@ -36,7 +38,8 @@ namespace Web.Host.Controllers
         public JsonResult GetAllModule()
         {
             var modules = HotBagConfiguration.Configurations.ModuleSetting.GetAllModuleInfo();
-            string json = System.IO.File.ReadAllText("modulesettings.json");
+            var filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "modulesettings.json");
+            string json = System.IO.File.ReadAllText(filePath);
             dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
             var coreModuleList = new List<string>();
             var allCoreModuel = (jsonObj["Modules"]["Default"]).ToString().Split(",");
@@ -59,7 +62,8 @@ namespace Web.Host.Controllers
         {
             try
             {
-                string json = System.IO.File.ReadAllText("modulesettings.json");
+                var filePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "modulesettings.json");
+                string json = System.IO.File.ReadAllText(filePath);
                 dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
                 var coreModuleList = new List<string>();
                 var allCoreModuel = (jsonObj["Modules"]["Default"]).ToString().Split(",");
@@ -75,7 +79,7 @@ namespace Web.Host.Controllers
 
                 jsonObj["Modules"]["Installed"] = installedModules;
                 string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObj, Newtonsoft.Json.Formatting.Indented);
-                System.IO.File.WriteAllText("modulesettings.json", output);
+                System.IO.File.WriteAllText(filePath, output);
                 return Json(new { success = true, message = "Module(s) Sussessfully updated" });
             }
             catch (System.Exception ex)
