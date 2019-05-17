@@ -57,3 +57,4 @@ packages/**
 *.ncrunch*
 *.ndproj
 HotBag.Application/Web.Host/Properties/launchSettings.json
+/Core/HotBag/Modules
