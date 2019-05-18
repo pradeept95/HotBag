@@ -1,4 +1,8 @@
-﻿using HotBag.Modules;
+﻿using GraphQL;
+using GraphQL.Server;
+using GraphQL.Types;
+using HotBag.Modules;
+using HotBag.Plugins.GraphQL;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -23,7 +27,22 @@ namespace HotBag.Plugins.GraphQl
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-          
+            serviceCollection.AddScoped<HotBagQueryType>();
+            serviceCollection.AddScoped<HotBagApplicationType>();
+
+            serviceCollection.AddScoped<HotBagMutationType>();
+            serviceCollection.AddScoped<HotBagAppSchema>();
+
+            serviceCollection.AddTransient<IDependencyResolver>(
+                serviceProvider => {
+                        return new FuncDependencyResolver(serviceProvider.GetRequiredService);
+                });
+
+            serviceCollection.AddGraphQL(o => { o.ExposeExceptions = true; })
+                 .AddGraphTypes(ServiceLifetime.Scoped);
+
+            //serviceCollection.AddSingleton<IDocumentExecuter, DocumentExecuter>();
+            //serviceCollection.AddSingleton<IDocumentWriter, DocumentWriter>(); 
         }
     } 
 }

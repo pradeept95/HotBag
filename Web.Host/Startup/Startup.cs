@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
@@ -8,10 +7,9 @@ using HotBag;
 using HotBag.EntityFrameworkCore.Context;
 using HotBag.ORM;
 using HotBag.Plugins.GraphQl;
-using HotBag.Plugins.Hangfire;
+using HotBag.Plugins.GraphQL;
 using HotBag.ResultWrapper.Extensions;
 using HotBag.ResultWrapper.Filters;
-using HotBag.SB.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -126,8 +124,8 @@ namespace Web.Host
             //Use HotBag Hangfire
             app.UseHotBagHangfire(env);
 
-            //user GraphQl
-            app.UseHotGraphQL();
+            //user HotBag GraphQl
+            app.UseHotGraphQL<HotBagAppSchema>();
 
             // Add Log4Net
             var loggingOptions = this.Configuration.GetSection("Log4NetCore")

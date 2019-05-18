@@ -9,9 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="PlayGround\index.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <PackageReference Include="GraphQL" Version="2.4.0" />
+    <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="GraphQL.Server.Ui.Playground" Version="3.4.0" />
   </ItemGroup>
 
 </Project>
