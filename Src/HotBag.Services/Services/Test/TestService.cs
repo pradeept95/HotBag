@@ -57,7 +57,7 @@ namespace HotBag.Services.Providers
             }
 
             //var totalCount = await result.CountAsync();
-            var finalResult = await result
+            var finalResult = result
                 .Select(x => new TestEntityDto {
                     Id = x.Id,
                     TestName = x.TestName,
@@ -65,7 +65,7 @@ namespace HotBag.Services.Providers
                     TestProp2 = x.TestProp2,
                     TestProp3 = x.TestProp3
                 })
-                .ToListAsync();
+                .ToList();
 
             return new ListResultDto<TestEntityDto>(finalResult, "Test summary");
 

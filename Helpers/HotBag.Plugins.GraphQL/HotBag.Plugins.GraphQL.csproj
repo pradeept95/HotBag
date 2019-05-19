@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Src\HotBag.Core\HotBag.Core.csproj" />
+    <ProjectReference Include="..\..\Src\HotBag.Services\HotBag.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>

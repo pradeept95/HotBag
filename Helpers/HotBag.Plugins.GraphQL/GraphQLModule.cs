@@ -28,7 +28,7 @@ namespace HotBag.Plugins.GraphQl
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
             serviceCollection.AddScoped<HotBagQueryType>();
-            serviceCollection.AddScoped<HotBagApplicationType>();
+            //serviceCollection.AddScoped<HotBagApplicationType>();
 
             serviceCollection.AddScoped<HotBagMutationType>();
             serviceCollection.AddScoped<HotBagAppSchema>();
