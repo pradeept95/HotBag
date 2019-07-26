@@ -13,32 +13,10 @@ namespace HotBag
             get { return "MongoDbModule"; }
 
         } 
-
-        public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        {
-             
-        }
-
+         
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
             SeedHelpers.SeedMongoData(serviceCollection).Wait();
-        }
-
-        public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        {
-           // serviceCollection.Scan(scan => scan
-           //.FromAssemblyOf<MongoDbModule>()
-           //    .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
-           //        .AsImplementedInterfaces()
-           //        .WithTransientLifetime()
-
-           //    .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
-           //        .As<IScopedDependencies>()
-           //        .WithScopedLifetime()
-
-           //     .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
-           //                .AsImplementedInterfaces()
-           //                .WithSingletonLifetime());
-        }
+        } 
     }
 }

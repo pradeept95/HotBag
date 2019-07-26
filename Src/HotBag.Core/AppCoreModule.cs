@@ -26,16 +26,6 @@ namespace HotBag.Core
 
             IMapper mapper = mappingConfig.CreateMapper();
             serviceCollection.AddSingleton(mapper);
-        }
-
-        public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        {
-            
-        }
-
-        public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        {
-             
-        }
+        } 
     }
 }

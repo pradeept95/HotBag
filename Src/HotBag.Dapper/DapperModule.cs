@@ -12,13 +12,8 @@ namespace HotBag.Dapper
         {
             get { return "DapperModule"; }
 
-        } 
-
-        public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        {
-
-        } 
-
+        }  
+     
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
             //SeedHelpers.SeedData(serviceCollection);

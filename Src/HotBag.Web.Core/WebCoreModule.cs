@@ -27,32 +27,6 @@ namespace HotBag.Web.Core
                     ConfigureApplicationPartManager(m =>
                         m.FeatureProviders.Add(new GenericTypeControllerFeatureProvider()
                     ));
-        }
-
-        public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        {
-            //throw new NotImplementedException();
-
-
-        }
-
-        public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        {
-            //throw new NotImplementedException();
-
-            //serviceCollection.Scan(scan => scan
-            //    .FromAssemblyOf<WebCoreModule>()
-            //        .AddClasses(classes => classes.AssignableTo<ITransientDependencies>())
-            //            .AsImplementedInterfaces()
-            //            .WithTransientLifetime()
-
-            //        .AddClasses(classes => classes.AssignableTo<IScopedDependencies>())
-            //            .As<IScopedDependencies>()
-            //            .WithScopedLifetime()
-
-            // .AddClasses(classes => classes.AssignableTo<ISingletonDependencies>())
-            //            .AsImplementedInterfaces()
-            //            .WithSingletonLifetime());
-        }
+        } 
     }
 }

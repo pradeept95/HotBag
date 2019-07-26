@@ -1,7 +1,4 @@
-﻿using System.Text;
-using HotBag.AutoMaper;
-using HotBag.Identity.AppSession;
-using Microsoft.Extensions.Configuration;
+﻿ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace HotBag.Modules
@@ -15,5 +12,4 @@ namespace HotBag.Modules
 
         public virtual void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration) { }
     }
-
 }
