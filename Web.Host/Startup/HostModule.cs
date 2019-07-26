@@ -11,24 +11,7 @@ namespace Web.Host
     {
         public override string ModuleName
         {
-            get { return "HostModule"; }
-
+            get { return "HostModule"; } 
         } 
-
-        public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        {
-            
-        }
-
-        public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        {
-            
-        }
-
-        public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
-        {
-            
-        }
-
     }
 }
