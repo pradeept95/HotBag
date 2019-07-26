@@ -1,10 +1,8 @@
 ﻿using HotBag.Data;
 using HotBag.DI.Base;
 using HotBag.EntityBase;
-using HotBag.EntityFrameworkCore.UnitOfWork;
 using HotBag.ResultWrapper.ResponseModel;
 using HotBag.Services.RepositoryFactory;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using IObjectMapper = HotBag.AutoMaper.IObjectMapper;
