@@ -2,6 +2,7 @@
 using AutoMapper;
 using HotBag.AuthConfiguration;
 using HotBag.AutoMaper;
+using HotBag.Configuration.Global.Custom;
 using HotBag.DI.Base;
 using HotBag.EntityFramework.Context;
 using HotBag.Identity.Profiller;
@@ -44,6 +45,9 @@ namespace HotBag
              
             var nn = HotBagConfiguration.Configurations.ApplicationSettings.ApplicationName;
 
+            //test of getting custom setting
+            var customConfig = IocManager.Configurations.Manager.GetService<IDictionaryBasedConfig>(); 
+            var settingValue = customConfig.Get<string>("myCustomSetting"); 
         }
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
@@ -59,7 +63,11 @@ namespace HotBag
             serviceCollection.AddAutoMapper(all);
              
             serviceCollection.ConfigureApplicationSettings(configuration);
-            AuthConfigurer.Configure(serviceCollection, configuration); 
+            AuthConfigurer.Configure(serviceCollection, configuration);
+
+            var customConfig = IocManager.Configurations.Manager.GetService<IDictionaryBasedConfig>();
+             
+            customConfig.Set<string>("myCustomSetting", "my custom setting value");
         }
     }
 }

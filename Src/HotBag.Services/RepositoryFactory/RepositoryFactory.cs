@@ -1,4 +1,5 @@
 ﻿using HotBag.Configuration.Global.Application;
+using HotBag.Configuration.Global.Custom;
 using HotBag.Dapper.Repository;
 using HotBag.Data;
 using HotBag.DI.Base;
@@ -24,7 +25,9 @@ namespace HotBag.Services.RepositoryFactory
             //test
             var someclass = IocManager.Configurations.Manager.GetService<IApplicationSetting>();
 
-
+            //test of getting custom setting
+            var customConfig = IocManager.Configurations.Manager.GetService<IDictionaryBasedConfig>();
+            var settingValue = customConfig.Get<string>("myCustomSetting");
 
             DatabaseORM databaseProvider = HotBagConfiguration.Configurations.ObjectRelationMappings.CurrentSelectedORM;
             IBaseRepository<TEntity, TPrimaryKey> currentRepository = null;
