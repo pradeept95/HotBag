@@ -14,16 +14,16 @@ namespace HotBag.Plugins.PushNotification
         public override void Initialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
             
-        }
+        } 
 
         public override void PostInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
 
-        }
+        } 
 
         public override void PreInitialize(IServiceCollection serviceCollection, IConfiguration configuration)
         {
 
-        }
+        } 
     }
 }

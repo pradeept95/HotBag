@@ -80,8 +80,8 @@ namespace HotBag.Services.Providers
                 result = result.Where(x => x.TestName.ToLower().Trim().Contains(searchText.ToLower().Trim()));
             }
 
-            var totalCount = await result.CountAsync();
-            var finalResult = await result
+            var totalCount = result.Count();
+            var finalResult = result
                 .Select(x => new TestEntityDto
                 {
                     Id = x.Id,
@@ -92,7 +92,7 @@ namespace HotBag.Services.Providers
                 })
                 .Skip(skip) 
                 .Take(maxResultCount)
-                .ToListAsync();
+                .ToList();
 
             return new PagedResultDto<TestEntityDto>(totalCount , finalResult, skip + maxResultCount < totalCount, "Total Data With summary");
         }
